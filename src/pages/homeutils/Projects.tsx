@@ -163,7 +163,7 @@ function Projects() {
         </div>
       </div>
 
-      <div className="flex flex-col  items-center justify-center mt-[10vh] pb-[5vh]">
+      <div className="flex flex-col  items-center justify-center mt-[5vh] pb-[5vh]">
         <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
           {(selectedType === "WEB" || selectedType === "ALL") && (
             <div className="flex flex-col lg:flex-row gap-10">
