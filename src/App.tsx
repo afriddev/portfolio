@@ -1,10 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ProjectDetail from "./pages/projectDetail";
-import { useAppContext } from "./utils/AppContext";
 
 function App() {
-  const { selectedProject } = useAppContext();
+  const selectedProject = localStorage.getItem("selectedProject")
 
   return (
     <div className=" relative cursor-default text-foreground scroll-smooth ">
