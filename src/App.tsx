@@ -4,10 +4,11 @@ import ProjectDetail from "./pages/projectDetail";
 
 function App() {
   const selectedProject = localStorage.getItem("selectedProject")
+  console.log(typeof selectedProject)
 
   return (
     <div className=" relative cursor-default text-foreground scroll-smooth ">
-      {!selectedProject && (
+      {(!selectedProject || selectedProject === "null")  && (
         <div className="relative w-full h-full  ">
           <div className="absolute h-[100vh] bg-black/25 inset-0  z-[201]"></div>
           <div className="absolute  h-full w-full  min-h-[100vh] z-[200] ">
