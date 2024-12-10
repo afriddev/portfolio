@@ -65,10 +65,8 @@ function Home() {
         payload: undefined,
       });
     }
-    dispatch({
-      type: "setProjectDetail",
-      payload: undefined,
-    });
+    localStorage.setItem("selectedProject", null as never);
+
 
     dispatch({
       type: "setScrollView",

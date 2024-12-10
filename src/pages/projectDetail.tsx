@@ -1,4 +1,4 @@
-import { useAppContext } from "../utils/AppContext";
+import { projectType, useAppContext } from "../utils/AppContext";
 import NavBar from "../utils/NavBar";
 import { MdChevronRight } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa6";
@@ -6,10 +6,13 @@ import BottomNav from "./homeutils/BottomNav";
 import Animate from "../utils/animations/Animate";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { projectData } from "../utils/projectData";
 
 function ProjectDetail() {
-  const { selectedProject, dispatch } = useAppContext();
+  const { dispatch } = useAppContext();
   const navigate = useNavigate();
+  const selectedProject: projectType =
+    projectData[localStorage.getItem("selectedProject") as never];
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -42,10 +45,8 @@ function ProjectDetail() {
               <div className="flex text-foreground/60 items-center">
                 <span
                   onClick={() => {
-                    dispatch({
-                      type: "setProjectDetail",
-                      payload: undefined,
-                    });
+                    localStorage.setItem("selectedProject", null as never);
+
                     dispatch({
                       type: "setScrollView",
                       payload: "WORK",
@@ -124,7 +125,9 @@ function ProjectDetail() {
 
             <div
               className={` mt-[5vh] justify-center items-center ${
-                selectedProject?.mobileView ? "flex flex-col lg:flex-row gap-4" : "flex flex-col  gap-3  w-full  "
+                selectedProject?.mobileView
+                  ? "flex flex-col lg:flex-row gap-4"
+                  : "flex flex-col  gap-3  w-full  "
               }`}
             >
               {selectedProject?.images?.map((item, index) => {
@@ -132,7 +135,9 @@ function ProjectDetail() {
                   <Animate type="slideLeft" delay={index * 200} key={index}>
                     <img
                       className={`rounded-sm  ${
-                        selectedProject?.mobileView ? "h-[60vh] w-[60vw] lg:h-[50vh] lg:w-[14vw]" : "lg:max-w-[60vw]"
+                        selectedProject?.mobileView
+                          ? "h-[60vh] w-[60vw] lg:h-[50vh] lg:w-[14vw]"
+                          : "lg:max-w-[60vw]"
                       } `}
                       key={index}
                       src={item}

@@ -11,25 +11,21 @@ function NavBar() {
   const [openMenu, setOpenMenu] = useState(false);
   function handleHomeClick() {
     navigate("/");
-    dispatch({
-      type: "setProjectDetail",
-      payload: undefined,
-    });
+    localStorage.setItem("selectedProject", null as never);
+
+    
   }
 
   function handleNameClick() {
     navigate("/");
-    dispatch({
-      type: "setProjectDetail",
-      payload: undefined,
-    });
+    localStorage.setItem("selectedProject", null as never);
+    
   }
 
   function handleScrollViewClick(value: string) {
-    dispatch({
-      type: "setProjectDetail",
-      payload: undefined,
-    });
+    localStorage.setItem("selectedProject", null as never);
+
+    
     dispatch({
       type: "setScrollView",
       payload: value,
