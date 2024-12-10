@@ -15,7 +15,7 @@ function Home() {
   const expertise = [
     {
       icon: "SOFTWARE",
-      desc: "Experienced in both functional and OOP: Dart, Python, Java, JavaScript, TypeScript.",
+      desc: "Experienced in both functional and OOP: Dart, Python, Java, TypeScript. Solved more than 100 DSA problems",
       heading: "Software",
       headingContemt: "Development",
     },

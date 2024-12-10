@@ -63,7 +63,7 @@ function ExpertiseCard({
         <div className="flex mt-4 justify-center items-center">
           <div className="flex flex-col items-center h-full text-foreground/30">
             <label>{`<h3>`}</label>
-            <div className="w-[0.1rem] h-[20vh] lg:h-[10vh] bg-foreground/10"></div>
+            <div className="w-[0.1rem] h-[21vh] lg:h-[12vh] bg-foreground/10"></div>
             <label>{`</h3>`}</label>
           </div>
           <div>
