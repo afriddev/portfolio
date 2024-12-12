@@ -56,7 +56,7 @@ function Home() {
   const targetDivRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const temp = scrollView
+    const temp = scrollView;
 
     if (targetDivRef.current) {
       targetDivRef.current.scrollIntoView({ behavior: "smooth" });
@@ -66,7 +66,6 @@ function Home() {
       });
     }
     localStorage.setItem("selectedProject", null as never);
-
 
     dispatch({
       type: "setScrollView",
@@ -100,6 +99,12 @@ function Home() {
                   type: "setScrollView",
                   payload: "EXPERTISE",
                 });
+                setTimeout(() => {
+                  dispatch({
+                    type: "setScrollView",
+                    payload: undefined,
+                  });
+                }, 400);
               }}
             >
               <DownwArrow />
