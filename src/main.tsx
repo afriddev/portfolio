@@ -4,6 +4,7 @@ import "./index.css";
 import App from "./App.tsx";
 import AnimatedCursor from "react-animated-cursor";
 import AppContext from "./utils/AppContext.tsx";
+import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -32,7 +33,8 @@ createRoot(document.getElementById("root")!).render(
       />
     </div>
     <AppContext>
-      <App />
+    <BrowserRouter>
+      <App /></BrowserRouter>
     </AppContext>
   </StrictMode>
 );

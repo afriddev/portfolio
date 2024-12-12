@@ -30,7 +30,17 @@ function NavBar() {
       type: "setScrollView",
       payload: value,
     });
+    setTimeout(()=>{
+      dispatch({
+        type: "setScrollView",
+        payload: undefined,
+      });
+      
+    },400)
+
     navigate("/");
+    
+    
   }
 
   function handleMenuClick() {

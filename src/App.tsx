@@ -1,14 +1,21 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import ProjectDetail from "./pages/projectDetail";
 
 function App() {
+
   const selectedProject = localStorage.getItem("selectedProject")
-  console.log(typeof selectedProject)
+  const location = useLocation();
+  
+  
+ 
+
 
   return (
+
+
     <div className=" relative cursor-default text-foreground scroll-smooth ">
-      {(!selectedProject || selectedProject === "null")  && (
+      {(!selectedProject || selectedProject === "null" || location.pathname === "/")  && (
         <div className="relative w-full h-full  ">
           <div className="absolute h-[100vh] bg-black/25 inset-0  z-[201]"></div>
           <div className="absolute  h-full w-full  min-h-[100vh] z-[200] ">
@@ -19,12 +26,12 @@ function App() {
       )}
 
       <div className="z-[998] absolute inset-0   ">
-        <BrowserRouter>
+        
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/projectdetail" element={<ProjectDetail />} />
           </Routes>
-        </BrowserRouter>
+        
       </div>
     </div>
   );
