@@ -59,7 +59,7 @@ function Projects() {
                 }}
               >
                 <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  6
+                  7
                 </div>
                 <h3
                   className={`${
@@ -170,6 +170,20 @@ function Projects() {
               <Animate delay={300} type="slideUp">
                 <ProjectCard
                   callBack={() => {
+                    handleCallBack("hyderabadmetro");
+                  }}
+                  category="Web Development"
+                  title="3Hyderabad Metro"
+                  image="hyderabadmetro/cover.PNG"
+                />
+              </Animate>
+            </div>
+          )}
+          {(selectedType === "WEB" || selectedType === "ALL") && (
+            <div className="flex flex-col lg:flex-row gap-10">
+              <Animate delay={300} type="slideUp">
+                <ProjectCard
+                  callBack={() => {
                     handleCallBack("3LINES");
                   }}
                   category="Web Development"
@@ -193,6 +207,9 @@ function Projects() {
               </Animate>
             </div>
           )}
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
           {(selectedType === "WEB" || selectedType === "ALL") && (
             <div className="flex flex-col lg:flex-row gap-10">
               <Animate delay={300} type="slideUp">
@@ -207,9 +224,6 @@ function Projects() {
               </Animate>
             </div>
           )}
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
           {(selectedType === "WEB" || selectedType === "ALL") && (
             <Animate delay={600} type="slideUp">
               <ProjectCard
@@ -234,6 +248,9 @@ function Projects() {
               />
             </Animate>
           )}
+        </div>
+
+        <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
           {(selectedType === "WEB" || selectedType === "ALL") && (
             <Animate delay={300} type="slideUp">
               <ProjectCard
@@ -246,9 +263,6 @@ function Projects() {
               />
             </Animate>
           )}
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
           {(selectedType === "OPENSOURCE" || selectedType === "ALL") && (
             <Animate delay={600} type="slideUp">
               <ProjectCard
@@ -274,7 +288,8 @@ function Projects() {
               />
             </Animate>
           )}
-
+        </div>
+        <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
           {(selectedType === "API" || selectedType === "ALL") && (
             <Animate delay={300} type="slideUp">
               <ProjectCard
@@ -287,32 +302,31 @@ function Projects() {
               />
             </Animate>
           )}
+          {(selectedType == "API" || selectedType === "ALL") && (
+            <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
+              <Animate delay={600} type="slideUp">
+                <ProjectCard
+                  callBack={() => {
+                    handleCallBack("TAILORINGAPI");
+                  }}
+                  category="API Development"
+                  title="Tailoring API"
+                  image="database/cover2.png"
+                />
+              </Animate>
+              <Animate delay={900} type="slideUp">
+                <ProjectCard
+                  callBack={() => {
+                    handleCallBack("FININFOLIBAPI");
+                  }}
+                  category="API Development"
+                  title="Fininfolib API"
+                  image="database/cover.png"
+                />
+              </Animate>
+            </div>
+          )}
         </div>
-
-        {(selectedType == "API" || selectedType === "ALL") && (
-          <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
-            <Animate delay={600} type="slideUp">
-              <ProjectCard
-                callBack={() => {
-                  handleCallBack("TAILORINGAPI");
-                }}
-                category="API Development"
-                title="Tailoring API"
-                image="database/cover2.png"
-              />
-            </Animate>
-            <Animate delay={900} type="slideUp">
-              <ProjectCard
-                callBack={() => {
-                  handleCallBack("FININFOLIBAPI");
-                }}
-                category="API Development"
-                title="Fininfolib API"
-                image="database/cover.png"
-              />
-            </Animate>
-          </div>
-        )}
       </div>
     </div>
   );

@@ -41,7 +41,7 @@ function Home() {
     },
     {
       icon: "MONGODB",
-      desc: "Skilled in database development and management using MongoDB and Firebase.",
+      desc: "Skilled in database development and management using MongoDB, Postgresql and Firebase.",
       heading: "Database Dev",
       headingContemt: "MongoDB,firebase",
     },
