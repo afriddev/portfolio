@@ -1,15 +1,12 @@
 export const projectData = {
-  "hyderabadmetro": {
+  hyderabadmetro: {
     projectTitle: "Hyderabad Metro",
     strategy: ["Clean Code", "Logic"],
     client: "Internal",
     technology: "ReactJS",
     projectDesc:
       "I contributed significantly to the development of this front-end project, focusing on creating a complex UI with ShadCN UI components and animations. The project involved implementing a user-friendly interface that provides detailed navigation, real-time notifications, and smooth interactions for users. Key features included an intuitive layout to show metro routes, interchanges, and station information, all built with a sleek and responsive design to enhance the user experience.",
-    images: [ 
-      "hyderabadmetro/1.PNG",
-      "hyderabadmetro/2.PNG"
-    ],
+    images: ["hyderabadmetro/1.PNG", "hyderabadmetro/2.PNG"],
     openProject: true,
     openProjectLink: "https://hyderabadmetro.vercel.app/",
     viewCode: false,
@@ -23,7 +20,7 @@ export const projectData = {
     technology: "ReactJS",
     projectDesc:
       "I contributed over 60% to the development of this project, collaborating with a 3-member team to build a complex UI with ShadCN UI and animations. The project included a detailed KYC process approved by the Super Admin for various business types. I integrated a ticketing system with WebSocket-based live chat and real-time notifications for actions like KYC submission, service purchases, and insurance logs. Additional features included merchant management, provider priority, service logs, and multi-role functionalities for Super Admin, Admin, Distributor, Retailer, and Sub-Retailer users.",
-    images: [ 
+    images: [
       "cpd/1.PNG",
       "cpd/2.PNG",
       "cpd/3.PNG",
@@ -126,7 +123,11 @@ export const projectData = {
     technology: "Python, FastAPI",
     projectDesc:
       "Published a library on Dart's pub.dev, Python's PyPI, and npm for seamless email service integration. Designed to enable developers to integrate mail services into applications with minimal code and configuration.",
-    images: [],
+    images: [
+      "emailapihost/dart.PNG",
+      "emailapihost/npm.PNG",
+      "emailapihost/python.PNG",
+    ],
     openProject: false,
     openProjectLink: "",
     viewCode: true,
@@ -150,21 +151,18 @@ export const projectData = {
   },
   FASTAPI: {
     projectTitle: "FastAPI",
-    strategy: ["Integration", "Minimal Code"],
+    strategy: ["Integration", "Clean Code","Logic"],
     client: "Internal",
-    technology: "FastAPI",
+    technology: "FastAPI,Postgresql",
     projectDesc:
-      "Published a library on Dart's pub.dev, Python's PyPI, and npm for seamless email service integration. Designed to enable developers to integrate mail services into applications with minimal code and configuration.",
+      "Built the backend using FastAPI and PostgreSQL to provide a high-performance API for seamless email service integration. The system supports easy email configuration, sending, and tracking, with minimal setup. FastAPI ensured fast development and automatic validation, while PostgreSQL handled secure and scalable data storage for email logs and configurations.",
     images: [
-      "emailapihost/dart.PNG",
-      "emailapihost/npm.PNG",
-      "emailapihost/python.PNG",
     ],
     openProject: false,
     openProjectLink: "",
     viewCode: true,
-    viewCodeLink: "https://github.com/afriddev/emailservice",
-    category: "Open Source Contribution",
+    viewCodeLink: "https://github.com/afriddev/hyderabad_metro_api",
+    category: "API Development",
   },
   TAILORINGAPI: {
     projectTitle: "Tailoring API System",

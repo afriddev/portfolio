@@ -31,7 +31,7 @@ function Projects() {
                 }}
               >
                 <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  11
+                  12
                 </div>
                 <h3
                   className={`${
