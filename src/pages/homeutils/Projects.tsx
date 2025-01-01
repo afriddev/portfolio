@@ -173,7 +173,7 @@ function Projects() {
                     handleCallBack("hyderabadmetro");
                   }}
                   category="Web Development"
-                  title="3Hyderabad Metro"
+                  title="Hyderabad Metro"
                   image="hyderabadmetro/cover.PNG"
                 />
               </Animate>
