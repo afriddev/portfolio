@@ -164,21 +164,21 @@ function Projects() {
       </div>
 
       <div className="flex flex-col  items-center justify-center mt-[5vh] pb-[5vh]">
+        
         <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
-          {(selectedType === "WEB" || selectedType === "ALL") && (
-            <div className="flex flex-col lg:flex-row gap-10">
-              <Animate delay={300} type="slideUp">
-                <ProjectCard
-                  callBack={() => {
-                    handleCallBack("hyderabadmetro");
-                  }}
-                  category="Web Development"
-                  title="Hyderabad Metro"
-                  image="hyderabadmetro/cover.PNG"
-                />
-              </Animate>
-            </div>
+        {(selectedType === "WEB" || selectedType === "ALL") && (
+            <Animate delay={300} type="slideUp">
+              <ProjectCard
+                callBack={() => {
+                  handleCallBack("DHOOTHA");
+                }}
+                category="Web Development"
+                title="Dhootha Promotions"
+                image="dhootha/cover.PNG"
+              />
+            </Animate>
           )}
+          
           {(selectedType === "WEB" || selectedType === "ALL") && (
             <div className="flex flex-col lg:flex-row gap-10">
               <Animate delay={300} type="slideUp">
@@ -225,7 +225,7 @@ function Projects() {
             </div>
           )}
           {(selectedType === "WEB" || selectedType === "ALL") && (
-            <Animate delay={600} type="slideUp">
+            <Animate delay={300} type="slideUp">
               <ProjectCard
                 callBack={() => {
                   handleCallBack("FININFOLIB");
@@ -237,16 +237,18 @@ function Projects() {
             </Animate>
           )}
           {(selectedType === "WEB" || selectedType === "ALL") && (
-            <Animate delay={900} type="slideUp">
-              <ProjectCard
-                callBack={() => {
-                  handleCallBack("DHOOTHA");
-                }}
-                category="Web Development"
-                title="Dhootha Promotions"
-                image="dhootha/cover.PNG"
-              />
-            </Animate>
+            <div className="flex flex-col lg:flex-row gap-10">
+              <Animate delay={300} type="slideUp">
+                <ProjectCard
+                  callBack={() => {
+                    handleCallBack("hyderabadmetro");
+                  }}
+                  category="Web Development"
+                  title="Hyderabad Metro"
+                  image="hyderabadmetro/cover.PNG"
+                />
+              </Animate>
+            </div>
           )}
         </div>
 
@@ -264,7 +266,7 @@ function Projects() {
             </Animate>
           )}
           {(selectedType === "OPENSOURCE" || selectedType === "ALL") && (
-            <Animate delay={600} type="slideUp">
+            <Animate delay={300} type="slideUp">
               <ProjectCard
                 callBack={() => {
                   handleCallBack("EMAILSENDER");
@@ -277,7 +279,7 @@ function Projects() {
           )}
 
           {(selectedType === "APP" || selectedType === "ALL") && (
-            <Animate delay={900} type="slideUp">
+            <Animate delay={300} type="slideUp">
               <ProjectCard
                 callBack={() => {
                   handleCallBack("APP");
@@ -303,7 +305,7 @@ function Projects() {
             </Animate>
           )}
           {(selectedType === "API" || selectedType === "ALL") && (
-            <Animate delay={600} type="slideUp">
+            <Animate delay={300} type="slideUp">
             <ProjectCard
               callBack={() => {
                 handleCallBack("TAILORINGAPI");
@@ -315,7 +317,7 @@ function Projects() {
           </Animate>
           )}
           {(selectedType === "API" || selectedType === "ALL") && (
-            <Animate delay={900} type="slideUp">
+            <Animate delay={300} type="slideUp">
             <ProjectCard
               callBack={() => {
                 handleCallBack("FININFOLIBAPI");
