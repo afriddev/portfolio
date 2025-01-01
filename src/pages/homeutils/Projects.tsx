@@ -302,30 +302,34 @@ function Projects() {
               />
             </Animate>
           )}
-          {(selectedType == "API" || selectedType === "ALL") && (
-            <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
-              <Animate delay={600} type="slideUp">
-                <ProjectCard
-                  callBack={() => {
-                    handleCallBack("TAILORINGAPI");
-                  }}
-                  category="API Development"
-                  title="Tailoring API"
-                  image="database/cover2.png"
-                />
-              </Animate>
-              <Animate delay={900} type="slideUp">
-                <ProjectCard
-                  callBack={() => {
-                    handleCallBack("FININFOLIBAPI");
-                  }}
-                  category="API Development"
-                  title="Fininfolib API"
-                  image="database/cover.png"
-                />
-              </Animate>
-            </div>
+          {(selectedType === "API" || selectedType === "ALL") && (
+            <Animate delay={600} type="slideUp">
+            <ProjectCard
+              callBack={() => {
+                handleCallBack("TAILORINGAPI");
+              }}
+              category="API Development"
+              title="Tailoring API"
+              image="database/cover2.png"
+            />
+          </Animate>
           )}
+          {(selectedType === "API" || selectedType === "ALL") && (
+            <Animate delay={900} type="slideUp">
+            <ProjectCard
+              callBack={() => {
+                handleCallBack("FININFOLIBAPI");
+              }}
+              category="API Development"
+              title="Fininfolib API"
+              image="database/cover.png"
+            />
+          </Animate>
+          )}
+          
+
+
+          
         </div>
       </div>
     </div>
