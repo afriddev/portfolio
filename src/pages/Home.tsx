@@ -181,8 +181,15 @@ function Home() {
                 </Animate>
               </div>
               <Animate delay={200} type="blink">
-                <div className="">
-                  <img src="mainapp.png" className="h-[50vh]" />
+                <div className="relative">
+                  <img
+                    src="mobile-frame.png"
+                    className="absolute  object-fill h-[51vh] rounded-xl"
+                  />
+                  <img
+                    src="main-app.PNG"
+                    className="h-[51vh] lg:w-[13vw] p-2 lg:p-3 rounded-[30px]"
+                  />
                 </div>
               </Animate>
             </div>
