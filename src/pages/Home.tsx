@@ -54,6 +54,7 @@ function Home() {
   ];
   const { scrollView, dispatch } = useAppContext();
   const targetDivRef = useRef<HTMLDivElement>(null);
+  const resumeRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const temp = scrollView;
@@ -73,6 +74,12 @@ function Home() {
     });
   }, [scrollView, targetDivRef]);
 
+  function handleHireMeClick() {
+    if (resumeRef?.current) {
+      (resumeRef as any).current.click();
+    }
+  }
+
   return (
     <div className=" w-full h-full flex flex-col ">
       <div className="min-h-[100vh]  flex flex-col">
@@ -89,6 +96,17 @@ function Home() {
                 {ABOUT_ME}
               </p>
             </Animate>
+          </div>
+          <div className=" flex justify-center  w-full ">
+            <div
+              onClick={handleHireMeClick}
+              className="hover:lg:scale-110 hover:lg:bg-[#02ffff]/90    bg-[#02ffff]  w-fit px-6  lg:px-12 lg:text-xl  rounded-full cursor-pointer py-2 lg:py-3 flex items-center roundFed-full text-black  "
+            >
+              Hire Me
+            </div>
+            <a href="Shaik afrid - Resume.pdf" download={true} ref={resumeRef} className="hidden">
+              Resume
+            </a>
           </div>
 
           <Animate delay={750}>
