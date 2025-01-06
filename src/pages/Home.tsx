@@ -84,7 +84,7 @@ function Home() {
     <div className=" w-full h-full flex flex-col ">
       <div className="min-h-[100vh]  flex flex-col">
         <NavBar />
-        <div className=" p-3  flex flex-col justify-between py-10 h-[80vh]">
+        <div className=" p-3  flex flex-col justify-between py-10 h-[85vh]">
           <div className="flex flex-col justify-center gap-3 mt-[25vh] lg:mt-[15vh] items-center">
             <Animate delay={450}>
               <h1 className="typewriter text-[40px] font-bold lg:text-[150px]">
