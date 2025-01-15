@@ -98,13 +98,21 @@ function Home() {
             </Animate>
           </div>
           <div className=" flex justify-center  w-full ">
-            <div
-              onClick={handleHireMeClick}
-              className="hover:lg:scale-110 hover:lg:bg-[#02ffff]/90    bg-[#02ffff]  w-fit px-6  lg:px-12 lg:text-xl  rounded-full cursor-pointer py-2 lg:py-3 flex items-center roundFed-full text-black  "
+            <Animate delay={400}>
+              <div
+                onClick={handleHireMeClick}
+                className="hover:lg:scale-110 hover:lg:bg-[#02ffff]/90    bg-[#02ffff]  w-fit px-6  lg:px-12 lg:text-xl  rounded-full cursor-pointer py-2 lg:py-3 flex items-center roundFed-full text-black  "
+              >
+                Hire Me
+              </div>
+            </Animate>
+
+            <a
+              href="Shaik afrid - Resume.pdf"
+              download={true}
+              ref={resumeRef}
+              className="hidden"
             >
-              Hire Me
-            </div>
-            <a href="Shaik afrid - Resume.pdf" download={true} ref={resumeRef} className="hidden">
               Resume
             </a>
           </div>
