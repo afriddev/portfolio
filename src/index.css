@@ -87,3 +87,45 @@ h2 {
 .animate-smooth-blink {
   animation: smooth-blink 2s ease-in-out ;
 }
+
+
+
+
+.spinner-container {
+  position: relative;
+  width: 120px;  /* Size of the spinner */
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  animation: spin 2s linear infinite; /* Rotating animation for the outer spinner */
+}
+
+.spinner-container img {
+  position: absolute;
+  width: 100px;  /* Adjust image size */
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.spinner-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 4px solid #222324;  /* Adjust border color */
+  border-top: 4px solid #02ffff;  /* Adjust spinner color */
+  animation: rotate 2s linear infinite; /* Rotation animation for the spinner */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -6,6 +6,8 @@ import { FaGithub } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
 import { CiLinkedin } from "react-icons/ci";
+import AppSpinner from "./utils/AppSpinner";
+import { useEffect, useState } from "react";
 
 function App() {
   const selectedProject = localStorage.getItem("selectedProject");
@@ -38,8 +40,24 @@ function App() {
     }
   }
 
+
+
+  const [loading,setLoading] = useState<boolean>(true)
+
+
+  useEffect(()=>{
+    setTimeout(()=>{setLoading(!loading)},600)
+  },[])
+
+
+
+
   return (
     <div className=" relative cursor-default text-foreground scroll-smooth ">
+
+      {
+        loading && <AppSpinner />
+      }
       {(!selectedProject ||
         selectedProject === "null" ||
         location.pathname === "/") && (
