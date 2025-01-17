@@ -91,7 +91,7 @@ function BottomNav() {
         <Animate delay={200} type="slideDown">
           <div className="w-full flex flex-col gap-2 lg:flex-row lg:justify-between lg:px-20">
             <div className="flex items-center justify-center text-foreground/40  text-xs">
-              © 2024. Made with passion by Shaik Afrid.
+              © 2025. Made with passion by Shaik Afrid.
             </div>
             <div className="flex items-center justify-center text-foreground/40  text-xs ">
               All right reserved
