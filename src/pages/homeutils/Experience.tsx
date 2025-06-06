@@ -14,87 +14,10 @@ function Experience() {
           </div>
         </Animate>
 
-        <div className="mt-[5vh] flex flex-col gap-2">
-          <Animate delay={300} type="slideLeft">
-            <div className="relative bg-blue-700 py-5  w-full  flex flex-col lg:flex-row lg:items-center  rounded-md px-6 font-semibold lg:gap-5">
-              <div className="lg:text-nowrap">Interim CTO</div>
-              <div className="font-this text-foreground/80 text-sm w-full flex ">
-                @ SkiLLoFin <br className="lg:hidden" /> 2025 - Currently
-                working(Part Time)
-              </div>
-            </div>
-          </Animate>
-
-          <Animate delay={400} type="slideLeft">
-            <div className="w-full px-6 py-3 bg-white rounded-md flex flex-col gap-5">
-              <div className="flex flex-col gap-3 lg:flex-row ">
-                <div>
-                  <img src="skillofin.png" className="lg:-ml-6 rounded-md w-42 h-20 object-cover" />
-                </div>
-                <div className="flex flex-col  gap-3 lg:flex-row lg:items-center">
-                  <div className="flex items-center text-black">
-                    <FaLocationDot className="w-5 h-6 text-black mr-3" /> Canada
-                  </div>
-
-                  <h1
-                    className="flex items-center -ml-3 text-black cursor-pointer"
-                    onClick={() => {
-                      window.open("https://skillofin.com");
-                    }}
-                  >
-                    <WiDirectionUpRight className="w-10 h-10 text-black lg:mt-1 text-black mr-1" />{" "}
-                    www.skillofin.com
-                  </h1>
-                </div>
-              </div>
-              <div>
-                <div className="lg:max-w-[50vw] text-black">
-                As the Interim CTO at Skillofin, I lead the development of a platform connecting freelancers and clients, ensuring secure payments, real-time communication, and scalability. The platform integrates Next.js, React.js, MongoDB, WebSockets, and Stripe, with support for multiple payment methods and seamless future expansion.
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-3 lg:grid lg:grid-cols-6">
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  React JS
-                </div>
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Next JS
-                </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Typescript
-                </div>
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Tailwind
-                </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Github
-                </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Web sockets
-                </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Mongo DB
-                </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Scalability
-                </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Stripe
-                </div>
-              </div>
-            </div>
-          </Animate>
-        </div>
-
         <div className="mt-[5vh] flex flex-col gap-2 ">
           <Animate delay={500} type="slideLeft">
             <div className="relative bg-green-700 py-5  w-full  flex flex-col lg:flex-row lg:items-center  rounded-md px-6 font-semibold lg:gap-5">
-              <div className="lg:text-nowrap">Frontend Developer</div>
+              <div className="lg:text-nowrap">Software Engineer</div>
               <div className="font-this text-foreground/80 text-sm w-full flex ">
                 @ Railtel corporation of india Ltd <br className="lg:hidden" />{" "}
                 2024 - Currently working
@@ -103,7 +26,7 @@ function Experience() {
           </Animate>
 
           <Animate delay={400} type="slideLeft">
-            <div className="w-full px-6 py-3 bg-green-200 rounded-md flex flex-col gap-5">
+            <div className="w-full px-6 py-3 bg-green-200 rounded-md flex flex-col gap-5 lg:w-[60vw]">
               <div className="flex flex-col gap-3 lg:flex-row ">
                 <div>
                   <img src="hmis-logo.png" className="rounded-md" />
@@ -117,51 +40,67 @@ function Experience() {
                   <h1
                     className="flex items-center -ml-3 text-black cursor-pointer"
                     onClick={() => {
-                      window.open("https://umid.digitalir.in/web/");
+                      window.open("https://www.railtel.in/");
                     }}
                   >
-                    <WiDirectionUpRight className="w-10 h-10 text-black lg:mt-1 text-black mr-1" />{" "}
-                    www.umid.digitalir.in
+                    <WiDirectionUpRight className="w-10 h-10 text-black lg:mt-1 mr-1" />{" "}
+                    https://www.railtel.in/
                   </h1>
                 </div>
               </div>
               <div>
                 <div className="lg:max-w-[50vw] text-black">
-                  Currently, I am focused on frontend development, primarily
-                  rebuilding the UMID project for RailTel Corporation using
-                  Agile methodology. I am collaborating with a team of 10
-                  members under a team leader. My tech stack includes Next.js,
-                  NextUI, Tailwind CSS, and React, while using Jira for project
-                  management and GitHub for version control.
+                  I’m a frontend developer currently focused on rebuilding the
+                  UMID project for RailTel Corporation using Agile methodology.
+                  I work in a 10-member team under a team lead, primarily using
+                  React, Next.js, NextUI, and Tailwind CSS, with Jira for
+                  project management and GitHub for version control. I’ve also
+                  developed the eOffice Helpdesk portal from scratch using
+                  React, Next.js, and PostgreSQL. Recently, I’ve been
+                  collaborating on full-stack development with React, NestJS,
+                  and PostgreSQL, contributing actively to both frontend and
+                  backend tasks.
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-3 lg:grid lg:grid-cols-6">
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
+              <div className="flex-wrap flex  gap-3">
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white text-nowrap">
                   React JS
                 </div>
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Next Ui
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white text-nowrap">
+                  Next.js
                 </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Typescript
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white text-nowrap">
+                  Next UI
                 </div>
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Tailwind
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white text-nowrap">
+                  Shadcn UI
                 </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Github
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white text-nowrap">
+                  TypeScript
                 </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white text-nowrap">
+                  Tailwind CSS
+                </div>
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white text-nowrap">
+                  PostgreSQL
+                </div>
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white text-nowrap">
+                  NestJS
+                </div>
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white text-nowrap">
+                  GitHub
+                </div>
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white text-nowrap">
                   Jira
+                </div>
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white text-nowrap">
+                  Agile Methodology
                 </div>
               </div>
             </div>
           </Animate>
         </div>
-        <div className="mt-[5vh] flex flex-col gap-2">
+        <div className="mt-[5vh] flex flex-col gap-2 lg:w-[60vw] ">
           <Animate delay={300} type="slideLeft">
             <div className="relative bg-[#740cdc] py-5  w-full  flex flex-col lg:flex-row lg:items-center  rounded-md px-6 font-semibold lg:gap-5">
               <div className="lg:text-nowrap">Associate Software Engineer</div>
@@ -197,37 +136,42 @@ function Experience() {
               </div>
               <div>
                 <div className="lg:max-w-[50vw]">
-                  I contributed more then 60% of the code for two production
-                  released projects and acted as a team lead for a team size of
-                  5 and i am in the part of recruiting new team members and
-                  making decision under CEO for srinine.
+                  At Srinine, I worked for 11 months, where I contributed over
+                  60% of the code for two production-released projects. I also
+                  took on the role of team lead for a team of 5 developers,
+                  actively participating in recruiting new team members and
+                  making key technical decisions in coordination with the CEO.
+                  This experience sharpened both my technical leadership and
+                  decision-making skills in a fast-paced startup environment.
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-3 lg:grid lg:grid-cols-5">
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
+              <div className="flex-wrap flex  gap-3">
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white">
                   Spring Boot
                 </div>
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white">
                   React
                 </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Typescript
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white">
+                  TypeScript
                 </div>
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Tailwind
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white">
+                  Tailwind CSS
                 </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Tanstack Query
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white">
+                  TanStack Query
                 </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
-                  Shadcn Ui
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white">
+                  ShadCN UI
                 </div>
-
-                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700">
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white">
                   Bitbucket
+                </div>
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white">
+                  REST APIs
+                </div>
+                <div className="w-fit h-fit py-2 px-5 rounded-full bg-blue-700 text-white">
+                  Agile Methodology
                 </div>
               </div>
             </div>

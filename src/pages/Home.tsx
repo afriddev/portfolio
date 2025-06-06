@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from "react";
 import { useUpdateProjectDetails } from "../hooks/appHooks";
 import Animate from "../utils/animations/Animate";
@@ -15,41 +16,22 @@ function Home() {
   const expertise = [
     {
       icon: "SOFTWARE",
-      desc: "Experienced in both functional and OOP: Dart, Python, Java, TypeScript. Solved more than 100 DSA problems",
-      heading: "Software",
-      headingContemt: "Development",
+      heading: "Full-Stack Development",
+      headingContemt: "Frontend | Backend | App",
+      desc: "Proficient in full-stack development using React, Next.js, Tailwind CSS, TypeScript, Spring Boot, NestJS, and PostgreSQL. Also experienced in building cross-platform apps with Flutter.",
     },
     {
-      icon: "REACT",
-      desc: "Passionate about UI/UX with 4+ years of experience in HTML, CSS, JavaScript, React, and Next.js.",
-      heading: "Frontend Dev",
-      headingContemt: "React,NextJS",
+      icon: "CODE",
+      heading: "Problem Solving & DSA",
+      headingContemt: "Leetcode | HackerRank",
+      desc: "Solved 150+ DSA problems. Strong foundation in data structures and algorithms. 5⭐ in Python and 3⭐ in Java on HackerRank, demonstrating solid problem-solving skills and coding consistency.",
     },
 
-    {
-      icon: "BACKEND",
-      desc: "Skilled in backend development using Spring Boot, Django, Flask, FastAPI",
-      heading: "Backend Dev",
-      headingContemt: "Spring boot,django",
-    },
-
-    {
-      icon: "FLUTTER",
-      desc: "Skilled in developing cross-platform mobile apps using the Flutter framework.",
-      heading: "Flutter Dev",
-      headingContemt: "Android, ios",
-    },
-    {
-      icon: "MONGODB",
-      desc: "Skilled in database development and management using MongoDB, Postgresql and Firebase.",
-      heading: "Database Dev",
-      headingContemt: "MongoDB,firebase",
-    },
     {
       icon: "GITHUB",
-      desc: "Skilled in Git, Bitbucket, and Agile workflows for efficient project delivery.",
-      heading: "Version Control ",
-      headingContemt: "Git, Bitbucket, Agile",
+      heading: "Tools, Workflow & Open Source",
+      headingContemt: "Git | Agile | Bitbucket",
+      desc: "Experienced with Git, Bitbucket, GitHub, and Agile methodologies. Involved in open-source collaboration and team-based development with Jira and CI/CD workflows for scalable and maintainable projects.",
     },
   ];
   const { scrollView, dispatch } = useAppContext();
@@ -148,7 +130,7 @@ function Home() {
           </Animate>
         </div>
         <div className="px-4 mt-[8vh] ">
-          <div className="grid grid-cols-1 lg:grid-cols-3 items-center justify-center w-full gap-8 ">
+          <div className="grid grid-cols-1 lg:grid-cols-3 lg:px-[10vw]  items-center justify-center w-full gap-8 ">
             {expertise?.map((item, index) => (
               <ExpertiseCard
                 key={index}
