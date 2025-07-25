@@ -13,34 +13,34 @@ function NavBar() {
     navigate("/");
     localStorage.setItem("selectedProject", null as never);
 
-    
+
   }
 
   function handleNameClick() {
     navigate("/");
     localStorage.setItem("selectedProject", null as never);
-    
+
   }
 
   function handleScrollViewClick(value: string) {
     localStorage.setItem("selectedProject", null as never);
 
-    
+
     dispatch({
       type: "setScrollView",
       payload: value,
     });
-    setTimeout(()=>{
+    setTimeout(() => {
       dispatch({
         type: "setScrollView",
         payload: undefined,
       });
-      
-    },400)
+
+    }, 400)
 
     navigate("/");
-    
-    
+
+
   }
 
   function handleMenuClick() {
@@ -53,10 +53,10 @@ function NavBar() {
   }
 
   return (
-    <div className=" w-full  px-4 flex items-center gap-3 lg:px-10 lg:py-8 static p-3">
-      <div className="flex items-center">
+    <div className=" w-full  px-4 flex items-center gap-3 lg:px-5 lg:py-6 static p-3 justify-between">
+      <div className="flex items-center w-full justify-between  lg:justify-start">
         {openMenu && (
-          <div className="h-[100vh] pb-20 justify-between flex flex-col  inset-0 pl-8 z-[999] fixed text-black  -ml-4  bg-zinc-200 w-[90vw]">
+          <div className="h-[100vh] pb-20 justify-between flex flex-col  inset-0 pl-8 z-[999] fixed text-black  -ml-4  bg-zinc-200 w-[75vw] ">
             <div className="flex flex-col gap-3">
               <Animate delay={100} type="slideDown">
                 <div
@@ -68,7 +68,8 @@ function NavBar() {
               </Animate>
               <div className="flex mt-[7vh] flex-col gap-5 ml-2 font-medium text-lg">
                 <Animate delay={100} type="slideLeft">
-                  <div onClick={()=>{handleHomeClick()
+                  <div onClick={() => {
+                    handleHomeClick()
                     setOpenMenu(false)
                   }} className="cursor-pointer">
                     // home
@@ -135,27 +136,43 @@ function NavBar() {
         </Animate>
         <Animate delay={150}>
           {" "}
-          <div className="cursor-pointer  ml-[2vw] flex items-end">
-            <div
-              onClick={handleNameClick}
-              className="cursor-pointer font-medium text-primary text-3xl lg:text-4xl"
+          <div className="cursor-pointer  ml-[2vw]  flex items-end">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 100 100"
+              className="h-14 w-14 text-[#02ffff]"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="4"
             >
-              {NAME}
-            </div>
-
-            <a className="text-foreground text-4xl">.</a>
-            <label className="text-secondary text-[25px] font-bold">_</label>
+              <polygon
+                points="50,5 90,28 90,72 50,95 10,72 10,28"
+                strokeLinejoin="round"
+              />
+              <text
+                x="50"
+                y="53"
+                textAnchor="middle"
+                fontSize="40"
+                fontFamily="Arial, sans-serif"
+                fill="currentColor"
+                stroke="none"
+                dominantBaseline="middle"
+              >
+                A
+              </text>
+            </svg>
           </div>
         </Animate>
       </div>
       <Animate delay={300}>
-        <div className="lg:flex items-center hover:text-foreground/40 text-foreground hidden gap-12 text-xl ml-[15vw]">
-          <div className="relative cursor-pointer hover:scale-105 hover:text-primary ">
+        <div className="lg:flex items-center hover:text-foreground/40 text-gray-300 hidden gap-12 text-xs ml-[15vw] -mt-4 mr-10">
+          <div className="relative cursor-pointer  hover:text-primary ">
             <div className="flex items-center gap-2" onClick={handleHomeClick}>
               //{" "}
               <span className="lg:hover:border-b lg:border-primary">Home</span>
             </div>
-            <a className=" absolute -top-2 font-thin -right-2 text-foreground/50 text-xs ">
+            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-xs ">
               01
             </a>
           </div>
@@ -163,7 +180,7 @@ function NavBar() {
             onClick={() => {
               handleScrollViewClick("EXPERTISE");
             }}
-            className="relative cursor-pointer hover:scale-105  hover:text-primary "
+            className="relative cursor-pointer   hover:text-primary "
           >
             <div className="flex items-center gap-2">
               //{" "}
@@ -171,7 +188,7 @@ function NavBar() {
                 Expertise
               </span>
             </div>
-            <a className=" absolute -top-2 font-thin -right-2 text-foreground/50 text-xs ">
+            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-xs ">
               02
             </a>
           </div>
@@ -179,13 +196,13 @@ function NavBar() {
             onClick={() => {
               handleScrollViewClick("WORK");
             }}
-            className="relative cursor-pointer hover:scale-105  hover:text-primary "
+            className="relative cursor-pointer   hover:text-primary "
           >
             <div className="flex items-center gap-2">
               //{" "}
               <span className="lg:hover:border-b lg:border-primary">Work</span>
             </div>
-            <a className=" absolute -top-2 font-thin -right-2 text-foreground/50 text-xs ">
+            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-xs ">
               03
             </a>
           </div>
@@ -193,7 +210,7 @@ function NavBar() {
             onClick={() => {
               handleScrollViewClick("EXPERIENCE");
             }}
-            className="relative cursor-pointer hover:scale-105  hover:text-primary "
+            className="relative cursor-pointer   hover:text-primary "
           >
             <div className="flex items-center gap-2">
               //{" "}
@@ -201,7 +218,7 @@ function NavBar() {
                 Experience
               </span>
             </div>
-            <a className=" absolute -top-2 font-thin -right-2 text-foreground/50 text-xs ">
+            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-xs ">
               04
             </a>
           </div>
@@ -210,7 +227,7 @@ function NavBar() {
             onClick={() => {
               handleScrollViewClick("CONTACT");
             }}
-            className="relative cursor-pointer hover:scale-105  hover:text-primary "
+            className="relative cursor-pointer   hover:text-primary "
           >
             <div className="flex items-center gap-2">
               //{" "}
@@ -218,7 +235,7 @@ function NavBar() {
                 Conatct
               </span>
             </div>
-            <a className=" absolute -top-2 font-thin -right-2 text-foreground/50 text-xs ">
+            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-xs ">
               05
             </a>
           </div>

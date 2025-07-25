@@ -1,29 +1,45 @@
-import { LuMoveRight } from "react-icons/lu";
+import { CiFolderOn, CiShare1 } from "react-icons/ci";
+import { projectDataType } from "../../utils/projectData";
+import { FaGithub } from "react-icons/fa";
 
 interface ProjectCardInterface {
-  image: string;
-  title: string;
-  category: string;
-  callBack:()=>void
+  projectData: projectDataType
 }
 
-function ProjectCard({ category, image, title,callBack }: ProjectCardInterface) {
+function ProjectCard({ projectData }: ProjectCardInterface) {
   return (
-    <div onClick={callBack} className="lg:h-[42vh]  relative rounded-md bg-background/40  group cursor-pointer">
-      <div className="">
-        <img
-          src={image}
-          className="lg:w-[20vw] w-[90vw]  lg:h-[30vh] object-fill rounded-t-md transition-transform duration-500 ease-in-out group-hover:scale-105"
-        />
+    <div className="border border-gray-700 rounded p-10 lg:max-w-[25vw] lg:h-[50vh]">
+      <div className="flex flex-col gap-2 w-full">
+        <div className="flex  items-center gap-10 w-full justify-between  ">
+          <CiFolderOn className="text-[#02ffff] h-10 w-10" />
+          <div className="flex flex-row items-center gap-4">
+            <FaGithub className="w-7 h-7 cursor-pointer text-[#45b7b7] lg:hover:text-[#02ffff]" />
+
+            <CiShare1 className="w-7 h-7 cursor-pointer text-[#45b7b7] lg:hover:text-[#02ffff]" />
+          </div>
+
+        </div>
+        <div className="text-gray-200 text-lg font-bold" >{projectData.title}</div>
+        <div className="text-gray-400 text-sm">{projectData.shortDesc}</div>
+        <div className="flex flex-grow flex-wrap  mt-5">
+          {
+            projectData?.strategy?.map((item,index)=>{
+              return <div className="text-xs text-gray-100 border-gray-700 px-3 py-1 border" key={index} >{item}</div>
+            })
+          }
+        </div>
+        
+        <div className="flex flex-grow flex-wrap ">
+          {
+            projectData?.technologies?.map((item,index)=>{
+              return <div className="text-xs text-gray-100 border-gray-700 px-3 py-1 border" key={index} >{item}</div>
+            })
+          }
+        </div>
+
       </div>
 
-      <div className="bg-zinc-700 px-8 pt-6 lg:pt-2  bg-opacity-10 rounded-b-md relative">
-        <div className="font-bold text-2xl ">{title}</div>
-        <div className="flex items-center text-foreground/50  opacity-100 translate-y-3 transition-all duration-500 ease-in-out group-hover:opacity-0 group-hover:translate-y-0">{category}</div>
-        <div className="flex items-center  text-foreground/50   opacity-0 translate-y-10 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:-translate-y-6">
-          Show Project <LuMoveRight className=" text-foreground/50  w-8 h-8 ml-4" />
-        </div>
-      </div>
+
     </div>
   );
 }

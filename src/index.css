@@ -12,6 +12,7 @@
 
 body {
   font-family: "Roboto Mono", monospace;
+  scrollbar-width: thin; 
 }
 
 h1,
@@ -128,4 +129,29 @@ h2 {
   100% {
     transform: rotate(360deg);
   }
+}
+
+
+
+
+/* Overall scrollbar */
+::-webkit-scrollbar {
+  width:5px; /* For vertical scrollbars */
+  height: 6px; /* For horizontal scrollbars */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  background-color: #1b1a1a;
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #02ffff;
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }

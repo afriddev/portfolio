@@ -42,91 +42,91 @@ function App() {
 
 
 
-  const [loading,setLoading] = useState<boolean>(true)
+  const [loading, setLoading] = useState<boolean>(true)
 
 
-  useEffect(()=>{
-    setTimeout(()=>{setLoading(!loading)},500)
-  },[])
+  useEffect(() => {
+    setTimeout(() => { setLoading(!loading) }, 500)
+  }, [])
 
 
 
 
   return (
-    <div className=" relative cursor-default text-foreground scroll-smooth ">
+    <div className=" relative  cursor-default text-foreground scroll-smooth ">
+
+
+
 
       {
-        loading && <AppSpinner />
+        // loading && <AppSpinner />
       }
       {(!selectedProject ||
         selectedProject === "null" ||
         location.pathname === "/") && (
-        <div className="relative w-full h-full  ">
-          <div className="absolute h-[100vh] bg-black/25 inset-0  z-[201]"></div>
-          <div className="absolute  h-full w-full  min-h-[100vh] z-[200] ">
-            <img src="cover.jpg" className="object-cover h-full w-full" />
-          </div>
-          <div className="circle h-[50px] w-[50px]  rounded-full z-[202] absolute top-[22.5vh] left-[56vw] animate-move-left-right"></div>
-          <div className="fixed z-[999]  bottom-10 flex-row justify-between w-full px-[2vw]  hidden lg:flex ">
-            <div>
-              <Animate delay={700}>
-                <div className="flex flex-row gap-6 rotate-90 items-center ml-[-12vw] justify-center">
-                  <div className="text-center flex  items-center justify-center gap-4">
-                    <h3
-                      onClick={() => {
-                        handleOpenSocialLink("GITHUB");
-                      }}
-                      className=" -rotate-90 flex items-center bg-foreground/10 rounded-md  px-3 py-2 cursor-pointer lg:hover:bg-foreground/20 lg:hover:scale-105"
-                    >
-                      {" "}
-                      <FaGithub className=" h-6 w-5" />
-                    </h3>
-                    <h3
-                      onClick={() => {
-                        handleOpenSocialLink("LINKEDIN");
-                      }}
-                      className=" -rotate-90 flex items-center bg-foreground/10 rounded-md  px-3 py-2 cursor-pointer lg:hover:bg-foreground/20 lg:hover:scale-105"
-                    >
-                      <CiLinkedin className=" h-6 w-5" />
-                    </h3>
-                    <h3
-                      onClick={() => {
-                        handleOpenSocialLink("X");
-                      }}
-                      className=" -rotate-90 flex items-center bg-foreground/10 rounded-md  px-3 py-2 cursor-pointer lg:hover:bg-foreground/20 lg:hover:scale-105"
-                    >
-                      <FaXTwitter className=" h-6 w-5" />
-                    </h3>
-                    <h3
-                      onClick={() => {
-                        handleOpenSocialLink("INSTA");
-                      }}
-                      className=" -rotate-90 flex items-center bg-foreground/10 rounded-md  px-3 py-2 cursor-pointer lg:hover:bg-foreground/20 lg:hover:scale-105"
-                    >
-                      <CiInstagram className=" h-6 w-5" />
-                    </h3>
-                  </div>
-                  <div className="w-[17vw] h-[1px] bg-[#02ffff] "></div>
-                </div>
-              </Animate>
-            </div>
+          <div className="relative w-full h-full  ">
+            <div className="absolute h-[100vh] bg-[#030011] inset-0  z-[201]"></div>
 
-            <div>
-              <Animate delay={700}>
-                <div className="flex flex-row gap-6 rotate-90 items-center -mr-[7vw]">
-                  <div
-                    onClick={handleEmailClick}
-                    className="text-xs cursor-pointer   lg:hover:scale-105 lg:hover:text-primary "
-                  >
-                    afridayan01@gmail.com
+            <div className="fixed z-[999]  bottom-10 flex-row justify-between w-full px-[2vw]  hidden lg:flex ">
+              <div>
+                <Animate delay={700}>
+                  <div className="flex flex-row gap-6 rotate-90 items-center ml-[-15vw] justify-center">
+                    <div className="text-center flex  items-center justify-center">
+                      <h3
+                        onClick={() => {
+                          handleOpenSocialLink("GITHUB");
+                        }}
+                        className=" -rotate-90 flex i rounded-md  px-3 py-2 cursor-pointer lg:hover:text-[#02ffff]"
+                      >
+                        {" "}
+                        <FaGithub className=" h-6 w-5" />
+                      </h3>
+                      <h3
+                        onClick={() => {
+                          handleOpenSocialLink("LINKEDIN");
+                        }}
+                        className=" -rotate-90 flex i rounded-md  px-3 py-2 cursor-pointer lg:hover:text-[#02ffff]"
+                      >
+                        <CiLinkedin className=" h-6 w-5" />
+                      </h3>
+                      <h3
+                        onClick={() => {
+                          handleOpenSocialLink("X");
+                        }}
+                        className=" -rotate-90 flex i rounded-md  px-3 py-2 cursor-pointer lg:hover:text-[#02ffff]"
+                      >
+                        <FaXTwitter className=" h-6 w-5" />
+                      </h3>
+                      <h3
+                        onClick={() => {
+                          handleOpenSocialLink("INSTA");
+                        }}
+                        className=" -rotate-90 flex i rounded-md  px-3 py-2 cursor-pointer lg:hover:text-[#02ffff]"
+                      >
+                        <CiInstagram className=" h-6 w-5" />
+                      </h3>
+                    </div>
+                    <div className="w-[17vw] h-[1px] bg-[#02ffff] "></div>
                   </div>
-                  <div className="w-[10vw] h-[1px] bg-[#02ffff] "></div>
-                </div>
-              </Animate>
+                </Animate>
+              </div>
+
+              <div>
+                <Animate delay={700}>
+                  <div className="flex flex-row gap-6 rotate-90 items-center -mr-[13vw]">
+                    <div
+                      onClick={handleEmailClick}
+                      className="text-xs cursor-pointer lg:hover:text-primary "
+                    >
+                      afridayan01@gmail.com
+                    </div>
+                    <div className="w-[14vw] h-[1px] bg-[#02ffff] "></div>
+                  </div>
+                </Animate>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        )}
 
       <div className="z-[998] absolute inset-0   ">
         <Routes>

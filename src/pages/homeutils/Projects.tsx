@@ -3,11 +3,12 @@ import { useState } from "react";
 import Animate from "../../utils/animations/Animate";
 import ProjectCard from "./ProjectCard";
 import { useUpdateProjectDetails } from "../../hooks/appHooks";
+import { projectData, projectDataType } from "../../utils/projectData";
 
 function Projects() {
   const [selectedType, setSelectedType] = useState<
-    "ALL" | "WEB" | "APP" | "API" | "OPENSOURCE"
-  >("ALL");
+    "web" | "app" | "openSource" | "API" | "all"
+  >("all");
 
   const { updateProjectDetails } = useUpdateProjectDetails();
 
@@ -31,14 +32,13 @@ function Projects() {
                 }}
               >
                 <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  12
+                  {projectData.length}
                 </div>
                 <h3
-                  className={`${
-                    selectedType === "ALL"
-                      ? "scale-105 border-b border-primary text-primary"
-                      : "text-foreground/50"
-                  }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
+                  className={`${selectedType === "all"
+                    ? "scale-105 border-b border-primary text-primary"
+                    : "text-foreground/50"
+                    }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
                 >
                   Filer by ALL
                 </h3>
@@ -54,19 +54,18 @@ function Projects() {
                 onClick={() => {
                   setSelectedType("NONE" as any);
                   setTimeout(() => {
-                    setSelectedType("WEB");
+                    setSelectedType("web");
                   }, 100);
                 }}
               >
                 <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  7
+                  {projectData.filter((item: projectDataType) => item.category.includes("web")).length}
                 </div>
                 <h3
-                  className={`${
-                    selectedType === "WEB"
-                      ? "scale-105 border-b border-primary text-primary"
-                      : "text-foreground/50"
-                  }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
+                  className={`${selectedType === "web"
+                    ? "scale-105 border-b border-primary text-primary"
+                    : "text-foreground/50"
+                    }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
                 >
                   Web Development
                 </h3>
@@ -84,19 +83,18 @@ function Projects() {
                 onClick={() => {
                   setSelectedType("NONE" as any);
                   setTimeout(() => {
-                    setSelectedType("APP");
+                    setSelectedType("app");
                   }, 100);
                 }}
               >
                 <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  1
+                  {projectData.filter((item: projectDataType) => item.category.includes("app")).length}
                 </div>
                 <h3
-                  className={`${
-                    selectedType === "APP"
-                      ? "scale-105 border-b border-primary text-primary"
-                      : "text-foreground/50"
-                  }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
+                  className={`${selectedType === "app"
+                    ? "scale-105 border-b border-primary text-primary"
+                    : "text-foreground/50"
+                    }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
                 >
                   App Development
                 </h3>
@@ -116,14 +114,13 @@ function Projects() {
                 }}
               >
                 <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  3
+                  {projectData.filter((item: projectDataType) => item.category.includes("API")).length}
                 </div>
                 <h3
-                  className={`${
-                    selectedType === "API"
-                      ? "scale-105 border-b border-primary text-primary"
-                      : "text-foreground/50"
-                  }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
+                  className={`${selectedType === "API"
+                    ? "scale-105 border-b border-primary text-primary"
+                    : "text-foreground/50"
+                    }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
                 >
                   API Developemnt
                 </h3>
@@ -141,19 +138,18 @@ function Projects() {
                 onClick={() => {
                   setSelectedType("NONE" as any);
                   setTimeout(() => {
-                    setSelectedType("OPENSOURCE");
+                    setSelectedType("openSource");
                   }, 100);
                 }}
               >
                 <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  1
+                  {projectData.filter((item: projectDataType) => item.category.includes("openSource")).length}
                 </div>
                 <h3
-                  className={`${
-                    selectedType === "OPENSOURCE"
-                      ? "scale-105 border-b border-primary text-primary"
-                      : "text-foreground/50"
-                  }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
+                  className={`${selectedType === "openSource"
+                    ? "scale-105 border-b border-primary text-primary"
+                    : "text-foreground/50"
+                    }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
                 >
                   Open Source Contribution
                 </h3>
@@ -163,178 +159,21 @@ function Projects() {
         </div>
       </div>
 
-      <div className="flex flex-col  items-center justify-center mt-[5vh] pb-[5vh]">
-        
-        <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
-        {(selectedType === "WEB" || selectedType === "ALL") && (
-            <Animate delay={300} type="slideUp">
-              <ProjectCard
-                callBack={() => {
-                  handleCallBack("DHOOTHA");
-                }}
-                category="Web Development"
-                title="Dhootha Promotions"
-                image="dhootha/cover.PNG"
-              />
-            </Animate>
-          )}
-          
-          {(selectedType === "WEB" || selectedType === "ALL") && (
-            <div className="flex flex-col lg:flex-row gap-10">
-              <Animate delay={300} type="slideUp">
-                <ProjectCard
-                  callBack={() => {
-                    handleCallBack("3LINES");
-                  }}
-                  category="Web Development"
-                  title="3 Lines UI"
-                  image="cpd/cover.png"
-                />
-              </Animate>
-            </div>
-          )}
-          {(selectedType === "WEB" || selectedType === "ALL") && (
-            <div className="flex flex-col lg:flex-row gap-10">
-              <Animate delay={300} type="slideUp">
-                <ProjectCard
-                  callBack={() => {
-                    handleCallBack("CPD");
-                  }}
-                  category="Web Development"
-                  title="CPD Apiserver UI"
-                  image="apiserver/cover.png"
-                />
-              </Animate>
-            </div>
-          )}
-        </div>
+      <div className="flex items-center justify-center mt-10">
+        <div className="flex items-center justify-center w-[90vw]  ">
+          <div className="flex flex-grow flex-wrap gap-3 items-center justify-center ">
+            {
+              projectData.map((item, index) => {
+                return <div key={index}>
+                  <ProjectCard projectData={item} />
+                </div>
+              })
+            }
 
-        <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
-          {(selectedType === "WEB" || selectedType === "ALL") && (
-            <div className="flex flex-col lg:flex-row gap-10">
-              <Animate delay={300} type="slideUp">
-                <ProjectCard
-                  callBack={() => {
-                    handleCallBack("EMAILAPI");
-                  }}
-                  category="Web Development"
-                  title="Free Email API"
-                  image="emailapi/cover.png"
-                />
-              </Animate>
-            </div>
-          )}
-          {(selectedType === "WEB" || selectedType === "ALL") && (
-            <Animate delay={300} type="slideUp">
-              <ProjectCard
-                callBack={() => {
-                  handleCallBack("FININFOLIB");
-                }}
-                category="Web Development"
-                title="Fininfolib Company"
-                image="fininfolib/cover.PNG"
-              />
-            </Animate>
-          )}
-          {(selectedType === "WEB" || selectedType === "ALL") && (
-            <div className="flex flex-col lg:flex-row gap-10">
-              <Animate delay={300} type="slideUp">
-                <ProjectCard
-                  callBack={() => {
-                    handleCallBack("hyderabadmetro");
-                  }}
-                  category="Web Development"
-                  title="Hyderabad Metro"
-                  image="hyderabadmetro/cover.PNG"
-                />
-              </Animate>
-            </div>
-          )}
-        </div>
-
-        <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
-          {(selectedType === "WEB" || selectedType === "ALL") && (
-            <Animate delay={300} type="slideUp">
-              <ProjectCard
-                callBack={() => {
-                  handleCallBack("FRESHSLICE");
-                }}
-                category="Web Development"
-                title="Fresh SLice"
-                image="freshslice/cover.PNG"
-              />
-            </Animate>
-          )}
-          {(selectedType === "OPENSOURCE" || selectedType === "ALL") && (
-            <Animate delay={300} type="slideUp">
-              <ProjectCard
-                callBack={() => {
-                  handleCallBack("EMAILSENDER");
-                }}
-                category="Open Source Contribution"
-                title="Email Sender"
-                image="emailapihost/cover.PNG"
-              />
-            </Animate>
-          )}
-
-          {(selectedType === "APP" || selectedType === "ALL") && (
-            <Animate delay={300} type="slideUp">
-              <ProjectCard
-                callBack={() => {
-                  handleCallBack("APP");
-                }}
-                category="App Development"
-                title="Tailoring App"
-                image="app/cover.png"
-              />
-            </Animate>
-          )}
-        </div>
-        <div className="flex flex-col lg:flex-row gap-10 pt-[5vh]">
-          {(selectedType === "API" || selectedType === "ALL") && (
-            <Animate delay={300} type="slideUp">
-              <ProjectCard
-                callBack={() => {
-                  handleCallBack("FASTAPI");
-                }}
-                category="API Development"
-                title="Fast API"
-                image="fastapi/cover.png"
-              />
-            </Animate>
-          )}
-          {(selectedType === "API" || selectedType === "ALL") && (
-            <Animate delay={300} type="slideUp">
-            <ProjectCard
-              callBack={() => {
-                handleCallBack("TAILORINGAPI");
-              }}
-              category="API Development"
-              title="Tailoring API"
-              image="database/cover2.png"
-            />
-          </Animate>
-          )}
-          {(selectedType === "API" || selectedType === "ALL") && (
-            <Animate delay={300} type="slideUp">
-            <ProjectCard
-              callBack={() => {
-                handleCallBack("FININFOLIBAPI");
-              }}
-              category="API Development"
-              title="Fininfolib API"
-              image="database/cover.png"
-            />
-          </Animate>
-          )}
-          
-
-
-          
+          </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <div className="hidden lg:block z-[999]">
+    <div className="hidden lg:block z-[999] ">
       <AnimatedCursor
         innerSize={10}
         outerSize={40}

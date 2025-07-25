@@ -10,6 +10,8 @@ import NavBar from "../utils/NavBar";
 import BottomNav from "./homeutils/BottomNav";
 import Experience from "./homeutils/Experience";
 import Projects from "./homeutils/Projects";
+import { IoMdDownload } from "react-icons/io";
+import { LiaDownloadSolid } from "react-icons/lia";
 
 function Home() {
   const { updateProjectDetails } = useUpdateProjectDetails();
@@ -63,31 +65,47 @@ function Home() {
   }
 
   return (
-    <div className=" w-full h-full flex flex-col ">
+    <div className=" w-full h-full flex flex-col">
       <div className="min-h-[100vh]  flex flex-col">
         <NavBar />
-        <div className=" p-3  flex flex-col justify-between py-10 h-[85vh]">
-          <div className="flex flex-col justify-center gap-3 mt-[25vh] lg:mt-[15vh] items-center">
-            <Animate delay={450}>
-              <h1 className="typewriter text-[40px] font-bold lg:text-[150px]">
-                {NAME.toUpperCase()}
-              </h1>
-            </Animate>
-            <Animate delay={600}>
-              <p className="w-[70vw] text-xl text-center lg:text-2xl lg:-mt-10">
-                {ABOUT_ME}
-              </p>
-            </Animate>
+        <div className=" p-3  flex flex-col justify-between py-10 h-[85vh] w-full items-center">
+          <div className="w-full pl-[15vw]">
+            <div className="flex flex-col  gap-3 mt-[25vh] lg:mt-[1vh] w-[50vw]  ">
+              <Animate delay={450}>
+                <h1 className="text-[#02ffff]">
+                  {"Hi, my name is"}
+                </h1>
+              </Animate>
+              <Animate delay={450}>
+                <h1 className=" -mt-4  text-[40px] text-gray-200 lg:text-[80px] font-bold ">
+                  {NAME.toUpperCase()}
+                </h1>
+              </Animate>
+              <Animate delay={600}>
+                <p className=" text-xl text-gray-300   lg:text-[40px]  leading-tight">
+                  {"I build intelligent systems for the web.".toUpperCase()}
+                </p>
+              </Animate>
+
+              <Animate delay={600}>
+                <p className=" leading-6  text-xl  lg:text-[20px] text-gray-400 ">
+                  {"I’m a full stack and LLM developer focused on creating fast, real-time, and AI-powered applications. Currently, I’m building internal support tools, document intelligence systems, and ID card solutions at RailTel Corporation of India."}
+                </p>
+              </Animate>
+
+              <Animate delay={400}>
+                <div
+                  onClick={handleHireMeClick}
+                  className="mt-10   border text-[#02ffff]/60 lg:hover:text-[#02ffff]    border-[#02ffff]/70 lg:hover:border-[#02ffff]  w-fit px-6  lg:px-12 lg:text-xl   cursor-pointer py-2 lg:py-3 flex items-center  "
+                >
+                  Resume<LiaDownloadSolid className="ml-2" />
+                </div>
+              </Animate>
+            </div>
+
           </div>
-          <div className=" flex justify-center  w-full ">
-            <Animate delay={400}>
-              <div
-                onClick={handleHireMeClick}
-                className="hover:lg:scale-110 hover:lg:bg-[#02ffff]/90    bg-[#02ffff]  w-fit px-6  lg:px-12 lg:text-xl  rounded-full cursor-pointer py-2 lg:py-3 flex items-center roundFed-full text-black  "
-              >
-                Hire Me
-              </div>
-            </Animate>
+          <div className=" flex   w-full ">
+
 
             <a
               href="Shaik afrid - Resume.pdf"
@@ -120,7 +138,7 @@ function Home() {
           </Animate>
         </div>
       </div>
-      <div className="bg-gradient-to-b from-[#1c1b22] pb-10 via-[#17161a] to-[#17161a] -mt-4 lg:-mt-0 w-full">
+      <div className="bg-[#030011] -mt-4 lg:-mt-0 w-full">
         <div
           ref={scrollView === "EXPERTISE" ? targetDivRef : null}
           className="mt-[20vh] font-bold w-full flex items-center justify-center text-4xl"
