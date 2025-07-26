@@ -4,36 +4,30 @@ function AboutMe() {
   const recentTech = [
     "React",
     "TypeScript",
-    "Tailwind CSS",
-    "Vite",
-    "WebSockets",
     "FastAPI",
-    "Spring Boot",
     "PostgreSQL",
     "MongoDB",
-    "Firebase",
     "Next.js",
     "Docker",
-    "Flutter",
     "Kotlin",
     "LLMs (BERT, Mistral)",
   ];
 
   return (
-    <div className="w-full items-center justify-center  flex">
+    <div className="w-full   flex">
       <div className="flex lg:flex-row flex-col gap-10">
         <div className="flex flex-col  gap-2">
-          <div className="flex gap-4 items-center ">
+          <div className="flex gap-4 items-center lg:-ml-10">
             <label className="text-[#02ffff]">
               01.
-              <span className="text-2xl ml-3 text-white text-nowrap">
+              <span className="text-2xl  text-white text-nowrap">
                 About Me
               </span>
             </label>
-            <div className="h-[0.4px] w-full   bg-[#02ffff]/40"></div>
+            <div className="h-[0.4px] w-full lg:w-[20vw]   bg-[#02ffff]/40"></div>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 mt-10">
             <p className="lg:max-w-[40vw] text-gray-400">
               Hi, I’m Shaik Afrid — a full stack and LLM developer passionate
               about crafting fast, intelligent, and user-focused applications
@@ -58,18 +52,18 @@ function AboutMe() {
               LLM pipelines and performance optimization.
             </p>
           </div>
-          <div className="flex flex-col gap-5">
-            <p className="text-gray-300">
+          <div className="flex flex-col gap-5 mt-10">
+            <p className="text-gray-300 -ml-2">
               Technologies I’ve been working with recently:
             </p>
-            <div className="grid grid-cols-2 lg:grid-cols-3 lg:w-[40vw] gap-3">
+            <div className="grid grid-cols-2  lg:w-[40vw] gap-3">
               {recentTech?.map((item, index) => {
                 return (
-                  <div key={index} className="flex items-center gap-3">
+                  <div key={index} className="flex  gap-3">
                     <div className="w-3 h-3">
-                      <FaCaretRight className="text-[#02ffff] w-3 h-3" />
+                      <FaCaretRight className="text-[#02ffff] w-3 h-3 mt-1"  />
                     </div>
-                    <label className="text-nowrap">{item}</label>
+                    <label className=" text-gray-400">{item}</label>
                   </div>
                 );
               })}

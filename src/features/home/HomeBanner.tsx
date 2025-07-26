@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import Animate from "../../utils/animations/Animate";
-import NavBar from "../../utils/NavBar";
 import { NAME } from "../../utils/AppConstants";
 import { LiaDownloadSolid } from "react-icons/lia";
 import DownwArrow from "../../utils/DownArraow";
@@ -17,8 +16,8 @@ function HomeBanner() {
   }
   return (
     <div className="min-h-[100vh]  flex flex-col">
-      <div className=" p-5  flex flex-col justify-between py-10 h-[85vh] w-full items-center">
-        <div className="w-full lg:pl-[15vw]">
+      <div className=" flex flex-col justify-between py-10 h-[85vh] w-full items-center">
+        <div className="w-full ">
           <div className="flex flex-col  gap-3   lg:w-[50vw]  ">
             <Animate delay={450}>
               <h1 className="text-[#02ffff]">{"Hi, my name is"}</h1>
@@ -45,7 +44,7 @@ function HomeBanner() {
             <Animate delay={400}>
               <div
                 onClick={handleHireMeClick}
-                className="mt-10   border text-[#02ffff]/60 lg:hover:text-[#02ffff]    border-[#02ffff]/70 lg:hover:border-[#02ffff]  w-fit px-6  lg:px-12 lg:text-xl   cursor-pointer py-2 lg:py-3 flex items-center  "
+                className="mt-10   border text-[#02ffff] border-[#02ffff]     w-fit px-6  lg:px-12 lg:text-xl   cursor-pointer py-2 lg:py-3 flex items-center  "
               >
                 Resume
                 <LiaDownloadSolid className="ml-2" />

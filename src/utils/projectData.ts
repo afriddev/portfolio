@@ -8,10 +8,60 @@ export type projectDataType = {
   link?: string;
   category: ("web" | "app" | "openSource" | "API")[];
   technologies: string[];
+  private?:boolean
 };
 
-
-export const projectData: projectDataType[] = [
+export const  projectData: projectDataType[] = [
+  {
+    title: "eOffice Support System",
+    shortDesc: "Internal support platform with ticketing, user roles, and real-time updates. Built using Vite, React, and PostgreSQL; deployed via Docker.",
+    strategy: ["Ownership", "Real-time", "UI/UX"],
+    private: true,
+    viewCode: false,
+    openProject: false,
+    category: ["web", "API"],
+    technologies: ["vite", "reactjs", "typescript", "tailwindcss", "postgresql", "nextjs", "docker"]
+  },
+  {
+    title: "RailTel ID Card Generation System",
+    shortDesc: "Full-stack tool to generate and manage employee ID cards using jsReport templates and real-time updates.",
+    strategy: ["Automation", "Data Integrity"],
+    private: true,
+    viewCode: false,
+    openProject: false,
+    category: ["web", "API"],
+    technologies: ["reactjs", "nextjs", "tailwindcss", "jsreport", "postgresql", "docker"]
+  },
+  {
+    title: "MediRetrieve_AI",
+    shortDesc: "LLM-powered document intelligence system with embedding, vector search, feedback loop, and structured JSON extraction.",
+    strategy: ["AI Integration", "Document Intelligence"],
+    private: true,
+    viewCode: false,
+    openProject: false,
+    category: ["web", "API"],
+    technologies: ["llm", "postgresql", "mongodb", "fastapi", "nextjs", "python", "reactjs"]
+  },
+  {
+    title: "3Lines Admin Dashboard with KYC & Chat",
+    shortDesc: "Secure admin portal with KYC flow, live WebSocket chat, role-based access and real-time notifications for multiple user types.",
+    strategy: ["Clean Code", "Security"],
+    private: true,
+    viewCode: false,
+    openProject: false,
+    category: ["web"],
+    technologies: ["reactjs", "shadcn", "tailwindcss", "websocket"]
+  },
+  {
+    title: "CPD API Management Admin Interface",
+    shortDesc: "Dashboard for API monitoring, pricing, provider setup, security logs and commission management with smooth user experience.",
+    strategy: ["Provider Priority", "Secure APIs"],
+    private: true,
+    viewCode: false,
+    openProject: false,
+    category: ["web"],
+    technologies: ["reactjs", "typescript", "shadcn", "tailwindcss"]
+  },
   {
     title: "Hyderabad Metro Navigation and Route UI",
     shortDesc: "Interactive metro map with station info, interchanges, real-time notifications, and modern UI for easy navigation.",
@@ -20,27 +70,7 @@ export const projectData: projectDataType[] = [
     openProject: true,
     link: "https://hyderabadmetro.vercel.app/",
     category: ["web"],
-    technologies: ["reactjs", "shadcn", "tailwindcss"],
-  },
-  {
-    title: "3Lines Admin Dashboard with KYC & Chat",
-    shortDesc: "Secure admin portal with KYC flow, live WebSocket chat, role-based access and real-time notifications for multiple user types.",
-    strategy: ["Clean Code", "Security"],
-    viewCode: false,
-    openProject: true,
-    link: "https://companydev.cpd.net.in/login",
-    category: ["web"],
-    technologies: ["reactjs", "shadcn", "tailwindcss", "websocket"],
-  },
-  {
-    title: "CPD API Management Admin Interface",
-    shortDesc: "Dashboard for API monitoring, pricing, provider setup, security logs and commission management with smooth user experience.",
-    strategy: ["Provider Priority", "Secure APIs"],
-    viewCode: false,
-    openProject: true,
-    link: "https://apiserverdev.cpd.net.in/login",
-    category: ["web"],
-    technologies: ["reactjs", "typescript", "shadcn", "tailwindcss"],
+    technologies: ["reactjs", "shadcn", "tailwindcss"]
   },
   {
     title: "Email API Client Dashboard Interface",
@@ -50,7 +80,7 @@ export const projectData: projectDataType[] = [
     openProject: true,
     link: "https://emailserviceapi.vercel.app/",
     category: ["web"],
-    technologies: ["reactjs", "shadcn", "tailwindcss"],
+    technologies: ["reactjs", "shadcn", "tailwindcss"]
   },
   {
     title: "Fininfolib HR Dashboard and Analytics",
@@ -60,7 +90,7 @@ export const projectData: projectDataType[] = [
     openProject: true,
     link: "https://fininfolib.vercel.app/",
     category: ["web"],
-    technologies: ["reactjs", "nextjs", "tailwindcss", "tanstack"],
+    technologies: ["reactjs", "nextjs", "tailwindcss", "tanstack"]
   },
   {
     title: "Dhootha Product Marketing and Promo Site",
@@ -70,7 +100,7 @@ export const projectData: projectDataType[] = [
     openProject: true,
     link: "https://www.doothapromotions.com/",
     category: ["web"],
-    technologies: ["reactjs", "tailwindcss"],
+    technologies: ["reactjs", "tailwindcss"]
   },
   {
     title: "FreshSlice Food Ordering Web Application",
@@ -79,7 +109,7 @@ export const projectData: projectDataType[] = [
     viewCode: true,
     openProject: false,
     category: ["web", "API"],
-    technologies: ["reactjs", "tailwindcss", "stripe"],
+    technologies: ["reactjs", "tailwindcss", "stripe"]
   },
   {
     title: "Email Sender Library for All Platforms",
@@ -88,7 +118,7 @@ export const projectData: projectDataType[] = [
     viewCode: true,
     openProject: false,
     category: ["openSource"],
-    technologies: ["python", "fastapi", "dart", "nodejs"],
+    technologies: ["python", "fastapi", "dart", "nodejs"]
   },
   {
     title: "Flutter-Based Mobile Apps for Clients",
@@ -97,7 +127,7 @@ export const projectData: projectDataType[] = [
     viewCode: true,
     openProject: false,
     category: ["app"],
-    technologies: ["flutter", "dart", "firebase", "mongodb"],
+    technologies: ["flutter", "dart", "firebase", "mongodb"]
   },
   {
     title: "FastAPI Email Backend Integration System",
@@ -106,7 +136,7 @@ export const projectData: projectDataType[] = [
     viewCode: true,
     openProject: false,
     category: ["API"],
-    technologies: ["fastapi", "postgresql", "python"],
+    technologies: ["fastapi", "postgresql", "python"]
   },
   {
     title: "Tailoring Service API for Orders and Delivery",
@@ -115,7 +145,7 @@ export const projectData: projectDataType[] = [
     viewCode: true,
     openProject: false,
     category: ["API", "app"],
-    technologies: ["expressjs", "firebase", "mongodb", "nodejs"],
+    technologies: ["expressjs", "firebase", "mongodb", "nodejs"]
   },
   {
     title: "Fininfolib Financial Data API Service",
@@ -124,6 +154,6 @@ export const projectData: projectDataType[] = [
     viewCode: true,
     openProject: false,
     category: ["API"],
-    technologies: ["nextjs", "mongodb", "nodejs"],
-  },
+    technologies: ["nextjs", "mongodb", "nodejs"]
+  }
 ];

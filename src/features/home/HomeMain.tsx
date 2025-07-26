@@ -1,9 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from "react";
-import { useUpdateProjectDetails } from "../../hooks/appHooks";
-import Animate from "../../utils/animations/Animate";
 import { useAppContext } from "../../utils/AppContext";
-import ExpertiseCard from "../../utils/ExpertiseCard";
 import BottomNav from "../../utils/BottomNav";
 import Experience from "./Experience";
 import Projects from "./Projects";
@@ -11,11 +8,8 @@ import HomeBanner from "./HomeBanner";
 import NavBar from "../../utils/NavBar";
 import AboutMe from "./AboutMe";
 import MyExpertise from "./MyExpertise";
-import MyWork from "./MyWork";
 
 function HomeMain() {
-  const { updateProjectDetails } = useUpdateProjectDetails();
-
   const { scrollView, dispatch } = useAppContext();
   const targetDivRef = useRef<HTMLDivElement>(null);
 
@@ -40,21 +34,27 @@ function HomeMain() {
   return (
     <div className=" w-full h-full flex flex-col">
       <NavBar />
-      <div className="bg-[#030011]">
-        <HomeBanner />
-        <AboutMe />
-        <MyExpertise scrollView={scrollView} targetDivRef={targetDivRef} />
-        <MyWork
-          scrollView={scrollView}
-          targetDivRef={targetDivRef}
-          updateProjectDetails={updateProjectDetails}
-        />
-        <Projects />
-        <div ref={scrollView === "EXPERIENCE" ? targetDivRef : null}>
-          <Experience />
+      <div className="bg-[#030011] items-center justify-center flex flex-col lg:gap-[15vh]">
+        <div className="flex flex-col lg:w-[60vw] lg:gap-[15vh] w-full p-5">
+          <HomeBanner />
+          <AboutMe /> {/*Scroll*/}
+          <div ref={scrollView === "EXPERIENCE" ? targetDivRef : null}>
+            <Experience />
+          </div>
+          <MyExpertise scrollView={scrollView} targetDivRef={targetDivRef} />
         </div>
-        <div ref={scrollView === "CONTACT" ? targetDivRef : null}>
-          <BottomNav />
+
+        <div className=" flex flex-col lg:w-[70vw] lg:gap-[15vh] w-full p-5">
+          
+          <div ref={scrollView === "WORK" ? targetDivRef : null}>
+            <Projects />
+          </div>
+
+          
+
+          <div ref={scrollView === "CONTACT" ? targetDivRef : null}>
+            <BottomNav />
+          </div>
         </div>
       </div>
     </div>

@@ -1,179 +1,52 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
-import Animate from "../../utils/animations/Animate";
 import ProjectCard from "./ProjectCard";
 import { useUpdateProjectDetails } from "../../hooks/appHooks";
-import { projectData, projectDataType } from "../../utils/projectData";
-
+import { projectData } from "../../utils/projectData";
 function Projects() {
-  const [selectedType, setSelectedType] = useState<
-    "web" | "app" | "openSource" | "API" | "all"
-  >("all");
-
   const { updateProjectDetails } = useUpdateProjectDetails();
+  const [showMore, setShowMore] = useState<boolean>(false);
 
   function handleCallBack(project: string) {
     updateProjectDetails(project);
   }
 
   return (
-    <div className="mt-[10vh] px-4">
-      <div className="text-xs flex flex-col gap-5 lg:items-center justify-center lg:gap-2  lg:flex-row hover:text-foreground/50">
-        <div className="flex gap-3">
-          <Animate type="slideDown" delay={200}>
-            <div className="cursor-pointer  flex items-center ">
-              <div
-                className="relative flex "
-                onClick={() => {
-                  setSelectedType("NONE" as any);
-                  setTimeout(() => {
-                    setSelectedType("all");
-                  }, 100);
-                }}
-              >
-                <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  {projectData.length}
-                </div>
-                <h3
-                  className={`${selectedType === "all"
-                    ? "scale-105 border-b border-primary text-primary"
-                    : "text-foreground/50"
-                    }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
-                >
-                  Filer by ALL
-                </h3>
-              </div>
-              <div className=" ml-4 lg:ml-2"> /</div>
-            </div>
-          </Animate>
-
-          <Animate type="slideDown" delay={400}>
-            <div className="cursor-pointer  flex items-center gap-3">
-              <div
-                className="relative flex "
-                onClick={() => {
-                  setSelectedType("NONE" as any);
-                  setTimeout(() => {
-                    setSelectedType("web");
-                  }, 100);
-                }}
-              >
-                <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  {projectData.filter((item: projectDataType) => item.category.includes("web")).length}
-                </div>
-                <h3
-                  className={`${selectedType === "web"
-                    ? "scale-105 border-b border-primary text-primary"
-                    : "text-foreground/50"
-                    }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
-                >
-                  Web Development
-                </h3>
-              </div>
-              <div className=" ml-4 lg:ml-2 hidden lg:block"> /</div>
-            </div>
-          </Animate>
-        </div>
-
-        <div className="flex gap-3">
-          <Animate type="slideDown" delay={600}>
-            <div className="cursor-pointer  flex items-center ">
-              <div
-                className="relative flex "
-                onClick={() => {
-                  setSelectedType("NONE" as any);
-                  setTimeout(() => {
-                    setSelectedType("app");
-                  }, 100);
-                }}
-              >
-                <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  {projectData.filter((item: projectDataType) => item.category.includes("app")).length}
-                </div>
-                <h3
-                  className={`${selectedType === "app"
-                    ? "scale-105 border-b border-primary text-primary"
-                    : "text-foreground/50"
-                    }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
-                >
-                  App Development
-                </h3>
-              </div>
-              <div className=" ml-4 lg:ml-2"> /</div>
-            </div>
-          </Animate>
-          <Animate type="slideDown" delay={800}>
-            <div className="cursor-pointer  flex items-center ">
-              <div
-                className="relative flex "
-                onClick={() => {
-                  setSelectedType("NONE" as any);
-                  setTimeout(() => {
-                    setSelectedType("API");
-                  }, 100);
-                }}
-              >
-                <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  {projectData.filter((item: projectDataType) => item.category.includes("API")).length}
-                </div>
-                <h3
-                  className={`${selectedType === "API"
-                    ? "scale-105 border-b border-primary text-primary"
-                    : "text-foreground/50"
-                    }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
-                >
-                  API Developemnt
-                </h3>
-              </div>
-              <div className=" ml-4 lg:ml-2"> /</div>
-            </div>
-          </Animate>
-        </div>
-
-        <div className="flex">
-          <Animate type="slideDown" delay={800}>
-            <div className="cursor-pointer  flex items-center ">
-              <div
-                className="relative flex "
-                onClick={() => {
-                  setSelectedType("NONE" as any);
-                  setTimeout(() => {
-                    setSelectedType("openSource");
-                  }, 100);
-                }}
-              >
-                <div className="absolute -right-3 text-xs -top-3 text-foreground/40">
-                  {projectData.filter((item: projectDataType) => item.category.includes("openSource")).length}
-                </div>
-                <h3
-                  className={`${selectedType === "openSource"
-                    ? "scale-105 border-b border-primary text-primary"
-                    : "text-foreground/50"
-                    }  hover:border-b border-primary hover:scale-105 hover:text-primary`}
-                >
-                  Open Source Contribution
-                </h3>
-              </div>
-            </div>
-          </Animate>
-        </div>
+    <div className="">
+      <div className="flex gap-4 items-center lg:ml-[4.5vw]">
+        <label className="text-[#02ffff]">
+          04.
+          <span className="text-2xl text-white text-nowrap">
+            My Projects
+          </span>
+        </label>
+        <div className="h-[0.4px] w-full lg:w-[20vw]   bg-[#02ffff]/40"></div>
       </div>
 
-      <div className="flex items-center justify-center mt-10">
-        <div className="flex items-center justify-center w-[90vw]  ">
+      <div className="flex flex-col items-center justify-center mt-10 ">
+        <div className="flex items-center justify-center ">
           <div className="flex flex-grow flex-wrap gap-3 items-center justify-center ">
-            {
-              projectData.map((item, index) => {
-                return <div key={index}>
-                  <ProjectCard projectData={item} />
-                </div>
-              })
-            }
-
+            {projectData
+              .slice(0, showMore ? projectData.length + 1 : 6)
+              .map((item, index) => {
+                return (
+                  <div key={index}>
+                    <ProjectCard projectData={item} />
+                  </div>
+                );
+              })}
           </div>
         </div>
+        <div
+          onClick={() => {
+            setShowMore(!showMore);
+          }}
+          className="mt-10   border lg:text-[#02ffff]/60 lg:hover:text-[#02ffff]    border-[#02ffff]/70 lg:hover:border-[#02ffff]  w-fit px-6  lg:px-12  cursor-pointer py-2 lg:py-3 flex items-center text-[#02ffff] border-[#02ffff]  "
+        >
+          {showMore ? "Show Less" : "Show More"}
+        </div>
       </div>
-    </div >
+    </div>
   );
 }
 
