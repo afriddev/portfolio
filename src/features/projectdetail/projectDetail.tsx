@@ -1,12 +1,12 @@
-import { projectType, useAppContext } from "../utils/AppContext";
-import NavBar from "../utils/NavBar";
+import { projectType, useAppContext } from "../../utils/AppContext";
+import NavBar from "../../utils/NavBar";
 import { MdChevronRight } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa6";
-import BottomNav from "./homeutils/BottomNav";
-import Animate from "../utils/animations/Animate";
+import BottomNav from "../../utils/BottomNav";
+import Animate from "../../utils/animations/Animate";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { projectData } from "../utils/projectData";
+import { projectData } from "../../utils/projectData";
 
 function ProjectDetail() {
   const { dispatch } = useAppContext();
@@ -41,7 +41,7 @@ function ProjectDetail() {
             </div>
           </Animate>
           <div className="mt-[5vh] mb-[5vh]">
-            <Animate delay={300} type="slideLeft">
+            <Animate delay={300} type="slideLeft"> 
               <div className="flex text-foreground/60 items-center">
                 <span
                   onClick={() => {

@@ -1,7 +1,7 @@
 import { FaGithub } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
 import { FaXTwitter } from "react-icons/fa6";
-import Animate from "../../utils/animations/Animate";
+import Animate from "./animations/Animate";
 import { CiLinkedin } from "react-icons/ci";
 
 function BottomNav() {

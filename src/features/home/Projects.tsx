@@ -27,7 +27,7 @@ function Projects() {
                 onClick={() => {
                   setSelectedType("NONE" as any);
                   setTimeout(() => {
-                    setSelectedType("ALL");
+                    setSelectedType("all");
                   }, 100);
                 }}
               >

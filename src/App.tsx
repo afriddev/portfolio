@@ -1,6 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import Home from "./pages/Home";
-import ProjectDetail from "./pages/projectDetail";
+import HomeMain from "./features/home/HomeMain";
+import ProjectDetail from "./features/projectdetail/projectDetail";
 import Animate from "./utils/animations/Animate";
 import { FaGithub } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
@@ -130,7 +130,7 @@ function App() {
 
       <div className="z-[998] absolute inset-0   ">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomeMain />} />
           <Route path="/projectdetail" element={<ProjectDetail />} />
         </Routes>
       </div>
