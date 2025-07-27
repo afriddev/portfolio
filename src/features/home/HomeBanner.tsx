@@ -14,6 +14,9 @@ function HomeBanner() {
       (resumeRef as any).current.click();
     }
   }
+  function handleCompanyNameClick() {
+    window.open("https://www.railtel.in/");
+  }
   return (
     <div className="min-h-[100vh]  flex flex-col">
       <div className=" flex flex-col justify-between py-10 h-[85vh] w-full items-center">
@@ -36,8 +39,14 @@ function HomeBanner() {
             <Animate delay={600}>
               <p className=" leading-6  lg:text-xl  lg:text-[20px] text-gray-400 ">
                 {
-                  "I’m a full stack and LLM developer focused on creating fast, real-time, and AI-powered applications. Currently, I’m building internal support tools, document intelligence systems, and ID card solutions at RailTel Corporation of India."
+                  "I’m a full stack and LLM developer focused on creating fast, real-time, and AI-powered applications. Currently, I’m building internal support tools, document intelligence systems, and ID card solutions at "
                 }
+                <span
+                  onClick={handleCompanyNameClick}
+                  className=" cursor-pointer text-[#02ffff]"
+                >
+                  RailTel Corporation of India.
+                </span>
               </p>
             </Animate>
 

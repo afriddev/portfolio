@@ -12,6 +12,9 @@ function AboutMe() {
     "Kotlin",
     "LLMs (BERT, Mistral)",
   ];
+  function handleCompanyNameClick() {
+    window.open("https://www.railtel.in/");
+  }
 
   return (
     <div className="w-full   flex">
@@ -38,7 +41,7 @@ function AboutMe() {
             </p>
             <p className="lg:max-w-[40vw] text-gray-400">
               Currently, I’m working at{" "}
-              <span className="text-[#02ffff] cursor-pointer">
+              <span onClick={handleCompanyNameClick} className="text-[#02ffff] cursor-pointer">
                 RailTel Corporation of India
               </span>
               , where I’ve built internal platforms like eOffice-Support and

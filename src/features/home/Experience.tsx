@@ -67,6 +67,10 @@ function Experience() {
 
   const [selectedCompanyIndex, setSelectedCompanyIndex] = useState<number>(0);
 
+  function handleCompanyNameClick(link: string) {
+    window.open(link);
+  }
+
   return (
     <div>
       <div className=" flex  flex-col gap-10">
@@ -103,7 +107,14 @@ function Experience() {
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2 text-gray-100 text-xl flex-wrap">
               {experienceData[selectedCompanyIndex].title}
-              <span className="text-[#02ffff] cursor-pointer">
+              <span
+                onClick={() => {
+                  handleCompanyNameClick(
+                    experienceData[selectedCompanyIndex].website
+                  );
+                }}
+                className="text-[#02ffff] cursor-pointer"
+              >
                 @{experienceData[selectedCompanyIndex].shortCompanyName}
               </span>
             </div>
