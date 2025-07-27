@@ -48,7 +48,7 @@ function App() {
     }, 2800);
   }, []);
 
-  if (loading) return <AppSpinner />;
+  // if (loading) return <AppSpinner />;
   return (
     <div className=" relative  cursor-default text-foreground scroll-smooth ">
       {(!selectedProject ||

@@ -1,4 +1,3 @@
-
 export type projectDataType = {
   title: string;
   shortDesc: string;
@@ -8,152 +7,227 @@ export type projectDataType = {
   link?: string;
   category: ("web" | "app" | "openSource" | "API")[];
   technologies: string[];
-  private?:boolean
+  private?: boolean;
+  codeLink?: string;
+  backend?: boolean;
+  backendCodeLink?: string;
 };
+export const projectData: projectDataType[] = [
+  {
+    title: "Skillofin Talent Platform",
+    shortDesc:
+      "Performance-based freelancing platform that supports trustless global hiring, real-time payments with Stripe, and proof-of-work validation.",
+    strategy: ["Trustless Hiring", "Proof of Work"],
+    viewCode: false,
+    openProject: true,
+    private: true,
+    link: "https://www.skillofin.com/",
+    category: ["web"],
+    technologies: [
+      "Reactjs",
+      "Nextjs",
+      "Vite",
+      "Typescript",
+      "Tailwindcss",
+      "Shadcn",
+      "Stripe",
+    ],
+  },
 
-export const  projectData: projectDataType[] = [
   {
     title: "eOffice Support System",
-    shortDesc: "Internal support platform with ticketing, user roles, and real-time updates. Built using Vite, React, and PostgreSQL; deployed via Docker.",
+    shortDesc:
+      "Internal ticketing and support platform with role-based access and real-time updates, built with React, PostgreSQL, and Docker.",
     strategy: ["Ownership", "Real-time", "UI/UX"],
     private: true,
     viewCode: false,
     openProject: false,
     category: ["web", "API"],
-    technologies: ["vite", "reactjs", "typescript", "tailwindcss", "postgresql", "nextjs", "docker"]
+    technologies: [
+      "Vite",
+      "Reactjs",
+      "Typescript",
+      "Tailwindcss",
+      "Postgresql",
+      "Nextjs",
+      "Docker",
+    ],
   },
   {
     title: "RailTel ID Card Generation System",
-    shortDesc: "Full-stack tool to generate and manage employee ID cards using jsReport templates and real-time updates.",
+    shortDesc:
+      "Full-stack solution to generate employee ID cards using jsReport templates with secure backend and Docker deployment.",
     strategy: ["Automation", "Data Integrity"],
     private: true,
     viewCode: false,
     openProject: false,
     category: ["web", "API"],
-    technologies: ["reactjs", "nextjs", "tailwindcss", "jsreport", "postgresql", "docker"]
+    technologies: [
+      "Reactjs",
+      "Nextjs",
+      "Tailwindcss",
+      "Jsreport",
+      "Postgresql",
+      "Docker",
+    ],
   },
   {
     title: "MediRetrieve_AI",
-    shortDesc: "LLM-powered document intelligence system with embedding, vector search, feedback loop, and structured JSON extraction.",
+    shortDesc:
+      "Document intelligence system using LLMs and vector databases for structured data extraction from unstructured files.",
     strategy: ["AI Integration", "Document Intelligence"],
     private: true,
     viewCode: false,
     openProject: false,
     category: ["web", "API"],
-    technologies: ["llm", "postgresql", "mongodb", "fastapi", "nextjs", "python", "reactjs"]
+    technologies: [
+      "Llm",
+      "Postgresql",
+      "Mongodb",
+      "Fastapi",
+      "Nextjs",
+      "Python",
+      "Reactjs",
+    ],
   },
   {
     title: "3Lines Admin Dashboard with KYC & Chat",
-    shortDesc: "Secure admin portal with KYC flow, live WebSocket chat, role-based access and real-time notifications for multiple user types.",
+    shortDesc:
+      "Secure admin panel with KYC flow, live WebSocket-based chat, role-based access and real-time notifications.",
     strategy: ["Clean Code", "Security"],
     private: true,
     viewCode: false,
     openProject: false,
     category: ["web"],
-    technologies: ["reactjs", "shadcn", "tailwindcss", "websocket"]
+    technologies: ["Reactjs", "Shadcn", "Tailwindcss", "Websocket"],
   },
   {
     title: "CPD API Management Admin Interface",
-    shortDesc: "Dashboard for API monitoring, pricing, provider setup, security logs and commission management with smooth user experience.",
+    shortDesc:
+      "Admin dashboard for API monitoring, provider setup, pricing control, and commission logs with secure UI.",
     strategy: ["Provider Priority", "Secure APIs"],
     private: true,
     viewCode: false,
     openProject: false,
     category: ["web"],
-    technologies: ["reactjs", "typescript", "shadcn", "tailwindcss"]
+    technologies: ["Reactjs", "Typescript", "Shadcn", "Tailwindcss"],
   },
   {
     title: "Hyderabad Metro Navigation and Route UI",
-    shortDesc: "Interactive metro map with station info, interchanges, real-time notifications, and modern UI for easy navigation.",
+    shortDesc:
+      "Interactive map with metro routes, interchange logic, live status, and intuitive UI for quick navigation.",
     strategy: ["Clean Code", "Logic"],
-    viewCode: false,
+    viewCode: true,
     openProject: true,
     link: "https://hyderabadmetro.vercel.app/",
     category: ["web"],
-    technologies: ["reactjs", "shadcn", "tailwindcss"]
+    technologies: ["Reactjs", "Shadcn", "Tailwindcss"],
+    codeLink: "https://github.com/afriddev/hyderabad_metro",
+    backend: true,
+    backendCodeLink: "https://github.com/afriddev/hyderabad_metro_api",
   },
   {
-    title: "Email API Client Dashboard Interface",
-    shortDesc: "Frontend for sending emails, managing templates, and viewing real-time delivery analytics in a scalable dashboard.",
-    strategy: ["Scalability", "Reliability"],
-    viewCode: false,
+    title: "Email API Web Integration Portal",
+    shortDesc:
+      "Frontend for developers to explore the Email API service with SDK links for Python, Dart, Node.js, and Java.",
+    strategy: ["Integration", "Minimal UI"],
+    viewCode: true,
     openProject: true,
-    link: "https://emailserviceapi.vercel.app/",
+    link: "https://emailsender.afrid.live/",
     category: ["web"],
-    technologies: ["reactjs", "shadcn", "tailwindcss"]
+    technologies: ["Reactjs", "Shadcn", "Tailwindcss"],
+    backend: true,
+    backendCodeLink: "https://github.com/afriddev/emailAPI",
+    codeLink: "https://github.com/afriddev/email_sender_web",
   },
   {
     title: "Fininfolib HR Dashboard and Analytics",
-    shortDesc: "Employee platform with leave tracking, login, charts, data filters, and clean analytics features for HR teams.",
+    shortDesc:
+      "HR dashboard for managing employee leaves, analytics, filters, and charts with a modern UI and MongoDB backend.",
     strategy: ["Data Accuracy", "Employee Management"],
-    viewCode: false,
+    viewCode: true,
     openProject: true,
     link: "https://fininfolib.vercel.app/",
     category: ["web"],
-    technologies: ["reactjs", "nextjs", "tailwindcss", "tanstack"]
+    technologies: ["Reactjs", "Nextjs", "Tailwindcss", "Tanstack", "Mongodb"],
+    codeLink: "https://github.com/afriddev/fininfolib",
   },
   {
     title: "Dhootha Product Marketing and Promo Site",
-    shortDesc: "Promotional landing page with responsive layout, dynamic content and visually engaging UI for product awareness.",
+    shortDesc:
+      "Promotional website with responsive design and animated content to boost product visibility and user engagement.",
     strategy: ["Product Reach", "User Engagement"],
-    viewCode: false,
+    viewCode: true,
     openProject: true,
+    backend: false,
     link: "https://www.doothapromotions.com/",
     category: ["web"],
-    technologies: ["reactjs", "tailwindcss"]
+    technologies: ["Reactjs", "Tailwindcss", "Typescript"],
+    codeLink: "https://github.com/afriddev/dhootha_main",
   },
   {
     title: "FreshSlice Food Ordering Web Application",
-    shortDesc: "Stripe-integrated food delivery system with live menu updates, payment, order history and responsive layout.",
+    shortDesc:
+      "Stripe-enabled food ordering system with real-time menu, cart, payments, and order history for end-users.",
     strategy: ["User Experience", "Payment Integration"],
     viewCode: true,
     openProject: false,
     category: ["web", "API"],
-    technologies: ["reactjs", "tailwindcss", "stripe"]
+    technologies: ["Nextjs", "Tailwindcss"],
+    codeLink: "https://github.com/afriddev/freshslice",
   },
   {
     title: "Email Sender Library for All Platforms",
-    shortDesc: "Cross-platform library to integrate mail sending in Dart, Node.js, and Python with minimal setup.",
+    shortDesc:
+      "Cross-platform library to send emails easily using Python, Dart, Node.js with SDKs and minimal configuration.",
     strategy: ["Integration", "Minimal Code"],
-    viewCode: true,
-    openProject: false,
+    viewCode: false,
+    openProject: true,
     category: ["openSource"],
-    technologies: ["python", "fastapi", "dart", "nodejs"]
+    technologies: ["Python", "Fastapi", "Dart", "Nodejs"],
+    link: "https://pub.dev/packages/email_sender",
   },
   {
     title: "Flutter-Based Mobile Apps for Clients",
-    shortDesc: "Multiple Flutter mobile apps with Firebase, MongoDB, smooth UI, and reliable user authentication and data handling.",
+    shortDesc:
+      "Multiple mobile apps built using Flutter and Firebase with custom authentication, data sync, and clean UI.",
     strategy: ["Performance", "Design"],
     viewCode: true,
     openProject: false,
     category: ["app"],
-    technologies: ["flutter", "dart", "firebase", "mongodb"]
+    technologies: ["Flutter", "Dart", "Firebase", "Mongodb"],
   },
   {
-    title: "FastAPI Email Backend Integration System",
-    shortDesc: "FastAPI backend for scalable, secure and efficient email sending, tracking, and storage with PostgreSQL.",
-    strategy: ["Integration", "Clean Code", "Logic"],
-    viewCode: true,
-    openProject: false,
-    category: ["API"],
-    technologies: ["fastapi", "postgresql", "python"]
-  },
-  {
-    title: "Tailoring Service API for Orders and Delivery",
-    shortDesc: "API backend with order processing, customizations, and delivery tracking integrated with Firebase notifications.",
+    title: "Tailoring APP Service API for Orders and Delivery",
+    shortDesc:
+      "Backend API for tailoring service with order customization, delivery tracking, and Razorpay + Firebase notifications.",
     strategy: ["Customization", "Integration"],
     viewCode: true,
     openProject: false,
+    backend: true,
     category: ["API", "app"],
-    technologies: ["expressjs", "firebase", "mongodb", "nodejs"]
+    technologies: ["Expressjs", "Firebase", "Mongodb", "Nodejs", "Flutter"],
+    codeLink: "https://github.com/afriddev/ameerunisa-tailors",
+    backendCodeLink: "https://github.com/afriddev/aaaTailors-mongo_api",
   },
   {
-    title: "Fininfolib Financial Data API Service",
-    shortDesc: "Scalable backend API to manage financial data, support filters, and display advanced analytics effectively.",
-    strategy: ["Data Accuracy", "Scalability"],
+    title: "Muniammamma Pickles Website",
+    shortDesc:
+      "Full-stack web platform for selling homemade pickles online with Razorpay payments, Spring Boot backend, and MongoDB.",
+    strategy: ["E-commerce", "Performance", "Payments"],
     viewCode: true,
-    openProject: false,
-    category: ["API"],
-    technologies: ["nextjs", "mongodb", "nodejs"]
-  }
+    openProject: true,
+    backend: true,
+    category: ["web", "API"],
+    technologies: [
+      "Reactjs",
+      "Spring Boot",
+      "Tailwindcss",
+      "MongoDB",
+      "Razorpay",
+    ],
+    link: "https://www.muniammammapickles.in/",
+    codeLink: "https://github.com/afriddev/muniammamapickels",
+    backendCodeLink: "https://github.com/afriddev/muniammamapicklesapi",
+  },
 ];
