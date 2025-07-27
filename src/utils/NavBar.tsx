@@ -1,5 +1,4 @@
-import { IoReorderTwoSharp } from "react-icons/io5";
-import { NAME } from "./AppConstants";
+import { IoMenuOutline } from "react-icons/io5";
 import Animate from "./animations/Animate";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "./AppContext";
@@ -12,19 +11,12 @@ function NavBar() {
   function handleHomeClick() {
     navigate("/");
     localStorage.setItem("selectedProject", null as never);
-
-
   }
 
-  function handleNameClick() {
-    navigate("/");
-    localStorage.setItem("selectedProject", null as never);
-
-  }
+  
 
   function handleScrollViewClick(value: string) {
     localStorage.setItem("selectedProject", null as never);
-
 
     dispatch({
       type: "setScrollView",
@@ -35,12 +27,9 @@ function NavBar() {
         type: "setScrollView",
         payload: undefined,
       });
-
-    }, 400)
+    }, 400);
 
     navigate("/");
-
-
   }
 
   function handleMenuClick() {
@@ -56,7 +45,7 @@ function NavBar() {
     <div className=" w-full  px-4 flex items-center gap-3 lg:px-5 lg:py-6 static p-3 justify-between">
       <div className="flex items-center w-full justify-between  lg:justify-start">
         {openMenu && (
-          <div className="h-[100vh] pb-20 justify-between flex flex-col  inset-0 pl-8 z-[999] fixed text-black  -ml-4  bg-zinc-200 w-[75vw] ">
+          <div className="h-[100vh] pb-20 justify-between flex flex-col  inset-0 pl-8 z-[999] fixed text-[#02ffff] border-r border-[#02ffff]  -ml-4  bg-[#030011] w-[75vw] ">
             <div className="flex flex-col gap-3">
               <Animate delay={100} type="slideDown">
                 <div
@@ -68,11 +57,14 @@ function NavBar() {
               </Animate>
               <div className="flex mt-[7vh] flex-col gap-5 ml-2 font-medium text-lg">
                 <Animate delay={100} type="slideLeft">
-                  <div onClick={() => {
-                    handleHomeClick()
-                    setOpenMenu(false)
-                  }} className="cursor-pointer">
-                    // home
+                  <div
+                    onClick={() => {
+                      handleHomeClick();
+                      setOpenMenu(false);
+                    }}
+                    className="cursor-pointer"
+                  >
+                    // Home
                   </div>
                 </Animate>
                 <Animate delay={200} type="slideLeft">
@@ -120,10 +112,9 @@ function NavBar() {
             <div className="w-full mt-[9vh]">
               <Animate delay={200} type="slideDown">
                 <div className="w-full flex flex-col gap-2 lg:flex-row lg:justify-between lg:px-20">
-                  <div className="flex r   text-xs">
+                  <div className="flex   -ml-2 text-xs text-center">
                     © 2024. Made with passion by Shaik Afrid.
                   </div>
-                  <div className="flex r   text-xs ">All right reserved</div>
                 </div>
               </Animate>
             </div>
@@ -131,7 +122,7 @@ function NavBar() {
         )}
         <Animate delay={150}>
           <div onClick={handleMenuClick} className="lg:hidden cursor-pointer">
-            <IoReorderTwoSharp className="w-14 bg-zinc-700/10 p-3 rounded-full h-14  text-foreground " />
+            <IoMenuOutline className="w-14 bg-zinc-700/10 p-3 rounded-full h-14  text-[#02ffff]" />
           </div>
         </Animate>
         <Animate delay={150}>

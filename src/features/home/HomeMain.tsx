@@ -37,7 +37,10 @@ function HomeMain() {
       <div className="bg-[#030011] items-center justify-center flex flex-col lg:gap-[15vh]">
         <div className="flex flex-col lg:w-[60vw] lg:gap-[15vh] w-full p-5">
           <HomeBanner />
-          <AboutMe /> {/*Scroll*/}
+          <div ref={scrollView === "ABOUTME" ? targetDivRef : null}>
+            <AboutMe />
+          </div>
+
           <div ref={scrollView === "EXPERIENCE" ? targetDivRef : null}>
             <Experience />
           </div>
@@ -45,12 +48,9 @@ function HomeMain() {
         </div>
 
         <div className=" flex flex-col lg:w-[70vw] lg:gap-[15vh] w-full p-5">
-          
           <div ref={scrollView === "WORK" ? targetDivRef : null}>
             <Projects />
           </div>
-
-          
 
           <div ref={scrollView === "CONTACT" ? targetDivRef : null}>
             <BottomNav />

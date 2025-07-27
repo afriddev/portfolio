@@ -141,7 +141,7 @@ function Experience() {
                   return (
                     <div
                       key={index}
-                      className="border text-gray-400 px-4 py-1 border-[#298d8d] rounded-[1px]"
+                      className="border   text-gray-400 px-2 text-xs lg:text-sm lg:px-4 py-1 border-[#298d8d] rounded-[1px]"
                     >
                       {item}
                     </div>

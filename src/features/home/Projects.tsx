@@ -1,15 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
-import { useUpdateProjectDetails } from "../../hooks/appHooks";
 import { projectData } from "../../utils/projectData";
 function Projects() {
-  const { updateProjectDetails } = useUpdateProjectDetails();
   const [showMore, setShowMore] = useState<boolean>(false);
 
-  function handleCallBack(project: string) {
-    updateProjectDetails(project);
-  }
 
   return (
     <div className="">

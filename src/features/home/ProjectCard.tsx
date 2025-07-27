@@ -1,13 +1,8 @@
-import { CiFolderOn, CiLink, CiShare1 } from "react-icons/ci";
+import { CiFolderOn ,CiShare1 } from "react-icons/ci";
 import { projectDataType } from "../../utils/projectData";
 import { FaGithub } from "react-icons/fa";
 import { MdPrivateConnectivity } from "react-icons/md";
-import { PiPlugsLight } from "react-icons/pi";
-import { BsBrowserChrome, BsGear } from "react-icons/bs";
-import { BiGlobe } from "react-icons/bi";
 import { LuDatabaseZap } from "react-icons/lu";
-import { TiSocialGithub } from "react-icons/ti";
-import { SlSocialGithub } from "react-icons/sl";
 import { IoCodeOutline } from "react-icons/io5";
 
 interface ProjectCardInterface {

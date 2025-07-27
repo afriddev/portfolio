@@ -75,7 +75,7 @@ function AboutMe() {
         </div>
         <div className="w-full flex  lg:justify-start justify-center">
           <div className="lg:w-[20vw] w-[70vw] h-[40vh] lg:h-[20vh] mt-5 relative">
-            <div className="lg:w-[20vw] w-[70vw] h-[34vh] lg:h-[43vh] absolute z-10 border  border-[#02ffff] lg:left-3 left-2 top-4  lg:top-2 rounded"></div>
+            <div className="lg:w-[20vw] w-[71vw] h-[33vh] lg:h-[43vh] absolute z-10 border  border-[#02ffff] lg:left-3 left-2 top-2  lg:top-2 rounded"></div>
             <img src="favicon.ico" className="rounded z-50  absolute" />
           </div>
         </div>

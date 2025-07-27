@@ -1,6 +1,5 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import HomeMain from "./features/home/HomeMain";
-import ProjectDetail from "./features/projectdetail/projectDetail";
 import Animate from "./utils/animations/Animate";
 import { FaGithub } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
@@ -48,7 +47,7 @@ function App() {
     }, 2800);
   }, []);
 
-  // if (loading) return <AppSpinner />;
+  if (loading) return <AppSpinner />;
   return (
     <div className=" relative  cursor-default text-foreground scroll-smooth ">
       {(!selectedProject ||
@@ -121,7 +120,6 @@ function App() {
       <div className="z-[998] absolute inset-0   ">
         <Routes>
           <Route path="/" element={<HomeMain />} />
-          <Route path="/projectdetail" element={<ProjectDetail />} />
         </Routes>
       </div>
     </div>
