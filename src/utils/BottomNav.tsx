@@ -24,7 +24,7 @@ function BottomNav() {
         </div>
       </div>
       <div className="w-full mt-[9vh] mb-[5vh] flex items-center justify-center">
-        <div className="flex items-center justify-center text-foreground/40  text-xs">
+        <div className="flex items-center text-center justify-center text-foreground/40  text-xs">
           © 2025. Made with passion by Shaik Afrid.
         </div>
       </div>
