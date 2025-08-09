@@ -73,7 +73,7 @@ function HomeBanner() {
         </div>
 
           <div
-            className=" w-full flex items-center justify-center z-[999] relative mt-3"
+            className=" w-full flex items-center justify-center relative mt-3"
             onClick={() => {
               dispatch({
                 type: "setScrollView",
