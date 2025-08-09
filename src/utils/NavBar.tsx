@@ -111,7 +111,7 @@ function NavBar() {
             </div>
             <div className="w-full mt-[9vh]">
               <Animate delay={200} type="slideDown">
-                <div className="w-full flex flex-col gap-2 lg:flex-row lg:justify-between lg:px-20">
+                <div className="w-full flex flex-col gap-2 lg:flex-row lg:justify-between px-8 lg:px-20">
                   <div className="flex   -ml-2 text-xs text-center">
                     © 2024. Made with passion by Shaik Afrid.
                   </div>
