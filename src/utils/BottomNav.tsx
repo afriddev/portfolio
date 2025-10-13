@@ -9,10 +9,11 @@ function BottomNav() {
     <div className="w-full flex flex-col px-4 items-center justify-center mt-[5vh]">
       <div className="flex flex-col gap-10 lg:gap-3 text-center ">
         <h1 className="text-2xl text-gray-300 font-semibold">
-          Available for select freelance opportunities
+          Let’s build something remarkable together
         </h1>
-        <p className=" font-semibold text-gray-500 text-xs">
-          Have an exciting project you need help with? Send me an email.
+        <p className=" font-semibold text-gray-500 text-sm">
+          Have an idea or opportunity that aligns with AI and full-stack
+          development? Let’s connect.
         </p>
       </div>
       <div className="mt-[5vh]">

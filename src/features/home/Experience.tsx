@@ -10,28 +10,36 @@ function Experience() {
       duration: "2024 - Present",
       location: "Prakash Nagar, Hyderabad",
       description: [
-        "Rebuilt the UMID-V2 project frontend using React, Tailwind CSS, and TypeScript under Agile workflow.",
-        "Independently developed and deployed the eOffice-Support system with Vite, React, Next.js (API routes), PostgreSQL, and Docker.",
-        "Currently working on a full-stack ID card generation system using jsReport, with deployment in progress.",
-        "Also leading the MediRetrieve_AI platform, integrating LLMs and vector databases for document intelligence and retrieval.",
-        "Actively contributing to both frontend and backend using modern tooling with version control (GitHub) and project tracking (Jira).",
-      ],
+  "Rebuilt the UMID-V2 project frontend using React, Tailwind CSS, and TypeScript under Agile workflow.",
+  "Independently developed and deployed the eOffice-Support system with Vite, React, Next.js (API routes), PostgreSQL, and Docker.",
+  "Developed an OPD ChatAI system for doctors under the HMIS project, a web-based and backend-integrated solution that assists with patient interactions and real-time record management.",
+  "Built EmbedHub, a scalable embedding and reranking service running two models in parallel, handling up to 1000 requests per second with efficient batching using PyTorch.",
+  "Currently working on a full-stack ID card generation system using jsReport, with deployment in progress.",
+  "Actively contributing to both frontend and backend using modern tooling with version control (GitHub) and project tracking (Jira)."
+]
+,
       skills: [
-        "React JS",
-        "Next.js",
-        "Next UI",
-        "ShadCN UI",
+        "Grpc",
+        "Kafka",
         "TypeScript",
-        "Tailwind CSS",
+        "FastAPI",
         "PostgreSQL",
         "MongoDB",
+        "Next.js",
+        "Docker",
+        "Kotlin",
+        "AI",
+        "LLMs",
+        "Rag",
+        "GraphRag",
+        "KG-RAG",
+        "React JS",
+        "ShadCN UI",
+        "Tailwind CSS",
         "NestJS",
         "GitHub",
         "Jira",
         "Python",
-        "FastAPI",
-        "Kotlin",
-        "LLMs",
       ],
       website: "https://www.railtel.in/",
     },
@@ -73,11 +81,11 @@ function Experience() {
 
   return (
     <div>
-      <div className=" flex  flex-col gap-10">
+      <div className=" flex  flex-col text-lg gap-10">
         <div className="flex gap-4 items-center lg:-ml-10">
           <label className="text-[#02ffff]">
             02.
-            <span className="text-2xl  text-white ">Experience</span>
+            <span className="text-4xl  text-white ">Experience</span>
           </label>
           <div className="h-[0.4px] w-full lg:w-[20vw]   bg-[#02ffff]/40"></div>
         </div>

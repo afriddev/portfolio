@@ -2,6 +2,8 @@ import { FaCaretRight } from "react-icons/fa";
 
 function AboutMe() {
   const recentTech = [
+    "Grpc",
+    "Kafka",
     "React",
     "TypeScript",
     "FastAPI",
@@ -10,27 +12,31 @@ function AboutMe() {
     "Next.js",
     "Docker",
     "Kotlin",
-    "LLMs (BERT, Mistral)",
+    "AI",
+    "LLMs",
+    "Rag",
+    "GraphRag",
+    "KG-RAG"
   ];
   function handleCompanyNameClick() {
     window.open("https://www.railtel.in/");
   }
 
   return (
-    <div className="w-full   flex">
+    <div className="w-full   flex text-lg">
       <div className="flex lg:flex-row flex-col gap-10">
         <div className="flex flex-col  gap-2">
           <div className="flex gap-4 items-center lg:-ml-10">
             <label className="text-[#02ffff]">
               01.
-              <span className="text-2xl  text-white text-nowrap">
+              <span className="text-4xl  text-white text-nowrap">
                 About Me
               </span>
             </label>
             <div className="h-[0.4px] w-full lg:w-[20vw]   bg-[#02ffff]/40"></div>
           </div>
 
-          <div className="flex flex-col gap-6 mt-10">
+          <div className="flex flex-col  gap-6 mt-10">
             <p className="lg:max-w-[40vw] text-gray-400">
               Hi, I’m Shaik Afrid — a full stack and LLM developer passionate
               about crafting fast, intelligent, and user-focused applications

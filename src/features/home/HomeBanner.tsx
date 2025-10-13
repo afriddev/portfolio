@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRef } from "react";
 import Animate from "../../utils/animations/Animate";
 import { NAME } from "../../utils/AppConstants";
 import { LiaDownloadSolid } from "react-icons/lia";
 import DownwArrow from "../../utils/DownArraow";
 import { useAppContext } from "../../utils/AppContext";
+import { FaGithub } from "react-icons/fa";
+import { CiLinkedin } from "react-icons/ci";
+import { IoMailOutline } from "react-icons/io5";
 
 function HomeBanner() {
   const resumeRef = useRef<HTMLAnchorElement>(null);
@@ -17,78 +21,136 @@ function HomeBanner() {
   function handleCompanyNameClick() {
     window.open("https://www.railtel.in/");
   }
+
+  function handleEmailClick() {
+    const mailtoUrl =
+      "https://mail.google.com/mail/?view=cm&fs=1&to=afridayan01@gmail.com&su=Hey";
+    window.open(mailtoUrl, "_blank");
+  }
+
+  function handleOpenSocialLink(type: string) {
+    switch (type) {
+      case "INSTA":
+        window.open("https://www.instagram.com/afrid.dev/");
+        break;
+
+      case "X":
+        window.open("https://x.com/AFRIDANON");
+
+        break;
+      case "GITHUB":
+        window.open("https://github.com/afriddev");
+
+        break;
+      case "LINKEDIN":
+        window.open("https://www.linkedin.com/in/afriddev/");
+
+        break;
+    }
+  }
+
   return (
-    <div className="min-h-[100vh]  flex flex-col">
-      <div className=" flex flex-col justify-between lg:justify-normal  h-[80vh] w-full items-center">
-        <div className="w-full">
-          <div className="flex flex-col  gap-3   lg:w-[50vw]  ">
-            <Animate delay={450}>
-              <h1 className="text-[#02ffff]">{"Hi, my name is"}</h1>
-            </Animate>
-            <Animate delay={450}>
-              <h1 className=" -mt-4  text-[40px] text-gray-200 lg:text-[80px] font-bold ">
-                {NAME.toUpperCase()}
-              </h1>
-            </Animate>
-            <Animate delay={600}>
-              <p className=" text-xl text-gray-300   lg:text-[40px]  leading-tight">
-                {"I build intelligent systems for the web.".toUpperCase()}
-              </p>
-            </Animate>
+    <div className="h-[86vh] lg:h-[80vh]   flex flex-col">
+      <div className=" flex flex-col  justify-between   h-full w-full items-center">
+        <div className="flex  flex-col ">
+          <div className="w-full">
+            <div className="flex flex-col  gap-3 lg:mt-10  lg:w-[50vw]  ">
+              <Animate delay={450}>
+                <h1 className="text-[#02ffff]">{"Hi, my name is"}</h1>
+              </Animate>
+              <Animate delay={450}>
+                <h1 className=" -mt-4  text-[40px] text-gray-200 lg:text-[80px] font-bold ">
+                  {NAME.toUpperCase()}
+                </h1>
+              </Animate>
+              <Animate delay={600}>
+                <p className=" text-xl text-gray-300   lg:text-[40px]  leading-tight">
+                  {"I build intelligent and scalable systems for the web.".toUpperCase()}
+                </p>
+              </Animate>
 
-            <Animate delay={600}>
-              <p className=" leading-6  lg:text-xl  lg:text-[20px] text-gray-400 ">
-                {
-                  "I’m a full stack and LLM developer focused on creating fast, real-time, and AI-powered applications. Currently, I’m building internal support tools, document intelligence systems, and ID card solutions at "
-                }
-                <span
-                  onClick={handleCompanyNameClick}
-                  className=" cursor-pointer text-[#02ffff]"
-                >
-                  RailTel Corporation of India.
-                </span>
-              </p>
-            </Animate>
+              <Animate delay={600}>
+                <p className=" leading-6  lg:text-xl  lg:text-[20px] text-gray-400 ">
+                  {
+                    "I’m a full-stack and LLM developer focused on creating fast, real-time, and AI-powered applications. I’m currently building internal tools, document automation systems, and smart ID solutions that make operations more efficient."
+                  }
+                  <span
+                    onClick={handleCompanyNameClick}
+                    className=" cursor-pointer text-[#02ffff]"
+                  >
+                    RailTel Corporation of India.
+                  </span>
+                </p>
+              </Animate>
 
-            <Animate delay={400}>
-              <div
-                onClick={handleHireMeClick}
-                className="mt-10    border text-[#02ffff] border-[#02ffff]     w-fit px-6  lg:px-12 lg:text-xl   cursor-pointer py-2 lg:py-3 flex items-center  "
-              >
-                Resume
-                <LiaDownloadSolid className="ml-2" />
-              </div>
-            </Animate>
+              <Animate delay={400}>
+                <div className="flex  b justify-between  mt-10 items-center">
+                  <div
+                    onClick={handleHireMeClick}
+                    className="  border text-[#02ffff] border-[#02ffff]     w-fit px-6  lg:px-12 lg:text-xl   cursor-pointer py-2 lg:py-3 flex items-center  "
+                  >
+                    Resume
+                    <LiaDownloadSolid className="ml-2" />
+                  </div>
+                  <div className="flex items-center gap-3  lg:gap-5">
+                    <h3
+                      onClick={() => {
+                        handleOpenSocialLink("GITHUB");
+                      }}
+                      className=" flex  i  bg-white/10  px-4 py-4 cursor-pointer lg:hover:text-[#02ffff] lg:hover:bg-[#112424] rounded-full"
+                    >
+                      <FaGithub className="lg:h-8 lg:w-8" />
+                    </h3>
+
+                    <h3
+                      onClick={() => {
+                        handleOpenSocialLink("LINKEDIN");
+                      }}
+                      className=" flex  i  bg-white/10  px-4 py-4 cursor-pointer lg:hover:text-[#02ffff] lg:hover:bg-[#112424] rounded-full"
+                    >
+                      <CiLinkedin className="   lg:h-8 lg:w-8" />
+                    </h3>
+                    <h3
+                      onClick={handleEmailClick}
+                      className=" flex  i  bg-white/10  px-4 py-4 cursor-pointer lg:hover:text-[#02ffff] lg:hover:bg-[#112424] rounded-full"
+                    >
+                      <IoMailOutline className="   lg:h-8 lg:w-8" />
+                    </h3>
+                  </div>
+                </div>
+              </Animate>
+            </div>
+          </div>
+          <div className=" flex   w-full ">
+            <a
+              href="Shaik afrid - Resume.pdf"
+              download={true}
+              ref={resumeRef}
+              className="hidden"
+            >
+              Resume
+            </a>
           </div>
         </div>
-        <div className=" flex   w-full ">
-          <a
-            href="Shaik afrid - Resume.pdf"
-            download={true}
-            ref={resumeRef}
-            className="hidden"
-          >
-            Resume
-          </a>
-        </div>
+        
 
-          <div
-            className=" w-full flex items-center justify-center relative mt-3"
-            onClick={() => {
+        <div
+          className=" flex items-center justify-center  "
+          onClick={() => {
+            dispatch({
+              type: "setScrollView",
+              payload: "ABOUTME",
+            });
+            setTimeout(() => {
               dispatch({
                 type: "setScrollView",
-                payload: "ABOUTME",
+                payload: undefined,
               });
-              setTimeout(() => {
-                dispatch({
-                  type: "setScrollView",
-                  payload: undefined,
-                });
-              }, 400);
-            }}
-          >
-            <DownwArrow />
-          </div>
+            }, 400);
+          }}
+        >
+          <DownwArrow />
+        </div>
       </div>
     </div>
   );

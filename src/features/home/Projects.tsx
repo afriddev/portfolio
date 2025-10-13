@@ -7,11 +7,11 @@ function Projects() {
 
 
   return (
-    <div className="">
+    <div className="text-lg">
       <div className="flex gap-4 items-center lg:ml-[4.5vw]">
         <label className="text-[#02ffff]">
           04.
-          <span className="text-2xl text-white text-nowrap">
+          <span className="text-4xl text-white text-nowrap">
             My Projects
           </span>
         </label>

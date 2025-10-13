@@ -8,89 +8,98 @@ interface MyExpertiseInterface {
 
 function MyExpertise({ scrollView, targetDivRef }: MyExpertiseInterface) {
   const expertise = [
-    {
-      heading: "Fullstack",
-      headingContemt: "Frontend • Backend • App",
-      desc: [
-        {
-          point:
-            "Built modern UIs using React, TypeScript, Vite, Tailwind CSS, ShadCN UI, Hero UI, and Next.js.",
-        },
-        {
-          point:
-            "Developed scalable APIs with Spring Boot, NestJS, Django, and FastAPI.",
-        },
-        {
-          point:
-            "Integrated PostgreSQL, MongoDB, and Firebase for secure and efficient data management.",
-        },
-        {
-          point:
-            "Built cross-platform mobile apps with Flutter and Kotlin for Android and iOS.",
-        },
-        { point: "Deployed production apps using Docker, PM2, and Nginx." },
-        {
-          point:
-            "Worked in Linux environments with strong command-line proficiency.",
-        },
-        { point: "Explored cybersecurity and ethical hacking fundamentals." },
-      ],
-    },
-    {
-      heading: "DSA",
-      headingContemt: "LeetCode • HackerRank",
-      desc: [
-        { point: "Solved over 150 problems across LeetCode and HackerRank." },
-        { point: "5⭐ in Python and 3⭐ in Java on HackerRank." },
-        {
-          point: "Strong command of algorithms and real-world problem solving.",
-        },
-      ],
-    },
-    {
-      heading: "Workflow",
-      headingContemt: "Git • Agile • CI/CD",
-      desc: [
-        { point: "Worked with GitHub, Bitbucket, and Jira in Agile teams." },
-        { point: "Built CI/CD pipelines and deployed with Docker and PM2." },
-        {
-          point:
-            "Actively contributed to open-source and team collaboration workflows.",
-        },
-      ],
-    },
-    {
-      heading: "LLM",
-      headingContemt: "RAG • Embeddings • JSON Extraction",
-      desc: [
-        {
-          point:
-            "Built document intelligence systems with vector DBs and LLMs.",
-        },
-        {
-          point:
-            "Integrated Phi, TinyLlama, and custom fine-tuned models for structured output.",
-        },
-        {
-          point:
-            "Worked on real-time extraction, prompt engineering, and feedback loops.",
-        },
-      ],
-    },
-  ];
+  {
+    heading: "Fullstack",
+    headingContemt: "Frontend • Backend • App",
+    desc: [
+      {
+        point:
+          "Built modern and responsive UIs using React, TypeScript, Vite, Tailwind CSS, ShadCN UI, and Next.js.",
+      },
+      {
+        point:
+          "Developed and deployed scalable full-stack systems like UMID-V2, eOffice-Support, and ID Card Management using FastAPI, Next.js (API routes), and PostgreSQL.",
+      },
+      {
+        point:
+          "Integrated PostgreSQL, MongoDB, and Firebase for secure, reliable, and high-performance data management.",
+      },
+      {
+        point:
+          "Created internal tools and automated workflows including jsReport-based ID card generation systems.",
+      },
+      {
+        point:
+          "Built cross-platform mobile and web apps using Flutter, Kotlin, and modern REST APIs.",
+      },
+      { point: "Deployed production-grade apps using Docker, PM2, and Nginx." },
+      {
+        point:
+          "Experienced working in Linux environments with strong CLI and server management skills.",
+      }
+    ],
+  },
+  {
+    heading: "DSA",
+    headingContemt: "LeetCode • HackerRank",
+    desc: [
+      { point: "Solved over 200 problems across LeetCode and HackerRank." },
+      { point: "Earned 5⭐ in Python and Java on HackerRank." },
+      {
+        point:
+          "Strong understanding of algorithms, data structures, and problem-solving patterns applied in real projects.",
+      },
+    ],
+  },
+  {
+    heading: "Workflow",
+    headingContemt: "Git • Agile • CI/CD",
+    desc: [
+      { point: "Worked with GitHub, Bitbucket, and Jira in Agile environments." },
+      { point: "Implemented CI/CD pipelines and deployed systems with Docker and PM2." },
+      {
+        point:
+          "Led small dev teams, conducted code reviews, and maintained multiple repositories under the RailTel AI division.",
+      },
+    ],
+  },
+  {
+    heading: "AI",
+    headingContemt: "RAG • GraphRAG • KG-RAG • Embeddings • PyTorch",
+    desc: [
+      {
+        point:
+          "Built scalable AI-driven platforms like EmbedHub for embedding and reranking, handling up to 1000 requests per second using PyTorch and batching.",
+      },
+      {
+        point:
+          "Developed OPD ChatAI, a web-based AI assistant for HMIS, integrating LLMs and retrieval pipelines to support doctors in real time.",
+      },
+      {
+        point:
+          "Experienced in designing and deploying intelligent systems combining RAG, KG-RAG, and GraphRAG architectures with vector databases.",
+      },
+      {
+        point:
+          "Worked on prompt engineering, structured output extraction, and feedback loops for adaptive model behavior.",
+      },
+    ],
+  },
+];
+
   const [selectedExpertiseIndex, setSelectedExpertiseIndex] =
     useState<number>(0);
 
   return (
     <div>
       <div
-        className=" flex  flex-col gap-10 mt-10"
+        className="text-lg flex  flex-col  gap-10 mt-10"
         ref={scrollView === "EXPERTISE" ? targetDivRef : null}
       >
         <div className="flex gap-4 items-center lg:-ml-10">
           <label className="text-[#02ffff]">
             03.
-            <span className="text-2xl  text-white text-nowrap">Expertise</span>
+            <span className="text-4xl  text-white text-nowrap">Expertise</span>
           </label>
           <div className="h-[0.4px] w-full lg:w-[20vw]   bg-[#02ffff]/40"></div>
         </div>
@@ -111,7 +120,7 @@ function MyExpertise({ scrollView, targetDivRef }: MyExpertiseInterface) {
         ? "border-[#02ffff] border-b-4 lg:border-b-0 lg:border-l-[4px] -ml-[2px] bg-[#02ffff]/10 text-[#02ffff]"
         : " text-gray-500"
     } 
-    lg:w-[10vw] rounded-tr-[1px] rounded-br-[1px]`}
+    lg:w-[20vw] rounded-tr-[1px] rounded-br-[1px]`}
                 >
                   {item.heading}
                 </div>
@@ -119,7 +128,7 @@ function MyExpertise({ scrollView, targetDivRef }: MyExpertiseInterface) {
             })}
           </div>
           <div>
-            <div className="flex items-center gap-2 text-gray-100 text-xl">
+            <div className="flex items-center gap-2 text-gray-100 ">
               {expertise[selectedExpertiseIndex].headingContemt}
               <span className="text-[#02ffff] cursor-pointer"></span>
             </div>

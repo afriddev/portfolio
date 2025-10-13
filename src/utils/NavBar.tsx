@@ -13,8 +13,6 @@ function NavBar() {
     localStorage.setItem("selectedProject", null as never);
   }
 
-  
-
   function handleScrollViewClick(value: string) {
     localStorage.setItem("selectedProject", null as never);
 
@@ -42,7 +40,7 @@ function NavBar() {
   }
 
   return (
-    <div className=" w-full  px-4 flex items-center gap-3 lg:px-5 lg:py-6 static p-3 justify-between">
+    <div className=" w-full bg-[#030011]  px-4 flex items-center gap-3 lg:px-5 lg:py-6 static p-3 justify-between h-[15vh]">
       <div className="flex items-center w-full justify-between  lg:justify-start">
         {openMenu && (
           <div className="h-[100vh] pb-20 justify-between flex flex-col  inset-0 pl-8 z-[999] fixed text-[#02ffff] border-r border-[#02ffff]  -ml-4  bg-[#030011] w-[75vw] ">
@@ -55,7 +53,7 @@ function NavBar() {
                   <IoMdClose className="w-10 h-10" />
                 </div>
               </Animate>
-              <div className="flex mt-[7vh] flex-col gap-5 ml-2 font-medium text-lg">
+              <div className="flex mt-[7vh] flex-col gap-5 ml-2 font-medium ">
                 <Animate delay={100} type="slideLeft">
                   <div
                     onClick={() => {
@@ -161,9 +159,9 @@ function NavBar() {
           <div className="relative cursor-pointer  hover:text-primary ">
             <div className="flex items-center gap-2" onClick={handleHomeClick}>
               //{" "}
-              <span className="lg:hover:border-b lg:border-primary">Home</span>
+              <span className="lg:hover:border-b lg:border-primary text-lg">Home</span>
             </div>
-            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-xs ">
+            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
               01
             </a>
           </div>
@@ -175,11 +173,11 @@ function NavBar() {
           >
             <div className="flex items-center gap-2">
               //{" "}
-              <span className="lg:hover:border-b lg:border-primary">
+              <span className="lg:hover:border-b lg:border-primary text-lg">
                 Expertise
               </span>
             </div>
-            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-xs ">
+            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
               02
             </a>
           </div>
@@ -191,9 +189,9 @@ function NavBar() {
           >
             <div className="flex items-center gap-2">
               //{" "}
-              <span className="lg:hover:border-b lg:border-primary">Work</span>
+              <span className="lg:hover:border-b lg:border-primary text-lg">Work</span>
             </div>
-            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-xs ">
+            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
               03
             </a>
           </div>
@@ -205,11 +203,11 @@ function NavBar() {
           >
             <div className="flex items-center gap-2">
               //{" "}
-              <span className="lg:hover:border-b lg:border-primary">
+              <span className="lg:hover:border-b lg:border-primary text-lg">
                 Experience
               </span>
             </div>
-            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-xs ">
+            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
               04
             </a>
           </div>
@@ -222,11 +220,11 @@ function NavBar() {
           >
             <div className="flex items-center gap-2">
               //{" "}
-              <span className="lg:hover:border-b lg:border-primary">
+              <span className="lg:hover:border-b lg:border-primary text-lg">
                 Conatct
               </span>
             </div>
-            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-xs ">
+            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
               05
             </a>
           </div>

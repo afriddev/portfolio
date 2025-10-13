@@ -1,4 +1,4 @@
-import { CiFolderOn ,CiShare1 } from "react-icons/ci";
+import { CiFolderOn, CiShare1 } from "react-icons/ci";
 import { projectDataType } from "../../utils/projectData";
 import { FaGithub } from "react-icons/fa";
 import { MdPrivateConnectivity } from "react-icons/md";
@@ -19,23 +19,23 @@ function ProjectCard({ projectData }: ProjectCardInterface) {
   }
 
   return (
-    <div className="border border-gray-700 rounded p-6 lg:max-w-[20vw] lg:h-[45vh]">
+    <div className="border border-gray-700 rounded p-6   lg:max-w-[20vw] lg:h-[40vh]">
       <div className="flex flex-col gap-2 w-full">
         <div className="flex  items-center gap-10 w-full justify-between  ">
           <CiFolderOn className="text-[#02ffff] h-10 w-10" />
           <div className="flex  items-center gap-3">
-            {
-              projectData.private && <MdPrivateConnectivity
-              title="Private"
-              className="w-7 h-7  text-[#45b7b7] lg:hover:text-[#02ffff]"
-            />  
-            }
+            {projectData.private && (
+              <MdPrivateConnectivity
+                title="Private"
+                className="w-7 h-7  text-[#45b7b7] lg:hover:text-[#02ffff]"
+              />
+            )}
             <div className="flex flex-row items-center gap-4">
               {projectData.viewCode && (
                 <div className="relative" title="Frontend Code">
                   <FaGithub
-                    onClick={() => {
-                      projectData.codeLink &&
+                    onClick={() => {  
+                      if (projectData.codeLink)
                         handleGithubClick(projectData.codeLink);
                     }}
                     className="w-7 h-7 cursor-pointer text-[#45b7b7] lg:hover:text-[#02ffff]"
@@ -48,7 +48,7 @@ function ProjectCard({ projectData }: ProjectCardInterface) {
                   <LuDatabaseZap className="w-3 -right-1 -top-2 absolute  h-3 cursor-pointer text-[#45b7b7] lg:hover:text-[#02ffff]" />
                   <FaGithub
                     onClick={() => {
-                      projectData.backendCodeLink &&
+                      if (projectData.backendCodeLink)
                         handleGithubClick(projectData.backendCodeLink);
                     }}
                     className="w-7 h-7 cursor-pointer text-[#45b7b7] lg:hover:text-[#02ffff]"
@@ -60,7 +60,7 @@ function ProjectCard({ projectData }: ProjectCardInterface) {
                 <CiShare1
                   title="Live"
                   onClick={() => {
-                    projectData.link && handleLiveClick(projectData.link);
+                    if (projectData.link) handleLiveClick(projectData.link);
                   }}
                   className="w-7 h-7 cursor-pointer text-[#45b7b7] lg:hover:text-[#02ffff]"
                 />
@@ -68,14 +68,14 @@ function ProjectCard({ projectData }: ProjectCardInterface) {
             </div>
           </div>
         </div>
-        <div className="text-gray-200 text-sm font-bold">
+        <div className="text-gray-200 h-14 text-md  font-bold">
           {projectData.title}
         </div>
-        <div className="text-gray-400 text-xs">{projectData.shortDesc}</div>
-        <div className="flex flex-grow flex-wrap  mt-5">
+        <div className="text-gray-400 lg:h-[12vh] text-sm">{projectData.shortDesc}</div>
+        <div className="flex flex-grow flex-wrap   ">
           {projectData?.strategy?.map((item, index) => {
             return (
-              <div className="text-[12px] text-gray-500  px-1" key={index}>
+              <div className="text-[12px] border  text-foreground  px-3" key={index}>
                 {item}
                 {index < projectData?.strategy.length - 1 && ","}
               </div>
@@ -83,10 +83,10 @@ function ProjectCard({ projectData }: ProjectCardInterface) {
           })}
         </div>
 
-        <div className="flex flex-grow flex-wrap ">
+        <div className="flex flex-grow flex-wrap mt-3">
           {projectData?.technologies?.map((item, index) => {
             return (
-              <div className="text-[12px] text-gray-500  px-1" key={index}>
+              <div className="text-[12px]  text-foreground" key={index}>
                 {item}
                 {index < projectData?.technologies.length - 1 && ","}
               </div>

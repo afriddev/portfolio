@@ -32,7 +32,7 @@ function HomeMain() {
   }, [scrollView, targetDivRef]);
 
   return (
-    <div className=" w-full h-full flex flex-col">
+    <div className=" w-full h-full flex flex-col ">
       <NavBar />
       <div className="bg-[#030011] items-center justify-center flex flex-col lg:gap-[15vh]">
         <div className="flex flex-col lg:w-[60vw] lg:gap-[15vh] w-full p-5">
