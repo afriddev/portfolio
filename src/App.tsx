@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import HomeMain from "./features/home/HomeMain";
 import { useEffect, useState } from "react";
+import AppSpinner from "./utils/AppSpinner";
 
 function App() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -8,10 +9,10 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(!loading);
-    }, 2800);
+    }, 2300);
   }, []);
 
-  // if (loading) return <AppSpinner />;
+  if (loading) return <AppSpinner />;
   return (
     <div className=" relative bg-[#030011]  cursor-default text-foreground scroll-smooth ">
       <div className="z-[800] absolute inset-0   ">

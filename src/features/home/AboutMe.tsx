@@ -23,7 +23,7 @@ function AboutMe() {
   }
 
   return (
-    <div className="w-full   flex text-lg">
+    <div className="w-full   flex text-lg mt-10">
       <div className="flex lg:flex-row flex-col gap-10">
         <div className="flex flex-col  gap-2">
           <div className="flex gap-4 items-center lg:-ml-10">
