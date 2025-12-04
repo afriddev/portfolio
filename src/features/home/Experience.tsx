@@ -10,15 +10,18 @@ function Experience() {
       duration: "2024 - Present",
       location: "Prakash Nagar, Hyderabad",
       description: [
-  "Rebuilt the UMID-V2 project frontend using React, Tailwind CSS, and TypeScript under Agile workflow.",
-  "Independently developed and deployed the eOffice-Support system with Vite, React, Next.js (API routes), PostgreSQL, and Docker.",
-  "Developed an OPD ChatAI system for doctors under the HMIS project, a web-based and backend-integrated solution that assists with patient interactions and real-time record management.",
-  "Built EmbedHub, a scalable embedding and reranking service running two models in parallel, handling up to 1000 requests per second with efficient batching using PyTorch.",
-  "Currently working on a full-stack ID card generation system using jsReport, with deployment in progress.",
-  "Actively contributing to both frontend and backend using modern tooling with version control (GitHub) and project tracking (Jira)."
-]
-,
+        "Rebuilt UMID-V2 frontend using React, Tailwind CSS, and TypeScript under Agile workflow.",
+        "Designed, developed, and deployed eOffice-Support using Vite, React, Next.js API routes, PostgreSQL, Docker.",
+        "Built OPD ChatAI for HMIS—LLM-powered doctor assistance with real-time patient record integration.",
+        "Created EmbedHub, a high-throughput embedding + reranking service (1000 req/s) with PyTorch batching.",
+        "Engineered three internal AI systems using RAG, KG-RAG, and GraphRAG for document intelligence and smart search.",
+        "Deployed a new HIS platform with scalable Kubernetes cluster, HA PostgreSQL, Redis, ELK stack, and CI/CD automation.",
+        "Built a full-stack smart ID card generation system with jsReport and completed deployment.",
+      ],
       skills: [
+        "Kubernetes",
+        "ELK",
+        "CI/CD",
         "Grpc",
         "Kafka",
         "TypeScript",
@@ -30,8 +33,8 @@ function Experience() {
         "Kotlin",
         "AI",
         "LLMs",
-        "Rag",
-        "GraphRag",
+        "RAG",
+        "GraphRAG",
         "KG-RAG",
         "React JS",
         "ShadCN UI",
@@ -81,7 +84,7 @@ function Experience() {
 
   return (
     <div>
-      <div className=" flex  flex-col text-lg gap-10">
+      <div className=" flex  flex-col text-lg gap-10 mt-10">
         <div className="flex gap-4 items-center lg:-ml-10">
           <label className="text-[#02ffff]">
             02.
@@ -91,21 +94,21 @@ function Experience() {
         </div>
 
         <div className="flex  flex-col lg:flex-row gap-10">
-          <div className="flex lg:flex-col">
+          <div className="flex lg:flex-col gap-2 lg:gap-0">
             {experienceData?.map((item, index) => {
               return (
                 <div
                   onClick={() => setSelectedCompanyIndex(index)}
                   key={index}
-                  className={`px-10 lg:px-5 py-4 
-    border-b lg:border-b-0 lg:border-l 
+                  className={`px-10  lg:px-5 py-4 
+    border-b lg:border-b-0 border-l border-r border-t lg:border-r-0 lg:border-t-0 
     cursor-pointer 
     ${
       index === selectedCompanyIndex
-        ? "border-[#02ffff] border-b-4 lg:border-b-0 lg:border-l-[4px] -ml-[2px] bg-[#02ffff]/10 text-[#02ffff]"
+        ? "border-[#02ffff] border-b-4 lg:border-b-0 lg:border-l-[4px] -ml-[2px] bg-[#02ffff]/10 text-[#02ffff] border-l border-r border-t  lg:border-r-0  lg:border-t-0"
         : " text-gray-500"
     } 
-    lg:w-[10vw] rounded-tr-[1px] rounded-br-[1px]`}
+    lg:w-[10vw] rounded-tr-[1px] rounded-br-[1px] text-sm lg:text-base`}
                 >
                   {item.shortCompanyName}
                 </div>
@@ -113,7 +116,7 @@ function Experience() {
             })}
           </div>
           <div className="flex flex-col gap-2">
-            <div className="flex items-center gap-2 text-gray-100 text-xl flex-wrap">
+            <div className="flex items-center gap-2 text-gray-100  lg:text-xl flex-wrap">
               {experienceData[selectedCompanyIndex].title}
               <span
                 onClick={() => {
@@ -137,7 +140,7 @@ function Experience() {
                       <div>
                         <FaCaretRight className=" mt-1 w-4 h-4 text-[#02ffff]" />
                       </div>
-                      <p className="text-gray-400">{item}</p>
+                      <p className="text-gray-400 text-base">{item}</p>
                     </div>
                   );
                 }

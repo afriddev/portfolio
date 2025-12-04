@@ -50,7 +50,7 @@ function HomeBanner() {
   }
 
   return (
-    <div className="h-[86vh] lg:h-[80vh]   flex flex-col">
+    <div className="h-[83vh] lg:h-[80vh]   flex flex-col">
       <div className=" flex flex-col  justify-between   h-full w-full items-center">
         <div className="flex  flex-col ">
           <div className="w-full">
@@ -61,18 +61,22 @@ function HomeBanner() {
               <Animate delay={450}>
                 <h1 className=" -mt-4  text-[40px] text-gray-200 lg:text-[80px] font-bold ">
                   {NAME.toUpperCase()}
+                  <p className="text-sm lg:text-xl font-normal pl-2 -mt-3 lg:-mt-5">
+                    {" "}
+                    — Full-Stack & AI Systems Engineer
+                  </p>
                 </h1>
               </Animate>
               <Animate delay={600}>
-                <p className=" text-xl text-gray-300   lg:text-[40px]  leading-tight">
-                  {"I build intelligent and scalable systems for the web.".toUpperCase()}
+                <p className="lg:mt-5  text-gray-200   lg:text-[25px]  leading-tight">
+                  {"I design and build high-performance, real-time, and AI-driven platforms with a focus on scalability and reliability.".toUpperCase()}
                 </p>
               </Animate>
 
               <Animate delay={600}>
-                <p className=" leading-6  lg:text-xl  lg:text-[20px] text-gray-400 ">
+                <p className="  leading-6 lg:mt-2  lg:text-xl   text-gray-400 ">
                   {
-                    "I’m a full-stack and LLM developer focused on creating fast, real-time, and AI-powered applications. I’m currently building internal tools, document automation systems, and smart ID solutions that make operations more efficient."
+                    "Experienced in Kubernetes, ELK, HA clusters, internal DNS, full-stack development, and LLM systems (RAG, KG-RAG, GraphRAG). Currently building automation, document workflows, and smart ID solutions at RailTel."
                   }
                   <span
                     onClick={handleCompanyNameClick}
@@ -84,7 +88,7 @@ function HomeBanner() {
               </Animate>
 
               <Animate delay={400}>
-                <div className="flex  b justify-between  mt-10 items-center">
+                <div className="flex   justify-between mt-5  lg:mt-10 items-center">
                   <div
                     onClick={handleHireMeClick}
                     className="  border text-[#02ffff] border-[#02ffff]     w-fit px-6  lg:px-12 lg:text-xl   cursor-pointer py-2 lg:py-3 flex items-center  "
@@ -132,7 +136,6 @@ function HomeBanner() {
             </a>
           </div>
         </div>
-        
 
         <div
           className=" flex items-center justify-center  "

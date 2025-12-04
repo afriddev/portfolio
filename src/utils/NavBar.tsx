@@ -40,10 +40,10 @@ function NavBar() {
   }
 
   return (
-    <div className=" w-full bg-[#030011]  px-4 flex items-center gap-3 lg:px-5 lg:py-6 static p-3 justify-between h-[15vh]">
+    <div className=" w-full bg-[#011030]  px-4 flex items-center gap-3 lg:px-5 lg:py-6 static p-3 justify-between h-[15vh]">
       <div className="flex items-center w-full justify-between  lg:justify-start">
         {openMenu && (
-          <div className="h-[100vh] pb-20 justify-between flex flex-col  inset-0 pl-8 z-[999] fixed text-[#02ffff] border-r border-[#02ffff]  -ml-4  bg-[#030011] w-[75vw] ">
+          <div className="h-[100vh] pb-20 justify-between flex flex-col  inset-0 pl-8 z-[999] fixed text-[#02ffff] border-r border-[#02ffff]  -ml-4  bg-[#011030] w-[75vw] ">
             <div className="flex flex-col gap-3">
               <Animate delay={100} type="slideDown">
                 <div
@@ -65,6 +65,17 @@ function NavBar() {
                     // Home
                   </div>
                 </Animate>
+                <Animate delay={400} type="slideLeft">
+                  <div
+                    onClick={() => {
+                      handleMenuItemsClick("EXPERIENCE");
+                    }}
+                    className="cursor-pointer"
+                  >
+                    // Experience
+                  </div>
+                </Animate>
+                
                 <Animate delay={200} type="slideLeft">
                   <div
                     onClick={() => {
@@ -85,16 +96,7 @@ function NavBar() {
                     // Work
                   </div>
                 </Animate>
-                <Animate delay={400} type="slideLeft">
-                  <div
-                    onClick={() => {
-                      handleMenuItemsClick("EXPERIENCE");
-                    }}
-                    className="cursor-pointer"
-                  >
-                    // Experience
-                  </div>
-                </Animate>
+                
                 <Animate delay={500} type="slideLeft">
                   <div
                     onClick={() => {
@@ -111,7 +113,7 @@ function NavBar() {
               <Animate delay={200} type="slideDown">
                 <div className="w-full flex flex-col gap-2 lg:flex-row lg:justify-between px-8 lg:px-20">
                   <div className="flex   -ml-2 text-xs text-center">
-                    © 2024. Made with passion by Shaik Afrid.
+                    © 2025. Made with passion by Shaik Afrid.
                   </div>
                 </div>
               </Animate>
@@ -167,6 +169,23 @@ function NavBar() {
           </div>
           <div
             onClick={() => {
+              handleScrollViewClick("EXPERIENCE");
+            }}
+            className="relative cursor-pointer   hover:text-primary "
+          >
+            <div className="flex items-center gap-2">
+              //{" "}
+              <span className="lg:hover:border-b lg:border-primary text-lg">
+                Experience
+              </span>
+            </div>
+            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
+              04
+            </a>
+          </div>
+          
+          <div
+            onClick={() => {
               handleScrollViewClick("EXPERTISE");
             }}
             className="relative cursor-pointer   hover:text-primary "
@@ -195,22 +214,7 @@ function NavBar() {
               03
             </a>
           </div>
-          <div
-            onClick={() => {
-              handleScrollViewClick("EXPERIENCE");
-            }}
-            className="relative cursor-pointer   hover:text-primary "
-          >
-            <div className="flex items-center gap-2">
-              //{" "}
-              <span className="lg:hover:border-b lg:border-primary text-lg">
-                Experience
-              </span>
-            </div>
-            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
-              04
-            </a>
-          </div>
+          
 
           <div
             onClick={() => {

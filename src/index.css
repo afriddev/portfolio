@@ -22,11 +22,12 @@ h2 {
 
 
 
-
+::-webkit-scrollbar:horizontal {
+  height: 3px;
+}
 /* Overall scrollbar */
 ::-webkit-scrollbar {
   width:3px; /* For vertical scrollbars */
-  height: 1px; /* For horizontal scrollbars */
 }
 
 /* Scrollbar track */
@@ -44,3 +45,4 @@ h2 {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
+

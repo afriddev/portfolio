@@ -10,82 +10,124 @@ function MyExpertise({ scrollView, targetDivRef }: MyExpertiseInterface) {
   const expertise = [
   {
     heading: "Fullstack",
-    headingContemt: "Frontend • Backend • App",
+    headingContemt: "Frontend • Backend • Web & Mobile",
     desc: [
       {
         point:
-          "Built modern and responsive UIs using React, TypeScript, Vite, Tailwind CSS, ShadCN UI, and Next.js.",
+          "Built responsive and modern UIs using React, Next.js, TypeScript, Tailwind CSS, ShadCN UI, and Vite.",
       },
       {
         point:
-          "Developed and deployed scalable full-stack systems like UMID-V2, eOffice-Support, and ID Card Management using FastAPI, Next.js (API routes), and PostgreSQL.",
+          "Developed and deployed scalable full-stack systems like UMID-V2, eOffice-Support, MediRetrieve_AI, and ID Card Management using FastAPI, Next.js API routes, and PostgreSQL.",
       },
       {
         point:
-          "Integrated PostgreSQL, MongoDB, and Firebase for secure, reliable, and high-performance data management.",
+          "Integrated PostgreSQL, MongoDB, and Firebase for secure, high-performance data storage.",
       },
       {
         point:
-          "Created internal tools and automated workflows including jsReport-based ID card generation systems.",
+          "Built jsReport-based document automation and internal workflow tools for enterprise use.",
       },
       {
         point:
-          "Built cross-platform mobile and web apps using Flutter, Kotlin, and modern REST APIs.",
+          "Developed cross-platform mobile and web apps using Flutter, Kotlin, and REST APIs.",
       },
-      { point: "Deployed production-grade apps using Docker, PM2, and Nginx." },
+      {
+        point: "Deployed production systems using Docker, Nginx, PM2, and Linux servers.",
+      },
       {
         point:
-          "Experienced working in Linux environments with strong CLI and server management skills.",
+          "Strong Linux, CLI, and server-side debugging capabilities across distributed systems.",
       }
     ],
   },
+
+  {
+    heading: "AI Engineering",
+    headingContemt: "RAG • KG-RAG • GraphRAG • Embeddings • PyTorch",
+    desc: [
+      {
+        point:
+          "Built EmbedHub, a scalable embedding + reranking engine processing ~1000 requests/sec using PyTorch batching and async pipelines.",
+      },
+      {
+        point:
+          "Created OPD ChatAI for HMIS — a real-time doctor assistant combining LLMs, retrieval, and structured output flows.",
+      },
+      {
+        point:
+          "Developed enterprise-grade AI systems using RAG, KG-RAG, and GraphRAG for document intelligence and semantic search.",
+      },
+      {
+        point:
+          "Implemented vector search, embeddings, chunking strategies, and model-driven data pipelines.",
+      },
+      {
+        point:
+          "Designed robust prompt engineering flows with output validation, guards, and feedback loops.",
+      },
+    ],
+  },
+
+  {
+    heading: "DevOps & Infra",
+    headingContemt: "Kubernetes • HA • ELK • CI/CD",
+    desc: [
+      {
+        point:
+          "Deployed large-scale HIS platform using Kubernetes with auto-scaling, load balancing, and rolling updates.",
+      },
+      {
+        point:
+          "Configured HA PostgreSQL, Redis, and distributed microservices with resilience and failover.",
+      },
+      {
+        point:
+          "Implemented centralized logging and observability using the ELK Stack (Elasticsearch, Logstash, Kibana).",
+      },
+      {
+        point:
+          "Set up internal DNS, ingress routing, Nginx reverse proxies, and secure production networking.",
+      },
+      {
+        point:
+          "Built CI/CD pipelines using GitHub Actions and Docker for automated builds, testing, and deployments.",
+      },
+    ],
+  },
+
   {
     heading: "DSA",
     headingContemt: "LeetCode • HackerRank",
     desc: [
-      { point: "Solved over 200 problems across LeetCode and HackerRank." },
-      { point: "Earned 5⭐ in Python and Java on HackerRank." },
+      { point: "Solved 200+ problems across LeetCode and HackerRank." },
+      { point: "Earned 5⭐ badges in Python and Java on HackerRank." },
       {
         point:
-          "Strong understanding of algorithms, data structures, and problem-solving patterns applied in real projects.",
+          "Strong understanding of algorithms, data structures, and problem-solving patterns used in real engineering work.",
       },
     ],
   },
+
   {
     heading: "Workflow",
-    headingContemt: "Git • Agile • CI/CD",
-    desc: [
-      { point: "Worked with GitHub, Bitbucket, and Jira in Agile environments." },
-      { point: "Implemented CI/CD pipelines and deployed systems with Docker and PM2." },
-      {
-        point:
-          "Led small dev teams, conducted code reviews, and maintained multiple repositories under the RailTel AI division.",
-      },
-    ],
-  },
-  {
-    heading: "AI",
-    headingContemt: "RAG • GraphRAG • KG-RAG • Embeddings • PyTorch",
+    headingContemt: "Git • Agile • Team Leadership",
     desc: [
       {
-        point:
-          "Built scalable AI-driven platforms like EmbedHub for embedding and reranking, handling up to 1000 requests per second using PyTorch and batching.",
+        point: "Worked with GitHub, Bitbucket, and Jira in fast-paced Agile environments.",
       },
       {
         point:
-          "Developed OPD ChatAI, a web-based AI assistant for HMIS, integrating LLMs and retrieval pipelines to support doctors in real time.",
+          "Implemented CI/CD automation and managed deployments across dev, test, and production.",
       },
       {
         point:
-          "Experienced in designing and deploying intelligent systems combining RAG, KG-RAG, and GraphRAG architectures with vector databases.",
-      },
-      {
-        point:
-          "Worked on prompt engineering, structured output extraction, and feedback loops for adaptive model behavior.",
+          "Led small dev teams, reviewed code, and maintained multiple repositories under RailTel’s AI division.",
       },
     ],
   },
 ];
+
 
   const [selectedExpertiseIndex, setSelectedExpertiseIndex] =
     useState<number>(0);
@@ -104,7 +146,7 @@ function MyExpertise({ scrollView, targetDivRef }: MyExpertiseInterface) {
           <div className="h-[0.4px] w-full lg:w-[20vw]   bg-[#02ffff]/40"></div>
         </div>
         <div className="flex  flex-col lg:flex-row gap-10 ">
-          <div className="flex lg:flex-col lg:overflow-hidden overflow-auto">
+          <div className="flex flex-wrap lg:flex-col gap-2 lg:gap-0 ">
             {expertise?.map((item, index) => {
               return (
                 <div
@@ -113,14 +155,14 @@ function MyExpertise({ scrollView, targetDivRef }: MyExpertiseInterface) {
                   }}
                   key={index}
                   className={`px-10 lg:px-5 py-4 
-    border-b lg:border-b-0 lg:border-l 
+    border-b lg:border-b-0 border-l border-r border-t lg:border-r-0 lg:border-t-0 
     cursor-pointer 
     ${
       index === selectedExpertiseIndex
-        ? "border-[#02ffff] border-b-4 lg:border-b-0 lg:border-l-[4px] -ml-[2px] bg-[#02ffff]/10 text-[#02ffff]"
+        ? "border-[#02ffff] border-b-4 lg:border-b-0 lg:border-l-[4px] -ml-[2px] bg-[#02ffff]/10  text-[#02ffff] border-l border-r border-t  lg:border-r-0  lg:border-t-0 "
         : " text-gray-500"
     } 
-    lg:w-[20vw] rounded-tr-[1px] rounded-br-[1px]`}
+    lg:w-[10vw] w-[40vw] flex  lg:items-start items-center lg:justify-start justify-center rounded-tr-[1px] rounded-br-[1px] text-sm text-center lg:text-base`}
                 >
                   {item.heading}
                 </div>

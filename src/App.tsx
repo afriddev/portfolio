@@ -14,7 +14,7 @@ function App() {
 
   if (loading) return <AppSpinner />;
   return (
-    <div className=" relative bg-[#030011]  cursor-default text-foreground scroll-smooth ">
+    <div className=" relative bg-[#011030]  cursor-default text-foreground scroll-smooth ">
       <div className="z-[800] absolute inset-0   ">
         <Routes>
           <Route path="/" element={<HomeMain />} />
