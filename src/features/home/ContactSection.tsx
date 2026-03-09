@@ -57,16 +57,14 @@ function ContactSection() {
             {SOCIAL_LINKS.map((link) => (
               <div
                 key={link.number}
-                className="social-row"
+                className="social-row group"
                 onClick={() => HandleLinkClick(link.url)}
               >
                 <div className="flex items-center gap-6">
                   <span className="social-num">{link.number}</span>
                   <span className="social-name">{link.name}</span>
                 </div>
-                <div className="social-icon">
-                  {link.rightIcon}
-                </div>
+                <div className="social-icon">{link.rightIcon}</div>
               </div>
             ))}
           </div>
@@ -77,20 +75,17 @@ function ContactSection() {
             <span className="text-[10px] uppercase tracking-[0.25em] text-zinc-400 block mb-3">
               Based in Hyderabad
             </span>
-            <div className="flex items-center gap-3">
-              <a
-                href="mailto:afridayan01@gmail.com"
-                className="text-lg lg:text-xl font-bold tracking-wide hover:text-zinc-500 transition-colors"
-              >
+            <a
+              href="mailto:afridayan01@gmail.com"
+              className="flex items-center gap-3 group cursor-pointer w-fit"
+            >
+              <span className="text-lg lg:text-xl font-bold tracking-wide group-hover:text-zinc-500 transition-colors">
                 AFRIDAYAN01@GMAIL.COM
-              </a>
-              <a
-                href="mailto:afridayan01@gmail.com"
-                className="icon-hover-rotate text-zinc-400 hover:text-foreground transition-colors"
-              >
-                <HiArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
+              </span>
+              <span className="text-foreground group-hover:text-foreground transition-all duration-500 group-hover:rotate-[360deg] inline-block">
+                <HiArrowUpRight className="w-5 h-5" />
+              </span>
+            </a>
           </div>
         </Animate>
       </div>

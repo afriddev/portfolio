@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useAppContext } from "./AppContext";
 import { IoMenuOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
@@ -15,6 +15,15 @@ const NAV_ITEMS = [
 function NavBar() {
   const { dispatch } = useAppContext();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+    }
+    return () => document.body.classList.remove("menu-open");
+  }, [mobileMenuOpen]);
 
   function HandleScrollTo(target: string) {
     dispatch({ type: "setScrollView", payload: target });
@@ -58,9 +67,9 @@ function NavBar() {
             href="https://github.com/afriddev"
             target="_blank"
             rel="noopener noreferrer"
-            className="icon-hover-rotate text-zinc-500 hover:text-foreground transition-colors duration-300"
+            className="nav-github text-foreground hover:text-foreground transition-colors duration-300"
           >
-            <FaGithub className="w-4 h-4" />
+            <FaGithub className="w-[18px] h-[18px]" />
           </a>
         </div>
 
@@ -77,9 +86,12 @@ function NavBar() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-0 bg-background z-40 flex flex-col">
+        <div className="lg:hidden fixed inset-0 top-0 bg-background z-[60] flex flex-col">
           <div className="flex items-center justify-between px-6 h-16 border-b border-zinc-100">
-            <div className="flex flex-col select-none" onClick={HandleScrollToTop}>
+            <div
+              className="flex flex-col select-none"
+              onClick={HandleScrollToTop}
+            >
               <span className="text-sm font-bold tracking-wide text-foreground">
                 SHAIK <span className="font-extrabold">AFRID</span>
               </span>

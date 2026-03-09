@@ -17,13 +17,11 @@ function FooterSection() {
   }
 
   return (
-    <footer className="border-t border-zinc-100 py-10">
+    <footer className="bg-background border-t border-zinc-200 py-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="text-center lg:text-left">
-            <div className="text-sm font-bold tracking-wide">
-              SHAIK AFRID
-            </div>
+            <div className="text-sm font-bold tracking-wide">SHAIK AFRID</div>
             <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mt-0.5">
               Software Engineer &
             </div>

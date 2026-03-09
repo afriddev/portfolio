@@ -2,7 +2,13 @@ import Animate from "../../utils/animations/Animate";
 import { HiArrowRight } from "react-icons/hi";
 import { useAppContext } from "../../utils/AppContext";
 
-const HIGHLIGHT_SKILLS = ["React", "FastAPI", "Kubernetes", "TypeScript", "AI/LLM"];
+const HIGHLIGHT_SKILLS = [
+  "React",
+  "FastAPI",
+  "Kubernetes",
+  "TypeScript",
+  "AI/LLM",
+];
 
 function AboutSection() {
   const { dispatch } = useAppContext();
@@ -33,7 +39,7 @@ function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           <Animate delay={300}>
             <div className="relative">
-              <div className="aspect-[4/5] max-w-sm rounded-2xl overflow-hidden bg-zinc-100">
+              <div className="aspect-[4/5] max-w-sm rounded-md overflow-hidden bg-zinc-100">
                 <img
                   src="favicon.ico"
                   alt="Shaik Afrid"
@@ -59,8 +65,8 @@ function AboutSection() {
             <Animate delay={400}>
               <h3 className="text-xl lg:text-2xl xl:text-3xl font-semibold leading-snug mb-6">
                 Building refined digital products with a focus on{" "}
-                <span className="text-zinc-400">scalable architecture</span>{" "}
-                and AI-driven engineering.
+                <span className="text-zinc-400">scalable architecture</span> and
+                AI-driven engineering.
               </h3>
             </Animate>
 
@@ -69,8 +75,8 @@ function AboutSection() {
                 I bridge the gap between design and high-level engineering.
                 Based in Hyderabad, I focus on creating digital experiences that
                 are as technically sound as they are visually intuitive.
-                Currently leading a sub-team at RailTel, delivering enterprise-grade
-                full-stack solutions and AI prototypes.
+                Currently leading a sub-team at RailTel, delivering
+                enterprise-grade full-stack solutions and AI prototypes.
               </p>
             </Animate>
 
@@ -113,7 +119,7 @@ function AboutSection() {
 
             <Animate delay={600}>
               <button
-                className="btn-outline w-fit text-[11px]"
+                className="btn-outline w-full lg:w-fit text-[11px] justify-center"
                 onClick={HandleGetInTouch}
               >
                 Get in touch

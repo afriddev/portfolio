@@ -90,12 +90,12 @@ function ProjectsSection() {
           </div>
 
           <Animate delay={300}>
-            <div className="flex items-center gap-1 mt-6 lg:mt-0 bg-zinc-100 rounded-full p-1">
+            <div className="flex items-center gap-0 mt-6 lg:mt-0 bg-zinc-100 rounded-full p-1 w-full lg:w-auto">
               {FILTERS.map((filter) => (
                 <button
                   key={filter.value}
                   onClick={() => setActiveFilter(filter.value)}
-                  className={`text-[11px] uppercase tracking-wider px-4 py-2 rounded-full transition-all duration-300 font-medium ${
+                  className={`flex-1 lg:flex-none text-[11px] uppercase tracking-wider px-4 py-2 rounded-full transition-all duration-300 font-medium text-center ${
                     activeFilter === filter.value
                       ? "bg-foreground text-white"
                       : "text-zinc-500 hover:text-foreground"
