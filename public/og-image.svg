@@ -1,0 +1,66 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#fafafa" />
+  <g stroke="rgba(0,0,0,0.06)">
+    <path d="M0 120H1200" />
+    <path d="M0 240H1200" />
+    <path d="M0 360H1200" />
+    <path d="M0 480H1200" />
+    <path d="M160 0V630" />
+    <path d="M320 0V630" />
+    <path d="M480 0V630" />
+    <path d="M640 0V630" />
+    <path d="M800 0V630" />
+    <path d="M960 0V630" />
+  </g>
+  <circle cx="156" cy="152" r="72" fill="none" stroke="#52525b" stroke-width="8" />
+  <text
+    x="156"
+    y="159"
+    text-anchor="middle"
+    font-size="86"
+    font-weight="900"
+    fill="#1a1a1a"
+    font-family="Inter, Arial, sans-serif"
+  >
+    A
+  </text>
+  <text
+    x="120"
+    y="290"
+    font-size="86"
+    font-weight="900"
+    fill="#1a1a1a"
+    font-family="Inter, Arial, sans-serif"
+  >
+    SHAIK AFRID
+  </text>
+  <text
+    x="120"
+    y="366"
+    font-size="34"
+    font-weight="600"
+    fill="#52525b"
+    font-family="Inter, Arial, sans-serif"
+  >
+    AI Engineer • LLM Engineer • Full-Stack Developer
+  </text>
+  <text
+    x="120"
+    y="434"
+    font-size="28"
+    fill="#71717a"
+    font-family="Inter, Arial, sans-serif"
+  >
+    Building RAG systems, scalable web apps, and production-ready digital products.
+  </text>
+  <text
+    x="120"
+    y="532"
+    font-size="26"
+    font-weight="700"
+    fill="#1a1a1a"
+    font-family="Inter, Arial, sans-serif"
+  >
+    afrid.live
+  </text>
+</svg>
