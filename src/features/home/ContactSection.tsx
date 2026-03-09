@@ -7,7 +7,6 @@ interface SocialLink {
   number: string;
   name: string;
   url: string;
-  icon: React.ReactNode;
   rightIcon: React.ReactNode;
 }
 
@@ -16,22 +15,19 @@ const SOCIAL_LINKS: SocialLink[] = [
     number: "01",
     name: "Email",
     url: "https://mail.google.com/mail/?view=cm&fs=1&to=afridayan01@gmail.com&su=Hey",
-    icon: <IoMailOutline className="w-5 h-5" />,
-    rightIcon: <HiArrowUpRight className="w-4 h-4" />,
+    rightIcon: <IoMailOutline className="w-5 h-5" />,
   },
   {
     number: "02",
     name: "LinkedIn",
     url: "https://www.linkedin.com/in/afriddev/",
-    icon: <FaLinkedinIn className="w-5 h-5" />,
-    rightIcon: <FaLinkedinIn className="w-4 h-4" />,
+    rightIcon: <FaLinkedinIn className="w-5 h-5" />,
   },
   {
     number: "03",
     name: "GitHub",
     url: "https://github.com/afriddev",
-    icon: <FaGithub className="w-5 h-5" />,
-    rightIcon: <FaGithub className="w-4 h-4" />,
+    rightIcon: <FaGithub className="w-5 h-5" />,
   },
 ];
 
@@ -48,9 +44,9 @@ function ContactSection() {
         </Animate>
 
         <Animate delay={200}>
-          <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-16">
+          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mt-4 mb-16">
             Get In{" "}
-            <span className="font-playfair italic text-zinc-400 font-normal">
+            <span className="font-playfair italic text-zinc-500 font-normal">
               Touch
             </span>
           </h2>
@@ -68,7 +64,9 @@ function ContactSection() {
                   <span className="social-num">{link.number}</span>
                   <span className="social-name">{link.name}</span>
                 </div>
-                <div className="social-icon">{link.rightIcon}</div>
+                <div className="social-icon">
+                  {link.rightIcon}
+                </div>
               </div>
             ))}
           </div>

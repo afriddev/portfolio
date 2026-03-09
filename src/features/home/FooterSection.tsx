@@ -21,7 +21,9 @@ function FooterSection() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
           <div className="text-center lg:text-left">
-            <div className="text-sm font-bold tracking-wide">SHAIK AFRID</div>
+            <div className="text-sm font-bold tracking-wide">
+              SHAIK AFRID
+            </div>
             <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 mt-0.5">
               Software Engineer &
             </div>
@@ -35,7 +37,7 @@ function FooterSection() {
               <button
                 key={link.target}
                 onClick={() => HandleScrollTo(link.target)}
-                className="text-[11px] uppercase tracking-[0.15em] text-zinc-500 hover:text-foreground transition-colors duration-300 font-medium"
+                className="nav-link text-[11px] uppercase tracking-[0.15em] text-zinc-500 hover:text-foreground transition-colors duration-300 font-medium"
               >
                 {link.label}
               </button>
@@ -44,7 +46,7 @@ function FooterSection() {
 
           <div className="text-center lg:text-right">
             <div className="text-[10px] uppercase tracking-[0.15em] text-zinc-400">
-              © 2025 Digital Portfolio
+              © 2026 Portfolio
             </div>
             <div className="text-[10px] uppercase tracking-[0.15em] text-zinc-400 font-semibold">
               All Rights Reserved

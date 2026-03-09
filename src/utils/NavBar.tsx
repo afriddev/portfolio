@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAppContext } from "./AppContext";
 import { IoMenuOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
+import { FaGithub } from "react-icons/fa";
 
 const NAV_ITEMS = [
   { label: "About", target: "ABOUT" },
@@ -48,11 +49,19 @@ function NavBar() {
             <button
               key={item.target}
               onClick={() => HandleScrollTo(item.target)}
-              className="text-[11px] uppercase tracking-[0.2em] text-zinc-500 hover:text-foreground transition-colors duration-300 font-medium"
+              className="nav-link text-[11px] uppercase tracking-[0.2em] text-zinc-500 hover:text-foreground transition-colors duration-300 font-medium"
             >
               {item.label}
             </button>
           ))}
+          <a
+            href="https://github.com/afriddev"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon-hover-rotate text-zinc-500 hover:text-foreground transition-colors duration-300"
+          >
+            <FaGithub className="w-4 h-4" />
+          </a>
         </div>
 
         <button
@@ -68,16 +77,48 @@ function NavBar() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-background/98 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8">
-          {NAV_ITEMS.map((item) => (
-            <button
-              key={item.target}
-              onClick={() => HandleScrollTo(item.target)}
-              className="text-sm uppercase tracking-[0.3em] text-zinc-500 hover:text-foreground transition-colors duration-300 font-medium"
-            >
-              {item.label}
+        <div className="lg:hidden fixed inset-0 top-0 bg-background z-40 flex flex-col">
+          <div className="flex items-center justify-between px-6 h-16 border-b border-zinc-100">
+            <div className="flex flex-col select-none" onClick={HandleScrollToTop}>
+              <span className="text-sm font-bold tracking-wide text-foreground">
+                SHAIK <span className="font-extrabold">AFRID</span>
+              </span>
+              <span className="text-[9px] tracking-[0.25em] text-zinc-400 uppercase">
+                Software Engineer
+              </span>
+            </div>
+            <button className="p-2" onClick={() => setMobileMenuOpen(false)}>
+              <IoMdClose className="w-6 h-6 text-foreground" />
             </button>
-          ))}
+          </div>
+
+          <div className="flex flex-col items-start px-10 pt-16 gap-8">
+            {NAV_ITEMS.map((item, index) => (
+              <button
+                key={item.target}
+                onClick={() => HandleScrollTo(item.target)}
+                className="text-2xl font-semibold text-foreground hover:text-zinc-500 transition-colors duration-300 tracking-wide"
+                style={{ animationDelay: `${index * 80}ms` }}
+              >
+                {item.label}
+              </button>
+            ))}
+            <a
+              href="https://github.com/afriddev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 text-lg font-semibold text-foreground hover:text-zinc-500 transition-colors duration-300 tracking-wide mt-4"
+            >
+              <FaGithub className="w-5 h-5" />
+              GitHub
+            </a>
+          </div>
+
+          <div className="mt-auto px-10 pb-10">
+            <div className="text-[10px] uppercase tracking-[0.2em] text-zinc-400">
+              © 2026 Shaik Afrid
+            </div>
+          </div>
         </div>
       )}
     </nav>

@@ -80,9 +80,9 @@ function ProjectsSection() {
               <span className="section-label">Portfolio</span>
             </Animate>
             <Animate delay={200}>
-              <h2 className="text-4xl lg:text-5xl font-bold mt-4">
+              <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mt-4">
                 Featured{" "}
-                <span className="font-playfair italic text-zinc-400 font-normal">
+                <span className="font-playfair italic text-zinc-500 font-normal">
                   Works
                 </span>
               </h2>

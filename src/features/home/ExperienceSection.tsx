@@ -50,9 +50,9 @@ function ExperienceSection() {
         </Animate>
 
         <Animate delay={200}>
-          <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-16">
+          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mt-4 mb-16">
             Work &{" "}
-            <span className="font-playfair italic text-zinc-400 font-normal">
+            <span className="font-playfair italic text-zinc-500 font-normal">
               Impact
             </span>
           </h2>

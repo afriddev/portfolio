@@ -22,9 +22,9 @@ function AboutSection() {
         </Animate>
 
         <Animate delay={200}>
-          <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-16">
+          <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold mt-4 mb-16">
             What{" "}
-            <span className="font-playfair italic text-zinc-400 font-normal">
+            <span className="font-playfair italic text-zinc-500 font-normal">
               I Do
             </span>
           </h2>
@@ -57,7 +57,7 @@ function AboutSection() {
             </Animate>
 
             <Animate delay={400}>
-              <h3 className="text-xl lg:text-2xl font-semibold leading-snug mb-6">
+              <h3 className="text-xl lg:text-2xl xl:text-3xl font-semibold leading-snug mb-6">
                 Building refined digital products with a focus on{" "}
                 <span className="text-zinc-400">scalable architecture</span>{" "}
                 and AI-driven engineering.
@@ -65,7 +65,7 @@ function AboutSection() {
             </Animate>
 
             <Animate delay={450}>
-              <p className="text-sm text-zinc-500 leading-relaxed mb-8">
+              <p className="text-sm lg:text-base text-zinc-500 leading-relaxed mb-8">
                 I bridge the gap between design and high-level engineering.
                 Based in Hyderabad, I focus on creating digital experiences that
                 are as technically sound as they are visually intuitive.
@@ -80,7 +80,7 @@ function AboutSection() {
                   <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 block mb-1">
                     Location
                   </span>
-                  <span className="text-sm font-semibold">
+                  <span className="text-sm lg:text-base font-semibold">
                     Hyderabad, India
                   </span>
                 </div>
@@ -88,8 +88,8 @@ function AboutSection() {
                   <span className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 block mb-1">
                     Status
                   </span>
-                  <span className="text-sm font-semibold text-green-600">
-                    Engineer @ RailTel
+                  <span className="text-sm lg:text-base font-semibold text-green-600">
+                    Open to Work
                   </span>
                 </div>
               </div>

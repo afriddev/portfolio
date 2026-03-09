@@ -30,7 +30,7 @@ function HeroSection() {
             <div className="flex items-center gap-3">
               <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse" />
               <span className="text-[10px] lg:text-[11px] uppercase tracking-[0.3em] text-zinc-500 font-medium">
-                Available for Collaboration
+                Open to Work
               </span>
             </div>
           </Animate>
@@ -38,7 +38,7 @@ function HeroSection() {
           <Animate delay={200}>
             <h1 className="text-[clamp(3.5rem,12vw,9rem)] font-black leading-[0.9] tracking-tight">
               <span className="block text-foreground">SHAIK</span>
-              <span className="block text-zinc-300">AFRID</span>
+              <span className="block text-zinc-500">AFRID</span>
             </h1>
           </Animate>
 
@@ -46,14 +46,14 @@ function HeroSection() {
             <Animate delay={300}>
               <div className="flex items-center gap-4">
                 <div className="w-10 h-px bg-zinc-400" />
-                <span className="text-[11px] lg:text-xs uppercase tracking-[0.3em] text-zinc-500 font-medium">
+                <span className="text-sm lg:text-base xl:text-lg uppercase tracking-[0.3em] text-zinc-600 font-medium">
                   Software Engineer
                 </span>
               </div>
             </Animate>
 
             <Animate delay={400}>
-              <p className="text-sm lg:text-base text-zinc-500 leading-relaxed max-w-md">
+              <p className="text-base lg:text-lg xl:text-xl text-zinc-500 leading-relaxed max-w-lg">
                 Crafting high-performance digital systems with a focus on
                 scalable architecture, AI-driven solutions, and clean
                 engineering.
@@ -77,36 +77,36 @@ function HeroSection() {
       </div>
 
       <Animate delay={600}>
-        <div className="hidden lg:flex flex-col gap-5 fixed right-8 top-1/2 -translate-y-1/2 z-40">
+        <div className="hidden lg:flex flex-col gap-4 fixed right-10 top-1/2 -translate-y-1/2 z-40">
           <a
             href="https://www.linkedin.com/in/afriddev/"
             target="_blank"
             rel="noopener noreferrer"
-            className="icon-hover-tilt text-zinc-400 hover:text-foreground transition-colors"
+            className="social-icon-link"
           >
-            <FaLinkedinIn className="w-4 h-4" />
+            <FaLinkedinIn className="w-[18px] h-[18px]" />
           </a>
           <a
             href="https://github.com/afriddev"
             target="_blank"
             rel="noopener noreferrer"
-            className="icon-hover-tilt text-zinc-400 hover:text-foreground transition-colors"
+            className="social-icon-link"
           >
-            <FaGithub className="w-4 h-4" />
+            <FaGithub className="w-[18px] h-[18px]" />
           </a>
           <a
             href="https://x.com/AFRIDANON"
             target="_blank"
             rel="noopener noreferrer"
-            className="icon-hover-tilt text-zinc-400 hover:text-foreground transition-colors"
+            className="social-icon-link"
           >
-            <FaXTwitter className="w-4 h-4" />
+            <FaXTwitter className="w-[18px] h-[18px]" />
           </a>
           <a
             href="mailto:afridayan01@gmail.com"
-            className="icon-hover-tilt text-zinc-400 hover:text-foreground transition-colors"
+            className="social-icon-link"
           >
-            <IoMailOutline className="w-4 h-4" />
+            <IoMailOutline className="w-[18px] h-[18px]" />
           </a>
         </div>
       </Animate>
