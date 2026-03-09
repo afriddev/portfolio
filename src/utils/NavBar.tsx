@@ -39,54 +39,59 @@ function NavBar() {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-zinc-100">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 lg:h-20">
-        <div
-          className="cursor-pointer flex flex-col select-none"
-          onClick={HandleScrollToTop}
-        >
-          <span className="text-sm lg:text-base font-bold tracking-wide text-foreground">
-            SHAIK <span className="font-extrabold">AFRID</span>
-          </span>
-          <span className="text-[9px] lg:text-[10px] tracking-[0.25em] text-zinc-400 uppercase">
-            Software Engineer
-          </span>
-        </div>
-
-        <div className="hidden lg:flex items-center gap-10">
-          {NAV_ITEMS.map((item) => (
-            <button
-              key={item.target}
-              onClick={() => HandleScrollTo(item.target)}
-              className="nav-link text-[11px] uppercase tracking-[0.2em] text-zinc-500 hover:text-foreground transition-colors duration-300 font-medium"
-            >
-              {item.label}
-            </button>
-          ))}
-          <a
-            href="https://github.com/afriddev"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nav-github text-foreground hover:text-foreground transition-colors duration-300"
+    <>
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-zinc-100 h-16 lg:h-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-full">
+          <div
+            className="cursor-pointer flex flex-col select-none"
+            onClick={HandleScrollToTop}
           >
-            <FaGithub className="w-[18px] h-[18px]" />
-          </a>
-        </div>
+            <span className="text-sm lg:text-base font-bold tracking-wide text-foreground">
+              SHAIK <span className="font-extrabold">AFRID</span>
+            </span>
+            <span className="text-[9px] lg:text-[10px] tracking-[0.25em] text-zinc-600 uppercase font-medium">
+              Software Engineer
+            </span>
+          </div>
 
-        <button
-          className="lg:hidden p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? (
-            <IoMdClose className="w-6 h-6 text-foreground" />
-          ) : (
-            <IoMenuOutline className="w-6 h-6 text-foreground" />
-          )}
-        </button>
-      </div>
+          <div className="hidden lg:flex items-center gap-10">
+            {NAV_ITEMS.map((item) => (
+              <button
+                key={item.target}
+                onClick={() => HandleScrollTo(item.target)}
+                className="nav-link text-[11px] uppercase tracking-[0.2em] text-zinc-600 hover:text-foreground hover:font-semibold transition-all duration-300 font-medium"
+              >
+                {item.label}
+              </button>
+            ))}
+            <a
+              href="https://github.com/afriddev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-github text-foreground hover:text-foreground transition-colors duration-300"
+            >
+              <FaGithub className="w-[18px] h-[18px]" />
+            </a>
+          </div>
+
+          <button
+            className="lg:hidden p-2 z-[70]"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <IoMdClose className="w-6 h-6 text-foreground" />
+            ) : (
+              <IoMenuOutline className="w-6 h-6 text-foreground" />
+            )}
+          </button>
+        </div>
+      </nav>
 
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-0 bg-background z-[60] flex flex-col">
+        <div
+          className="lg:hidden fixed inset-0 z-[60] flex flex-col"
+          style={{ backgroundColor: "#fafafa" }}
+        >
           <div className="flex items-center justify-between px-6 h-16 border-b border-zinc-100">
             <div
               className="flex flex-col select-none"
@@ -133,7 +138,7 @@ function NavBar() {
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 }
 

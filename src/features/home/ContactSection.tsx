@@ -82,7 +82,7 @@ function ContactSection() {
               <span className="text-lg lg:text-xl font-bold tracking-wide group-hover:text-zinc-500 transition-colors">
                 AFRIDAYAN01@GMAIL.COM
               </span>
-              <span className="text-foreground group-hover:text-foreground transition-all duration-500 group-hover:rotate-[360deg] inline-block">
+              <span className="text-foreground transition-all duration-400 group-hover:scale-125 inline-block">
                 <HiArrowUpRight className="w-5 h-5" />
               </span>
             </a>
