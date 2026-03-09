@@ -16,6 +16,8 @@ export default {
       animation: {
         "fade-in-up": "fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "slide-in": "slideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "spin-slow": "spin 1s linear infinite",
+        "pulse-subtle": "pulseSubtle 1.6s ease-in-out infinite",
       },
       keyframes: {
         fadeInUp: {
@@ -25,6 +27,10 @@ export default {
         slideIn: {
           "0%": { opacity: "0", transform: "translateX(-20px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        pulseSubtle: {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "1", transform: "scale(0.96)" },
         },
       },
     },

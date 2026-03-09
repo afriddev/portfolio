@@ -39,7 +39,7 @@ function App() {
               strokeLinecap="round"
             />
           </svg>
-          <span className="absolute text-2xl font-black tracking-tight text-foreground animate-pulse-subtle">
+          <span className="absolute text-2xl font-black tracking-tight text-foreground">
             A
           </span>
         </div>
