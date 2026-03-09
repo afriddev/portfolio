@@ -1,0 +1,103 @@
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { IoMailOutline } from "react-icons/io5";
+import { HiArrowUpRight } from "react-icons/hi2";
+import Animate from "../../utils/animations/Animate";
+
+interface SocialLink {
+  number: string;
+  name: string;
+  url: string;
+  icon: React.ReactNode;
+  rightIcon: React.ReactNode;
+}
+
+const SOCIAL_LINKS: SocialLink[] = [
+  {
+    number: "01",
+    name: "Email",
+    url: "https://mail.google.com/mail/?view=cm&fs=1&to=afridayan01@gmail.com&su=Hey",
+    icon: <IoMailOutline className="w-5 h-5" />,
+    rightIcon: <HiArrowUpRight className="w-4 h-4" />,
+  },
+  {
+    number: "02",
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/afriddev/",
+    icon: <FaLinkedinIn className="w-5 h-5" />,
+    rightIcon: <FaLinkedinIn className="w-4 h-4" />,
+  },
+  {
+    number: "03",
+    name: "GitHub",
+    url: "https://github.com/afriddev",
+    icon: <FaGithub className="w-5 h-5" />,
+    rightIcon: <FaGithub className="w-4 h-4" />,
+  },
+];
+
+function ContactSection() {
+  function HandleLinkClick(url: string) {
+    window.open(url, "_blank");
+  }
+
+  return (
+    <section className="py-24 lg:py-32">
+      <div className="max-w-4xl mx-auto px-6 lg:px-12">
+        <Animate delay={100}>
+          <span className="section-label">Available for Work</span>
+        </Animate>
+
+        <Animate delay={200}>
+          <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-16">
+            Get In{" "}
+            <span className="font-playfair italic text-zinc-400 font-normal">
+              Touch
+            </span>
+          </h2>
+        </Animate>
+
+        <Animate delay={300}>
+          <div className="flex flex-col">
+            {SOCIAL_LINKS.map((link) => (
+              <div
+                key={link.number}
+                className="social-row"
+                onClick={() => HandleLinkClick(link.url)}
+              >
+                <div className="flex items-center gap-6">
+                  <span className="social-num">{link.number}</span>
+                  <span className="social-name">{link.name}</span>
+                </div>
+                <div className="social-icon">{link.rightIcon}</div>
+              </div>
+            ))}
+          </div>
+        </Animate>
+
+        <Animate delay={400}>
+          <div className="mt-16">
+            <span className="text-[10px] uppercase tracking-[0.25em] text-zinc-400 block mb-3">
+              Based in Hyderabad
+            </span>
+            <div className="flex items-center gap-3">
+              <a
+                href="mailto:afridayan01@gmail.com"
+                className="text-lg lg:text-xl font-bold tracking-wide hover:text-zinc-500 transition-colors"
+              >
+                AFRIDAYAN01@GMAIL.COM
+              </a>
+              <a
+                href="mailto:afridayan01@gmail.com"
+                className="icon-hover-rotate text-zinc-400 hover:text-foreground transition-colors"
+              >
+                <HiArrowUpRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </Animate>
+      </div>
+    </section>
+  );
+}
+
+export default ContactSection;

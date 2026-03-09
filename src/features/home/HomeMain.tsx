@@ -1,65 +1,68 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef } from "react";
 import { useAppContext } from "../../utils/AppContext";
-import BottomNav from "../../utils/BottomNav";
-import Experience from "./Experience";
-import Projects from "./Projects";
-import HomeBanner from "./HomeBanner";
 import NavBar from "../../utils/NavBar";
-import AboutMe from "./AboutMe";
-import MyExpertise from "./MyExpertise";
-import MyWork from "./MyWork";
+import HeroSection from "./HeroSection";
+import AboutSection from "./AboutSection";
+import SkillsSection from "./SkillsSection";
+import ProjectsSection from "./ProjectsSection";
+import ExperienceSection from "./ExperienceSection";
+import ContactSection from "./ContactSection";
+import FooterSection from "./FooterSection";
 
 function HomeMain() {
-  const { scrollView, dispatch } = useAppContext();
-  const targetDivRef = useRef<HTMLDivElement>(null);
+  const { scrollView } = useAppContext();
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const temp = scrollView;
+    if (!scrollView) return;
 
-    if (targetDivRef.current) {
-      targetDivRef.current.scrollIntoView({ behavior: "smooth" });
-      dispatch({
-        type: "setScrollView",
-        payload: undefined,
-      });
+    const refMap: Record<string, React.RefObject<HTMLDivElement>> = {
+      ABOUT: aboutRef,
+      SKILLS: skillsRef,
+      PROJECTS: projectsRef,
+      EXPERIENCE: experienceRef,
+      CONTACT: contactRef,
+    };
+
+    const targetRef = refMap[scrollView];
+    if (targetRef?.current) {
+      const yOffset = -80;
+      const y =
+        targetRef.current.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
-    localStorage.setItem("selectedProject", null as never);
-
-    dispatch({
-      type: "setScrollView",
-      payload: temp,
-    });
-  }, [scrollView, targetDivRef]);
+  }, [scrollView]);
 
   return (
-    <div className=" w-full h-full flex flex-col ">
+    <div className="w-full min-h-screen grid-bg">
       <NavBar />
-      <div className="bg-[#011030] items-center justify-center flex flex-col lg:gap-[15vh]">
-        <div className="flex flex-col lg:w-[60vw] lg:gap-[15vh] w-full p-5">
-          <HomeBanner />
-          <div ref={scrollView === "ABOUTME" ? targetDivRef : null}>
-            <AboutMe />
-          </div>
-
-          <div ref={scrollView === "EXPERIENCE" ? targetDivRef : null}>
-            <Experience />
-          </div>
-          <MyExpertise scrollView={scrollView} targetDivRef={targetDivRef} />
+      <main>
+        <HeroSection />
+        <div ref={aboutRef}>
+          <AboutSection />
         </div>
-
-        <div className=" flex flex-col lg:w-[70vw] lg:gap-[15vh] w-full p-5">
-          <div className="flex flex-col gap-[30vh]" ref={scrollView === "WORK" ? targetDivRef : null}>
-            <MyWork />
-            <Projects />
-          </div>
-
-          <div ref={scrollView === "CONTACT" ? targetDivRef : null}>
-            <BottomNav />
-          </div>
+        <div ref={skillsRef}>
+          <SkillsSection />
         </div>
-      </div>
+        <div ref={projectsRef}>
+          <ProjectsSection />
+        </div>
+        <div ref={experienceRef}>
+          <ExperienceSection />
+        </div>
+        <div ref={contactRef}>
+          <ContactSection />
+        </div>
+        <FooterSection />
+      </main>
     </div>
   );
 }
+
 export default HomeMain;

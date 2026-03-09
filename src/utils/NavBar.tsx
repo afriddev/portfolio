@@ -1,240 +1,86 @@
-import { IoMenuOutline } from "react-icons/io5";
-import Animate from "./animations/Animate";
-import { useNavigate } from "react-router-dom";
-import { useAppContext } from "./AppContext";
 import { useState } from "react";
+import { useAppContext } from "./AppContext";
+import { IoMenuOutline } from "react-icons/io5";
 import { IoMdClose } from "react-icons/io";
+
+const NAV_ITEMS = [
+  { label: "About", target: "ABOUT" },
+  { label: "Skills", target: "SKILLS" },
+  { label: "Projects", target: "PROJECTS" },
+  { label: "Experience", target: "EXPERIENCE" },
+  { label: "Connect", target: "CONTACT" },
+];
+
 function NavBar() {
-  const navigate = useNavigate();
   const { dispatch } = useAppContext();
-  const [openMenu, setOpenMenu] = useState(false);
-  function handleHomeClick() {
-    navigate("/");
-    localStorage.setItem("selectedProject", null as never);
-  }
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  function handleScrollViewClick(value: string) {
-    localStorage.setItem("selectedProject", null as never);
-
-    dispatch({
-      type: "setScrollView",
-      payload: value,
-    });
+  function HandleScrollTo(target: string) {
+    dispatch({ type: "setScrollView", payload: target });
     setTimeout(() => {
-      dispatch({
-        type: "setScrollView",
-        payload: undefined,
-      });
+      dispatch({ type: "setScrollView", payload: undefined });
     }, 400);
-
-    navigate("/");
+    setMobileMenuOpen(false);
   }
 
-  function handleMenuClick() {
-    setOpenMenu(!openMenu);
-  }
-
-  function handleMenuItemsClick(value: string) {
-    setOpenMenu(false);
-    handleScrollViewClick(value);
+  function HandleScrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setMobileMenuOpen(false);
   }
 
   return (
-    <div className=" w-full bg-[#011030]  px-4 flex items-center gap-3 lg:px-5 lg:py-6 static p-3 justify-between h-[15vh]">
-      <div className="flex items-center w-full justify-between  lg:justify-start">
-        {openMenu && (
-          <div className="h-[100vh] pb-20 justify-between flex flex-col  inset-0 pl-8 z-[999] fixed text-[#02ffff] border-r border-[#02ffff]  -ml-4  bg-[#011030] w-[75vw] ">
-            <div className="flex flex-col gap-3">
-              <Animate delay={100} type="slideDown">
-                <div
-                  onClick={handleMenuClick}
-                  className="ml-[0.15rem] rounded-full px-2 py-2 mt-3 bg-black/5 w-fit"
-                >
-                  <IoMdClose className="w-10 h-10" />
-                </div>
-              </Animate>
-              <div className="flex mt-[7vh] flex-col gap-5 ml-2 font-medium ">
-                <Animate delay={100} type="slideLeft">
-                  <div
-                    onClick={() => {
-                      handleHomeClick();
-                      setOpenMenu(false);
-                    }}
-                    className="cursor-pointer"
-                  >
-                    // Home
-                  </div>
-                </Animate>
-                <Animate delay={400} type="slideLeft">
-                  <div
-                    onClick={() => {
-                      handleMenuItemsClick("EXPERIENCE");
-                    }}
-                    className="cursor-pointer"
-                  >
-                    // Experience
-                  </div>
-                </Animate>
-                
-                <Animate delay={200} type="slideLeft">
-                  <div
-                    onClick={() => {
-                      handleMenuItemsClick("EXPERTISE");
-                    }}
-                    className="cursor-pointer"
-                  >
-                    // Expertise
-                  </div>
-                </Animate>
-                <Animate delay={300} type="slideLeft">
-                  <div
-                    onClick={() => {
-                      handleMenuItemsClick("WORK");
-                    }}
-                    className="cursor-pointer"
-                  >
-                    // Work
-                  </div>
-                </Animate>
-                
-                <Animate delay={500} type="slideLeft">
-                  <div
-                    onClick={() => {
-                      handleMenuItemsClick("CONTACT");
-                    }}
-                    className="cursor-pointer"
-                  >
-                    // Conatct
-                  </div>{" "}
-                </Animate>
-              </div>
-            </div>
-            <div className="w-full mt-[9vh]">
-              <Animate delay={200} type="slideDown">
-                <div className="w-full flex flex-col gap-2 lg:flex-row lg:justify-between px-8 lg:px-20">
-                  <div className="flex   -ml-2 text-xs text-center">
-                    © 2025. Made with passion by Shaik Afrid.
-                  </div>
-                </div>
-              </Animate>
-            </div>
-          </div>
-        )}
-        <Animate delay={150}>
-          <div onClick={handleMenuClick} className="lg:hidden cursor-pointer">
-            <IoMenuOutline className="w-14 bg-zinc-700/10 p-3 rounded-full h-14  text-[#02ffff]" />
-          </div>
-        </Animate>
-        <Animate delay={150}>
-          {" "}
-          <div className="cursor-pointer  ml-[2vw]  flex items-end">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 100 100"
-              className="h-14 w-14 text-[#02ffff]"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="4"
-            >
-              <polygon
-                points="50,5 90,28 90,72 50,95 10,72 10,28"
-                strokeLinejoin="round"
-              />
-              <text
-                x="50"
-                y="53"
-                textAnchor="middle"
-                fontSize="40"
-                fontFamily="Arial, sans-serif"
-                fill="currentColor"
-                stroke="none"
-                dominantBaseline="middle"
-              >
-                A
-              </text>
-            </svg>
-          </div>
-        </Animate>
-      </div>
-      <Animate delay={300}>
-        <div className="lg:flex items-center hover:text-foreground/40 text-gray-300 hidden gap-12 text-xs ml-[15vw] -mt-4 mr-10">
-          <div className="relative cursor-pointer  hover:text-primary ">
-            <div className="flex items-center gap-2" onClick={handleHomeClick}>
-              //{" "}
-              <span className="lg:hover:border-b lg:border-primary text-lg">Home</span>
-            </div>
-            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
-              01
-            </a>
-          </div>
-          <div
-            onClick={() => {
-              handleScrollViewClick("EXPERIENCE");
-            }}
-            className="relative cursor-pointer   hover:text-primary "
-          >
-            <div className="flex items-center gap-2">
-              //{" "}
-              <span className="lg:hover:border-b lg:border-primary text-lg">
-                Experience
-              </span>
-            </div>
-            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
-              04
-            </a>
-          </div>
-          
-          <div
-            onClick={() => {
-              handleScrollViewClick("EXPERTISE");
-            }}
-            className="relative cursor-pointer   hover:text-primary "
-          >
-            <div className="flex items-center gap-2">
-              //{" "}
-              <span className="lg:hover:border-b lg:border-primary text-lg">
-                Expertise
-              </span>
-            </div>
-            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
-              02
-            </a>
-          </div>
-          <div
-            onClick={() => {
-              handleScrollViewClick("WORK");
-            }}
-            className="relative cursor-pointer   hover:text-primary "
-          >
-            <div className="flex items-center gap-2">
-              //{" "}
-              <span className="lg:hover:border-b lg:border-primary text-lg">Work</span>
-            </div>
-            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
-              03
-            </a>
-          </div>
-          
-
-          <div
-            onClick={() => {
-              handleScrollViewClick("CONTACT");
-            }}
-            className="relative cursor-pointer   hover:text-primary "
-          >
-            <div className="flex items-center gap-2">
-              //{" "}
-              <span className="lg:hover:border-b lg:border-primary text-lg">
-                Conatct
-              </span>
-            </div>
-            <a className=" absolute -top-3 font-thin -right-2 text-[#02ffff] text-sm ">
-              05
-            </a>
-          </div>
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-zinc-100">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-16 lg:h-20">
+        <div
+          className="cursor-pointer flex flex-col select-none"
+          onClick={HandleScrollToTop}
+        >
+          <span className="text-sm lg:text-base font-bold tracking-wide text-foreground">
+            SHAIK <span className="font-extrabold">AFRID</span>
+          </span>
+          <span className="text-[9px] lg:text-[10px] tracking-[0.25em] text-zinc-400 uppercase">
+            Software Engineer
+          </span>
         </div>
-      </Animate>
-    </div>
+
+        <div className="hidden lg:flex items-center gap-10">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.target}
+              onClick={() => HandleScrollTo(item.target)}
+              className="text-[11px] uppercase tracking-[0.2em] text-zinc-500 hover:text-foreground transition-colors duration-300 font-medium"
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+
+        <button
+          className="lg:hidden p-2"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? (
+            <IoMdClose className="w-6 h-6 text-foreground" />
+          ) : (
+            <IoMenuOutline className="w-6 h-6 text-foreground" />
+          )}
+        </button>
+      </div>
+
+      {mobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 top-16 bg-background/98 backdrop-blur-xl z-40 flex flex-col items-center justify-center gap-8">
+          {NAV_ITEMS.map((item) => (
+            <button
+              key={item.target}
+              onClick={() => HandleScrollTo(item.target)}
+              className="text-sm uppercase tracking-[0.3em] text-zinc-500 hover:text-foreground transition-colors duration-300 font-medium"
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </nav>
   );
 }
 
