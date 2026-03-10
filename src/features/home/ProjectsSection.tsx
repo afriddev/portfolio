@@ -98,7 +98,7 @@ const PROJECTS: ProjectData[] = [
       "A minimal, modern frontend for the Email API that lets developers explore and use the service from the browser, with links to official SDKs for Python, Dart, JavaScript, and Java.",
     categories: ["frontend"],
     categoryLabel: "Frontend",
-    image: "email-service.png",
+    image: "email-service.svg",
     githubLink: "https://github.com/afriddev/devmailer-ui",
     liveLink: "https://emailsender.afrid.live/",
   },
