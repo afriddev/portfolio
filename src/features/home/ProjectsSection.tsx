@@ -27,7 +27,7 @@ const PROJECT_ACTION_LINK_CLASS =
 interface ProjectData {
   title: string;
   description: string;
-  categories: ProjectFilter[];
+  categories: Exclude<ProjectFilter, "all">[];
   categoryLabel: string;
   image: string;
   githubLink?: string;
