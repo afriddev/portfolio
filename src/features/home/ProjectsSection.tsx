@@ -36,6 +36,26 @@ interface ProjectData {
 
 const PROJECTS: ProjectData[] = [
   {
+    title: "Cortexvia - AI Chatbot SaaS Platform",
+    description:
+      "Microservices-based AI chatbot SaaS built with React, TypeScript, FastAPI, PostgreSQL, Redis, AWS Bedrock, Voyage AI embeddings, pgvector, HNSW search, Graph RAG, real-time streaming, custom domains, analytics, usage limits, and secure Razorpay subscriptions.",
+    categories: ["ai", "fullstack"],
+    categoryLabel: "AI SaaS Platform",
+    image: "cortexvia.png",
+    githubLink: "https://github.com/cortexvia",
+    liveLink: "https://www.cortexvia.in/",
+  },
+  {
+    title: "MS Collection - Full-Stack E-Commerce Platform",
+    description:
+      "Fashion accessories and jewellery platform built with React, TypeScript, FastAPI, PostgreSQL, and Redis, featuring advanced product discovery, wishlists, checkout, Google OAuth, order tracking, COD and Razorpay payments, and a complete admin catalog studio.",
+    categories: ["fullstack"],
+    categoryLabel: "E-Commerce Platform",
+    image: "ms-collection.png",
+    githubLink: "https://github.com/mscollection-it",
+    liveLink: "https://mscollection.in/",
+  },
+  {
     title: "Muni Ammamma Pickles",
     description:
       "Full-stack e-commerce with Razorpay payments, product management, and mobile-optimized shopping experience.",
